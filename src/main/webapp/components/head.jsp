@@ -7,6 +7,6 @@
     />
 
     <title>Software de gestión de libreria</title>
-    <script type="module" crossorigin src="./assets/main-96c6bb5c.js"></script>
+    <script type="module" crossorigin src="./assets/main-b768d1ae.js"></script>
     <link rel="stylesheet" href="./assets/main-ae234cb9.css">
 </head>

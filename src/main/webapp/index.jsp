@@ -12,6 +12,7 @@
             <main class="p-3 m-0">
                 <div class="contenedor-contenido container-fluid p-0">
                     <%@include file="./components/contenido_principal.jsp" %>
+                    <%@include file="./components/modalesAccionesRealizadas.jsp" %>
                 </div>
             </main>
             <%@include file="./components/footer.jsp"%>

@@ -105,7 +105,7 @@
             </div>
             <div class="modal-body">
                 <span class="m-0">
-                    Se agregaran<strong id="t-masUnidades"># unidades</strong>
+                    Se agregaran <strong id="t-masUnidades"># unidades</strong>
                     del libro <strong><%= libroMod.getNombre() %></strong>
                 </span>
                 <span>¿Esta seguro de continuar?</span>

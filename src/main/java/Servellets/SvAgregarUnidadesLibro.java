@@ -45,9 +45,10 @@ public class SvAgregarUnidadesLibro extends HttpServlet {
             book.setUnidades(book.getUnidades() + unidadesAgregar);
             control.editarLibro(book);
 
-            response.sendRedirect("index.jsp?unidades_agregadas=true");
+            response.sendRedirect("index.jsp?accion=unidades_agregadas");
+            
         } catch (Exception e) {
-            response.sendRedirect("index.jsp?unidades_agregadas=false");
+            response.sendRedirect("index.jsp?accion=error");
         }
     }
 
