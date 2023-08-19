@@ -5,13 +5,20 @@
     const tituloAlerta = document.querySelector("#title-alert");
     const mensaje = document.querySelector("#message_");
 
+    let inpCode = document.getElementById("i_code");
+    let inpName = document.getElementById("i_nombre");
+    let inpAutor = document.getElementById("i_autor");
+    let inpYear = document.getElementById("i_anio");
+    let inpPrice = document.getElementById("i_precio");
+    let inpUnits = document.getElementById("i_unidades");
+
     const enableSendingButton = () => {
-        const inpCode = document.getElementById("i_code");
-        const inpName = document.getElementById("i_nombre");
-        const inpAutor = document.getElementById("i_autor");
-        const inpYear = document.getElementById("i_anio");
-        const inpPrice = document.getElementById("i_precio");
-        const inpUnits = document.getElementById("i_unidades");
+        inpCode = document.getElementById("i_code");
+        inpName = document.getElementById("i_nombre");
+        inpAutor = document.getElementById("i_autor");
+        inpYear = document.getElementById("i_anio");
+        inpPrice = document.getElementById("i_precio");
+        inpUnits = document.getElementById("i_unidades");
 
         // Expresiones regulares
         const regExpCode = /^\d{10}$/.test(inpCode.value);
@@ -44,9 +51,6 @@
             regExpUnits
         ) {
             case true:
-                validarDatos.disabled = true;
-                validarDatos.innerHTML = "Datos validos";
-
                 btnEnviar.disabled = false;
                 btnEnviar.classList.remove("btn-secondary");
                 btnEnviar.classList.add("btn-success");
@@ -56,13 +60,6 @@
                 tituloAlerta.innerHTML = "¡Validación exitosa!";
                 mensaje.innerHTML =
                     "Los datos parecen ser correctos. Puede continuar con la modificación.";
-
-                inpCode.disabled = true;
-                inpName.disabled = true;
-                inpAutor.disabled = true;
-                inpYear.disabled = true;
-                inpPrice.disabled = true;
-                inpUnits.disabled = true;
                 break;
 
             default:
@@ -83,7 +80,18 @@
         }
     };
 
-    validarDatos.addEventListener("click", () => {
-        enableSendingButton();
-    });
+    validarDatos.addEventListener("click", enableSendingButton);
+
+    const disableSendingButton = () => {
+        btnEnviar.disabled = true;
+        btnEnviar.classList.remove("btn-success");
+        btnEnviar.classList.add("btn-secondary");
+    };
+
+    inpCode.addEventListener("focus", disableSendingButton);
+    inpName.addEventListener("focus", disableSendingButton);
+    inpAutor.addEventListener("focus", disableSendingButton);
+    inpYear.addEventListener("focus", disableSendingButton);
+    inpPrice.addEventListener("focus", disableSendingButton);
+    inpUnits.addEventListener("focus", disableSendingButton);
 })();

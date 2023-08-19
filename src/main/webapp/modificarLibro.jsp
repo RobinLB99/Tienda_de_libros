@@ -16,6 +16,6 @@
             </main>
             <%@include file="./components/footer.jsp"%>
         </div>
-        <script src="./assets/validarDatosFormulario.js"></script>
+        <script type="module" src="./assets/validarDatosFormulario.js"></script>
     </body>
 </html>

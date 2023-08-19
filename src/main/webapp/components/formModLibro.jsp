@@ -1,6 +1,6 @@
-<%@page import="Logica.Libro"%> <%@page contentType="text/html" language="java"
-pageEncoding="UTF-8"%> <% Libro libro = (Libro)
-request.getSession().getAttribute("libro_"); %>
+<%@page import="Logica.Libro"%>
+<%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
+
 <!-- Modificar libro -->
 <div class="card shadow-sm card-modificar-libro">
     <div class="card-header">Modificar datos del libro</div>
@@ -10,6 +10,7 @@ request.getSession().getAttribute("libro_"); %>
             method="POST"
             class="d-flex flex-column justify-content-center formulario-modificar-libro"
         >
+            <% Libro libro = (Libro) request.getSession().getAttribute("libro_"); %>
             <input
                 type="text"
                 name="id_"
@@ -20,7 +21,7 @@ request.getSession().getAttribute("libro_"); %>
             <input
                 class="form-control m-0"
                 type="text"
-                name="codigo_i"
+                name="codigo_"
                 id="i_code"
                 value="<%=libro.getCodigo()%>"
                 placeholder="Codigo"
@@ -96,9 +97,9 @@ request.getSession().getAttribute("libro_"); %>
                 type="number"
                 name="unidades_"
                 id="i_unidades"
-                value="<%=libro.getUnidades()%>"
-                max="100"
                 min="1"
+                max="100"
+                value="<%=libro.getUnidades()%>"
                 placeholder="Unidades disponibles"
                 required
             />
