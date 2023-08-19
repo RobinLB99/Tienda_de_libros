@@ -8,19 +8,20 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author joel
  */
-@WebServlet(name = "SvAgregarUnidadesLibro", urlPatterns = {"/SvAgregarUnidadesLibro"})
-public class SvAgregarUnidadesLibro extends HttpServlet {
+@WebServlet(name = "SvRedirectModificarLibro", urlPatterns = {"/SvRedirectModificarLibro"})
+public class SvRedirectModificarLibro extends HttpServlet {
     
-    LogicController control = new LogicController();
-
+    LogicController control = null;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        
     }
 
     
@@ -36,22 +37,22 @@ public class SvAgregarUnidadesLibro extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        long idLibro = Long.parseLong((String) request.getParameter("idLibro_"));
-        int unidadesAgregar = Integer.parseInt((String) request.getParameter("unidadesAgregar_"));
+        control = new LogicController();
+        long id_libro_mod = Long.parseLong(request.getParameter("modificar_"));
         
         try {
-            Libro book_m = control.buscarLibro(idLibro);
+            Libro libroMod = control.buscarLibro(id_libro_mod);
             
-            int unidadesDisponibles = book_m.getUnidades();
-            book_m.setUnidades(unidadesDisponibles + unidadesAgregar);
-            
-            control.editarLibro(book_m);
+            HttpSession mySessionIdBookMod = request.getSession();
+            mySessionIdBookMod.setAttribute("libro_", libroMod);
 
-            response.sendRedirect("index.jsp?accion=unidades_agregadas");
+            response.sendRedirect("modificarLibro.jsp");
             
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             response.sendRedirect("index.jsp?accion=error");
         }
+        
     }
 
     

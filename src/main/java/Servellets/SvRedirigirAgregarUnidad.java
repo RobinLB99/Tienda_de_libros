@@ -13,6 +13,8 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet(name = "SvRedirigirAgregarUnidad", urlPatterns = {"/SvRedirigirAgregarUnidad"})
 public class SvRedirigirAgregarUnidad extends HttpServlet {
 
+    LogicController control = null;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -28,7 +30,7 @@ public class SvRedirigirAgregarUnidad extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        LogicController control = new LogicController();
+        control = new LogicController();
         
         long id = Long.parseLong(request.getParameter("agregar_"));
         Libro libroMod = control.buscarLibro(id);

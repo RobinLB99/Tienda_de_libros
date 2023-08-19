@@ -45,7 +45,7 @@
                                     ></i>
                                 </button>
                             </form>
-                            <form action="#" method="POST">
+                            <form action="SvRedirectModificarLibro" method="POST">
                                 <input type="text" value="<%= book.getId() %>" name="modificar_" hidden>
                                 <button
                                     type="submit"
@@ -56,7 +56,7 @@
                                     ></i>
                                 </button>
                             </form>
-                            <form action="#" method="POST">
+                            <form action="SvEliminarLibro" method="GET">
                                 <input type="text" value="<%= book.getId() %>" name="eliminar_" hidden>
                                 <button
                                     type="submit"
@@ -72,6 +72,7 @@
                 </tr>
                 <%
                     }
+                    libros = null;
                 %>
             </tbody>
             <tfoot>

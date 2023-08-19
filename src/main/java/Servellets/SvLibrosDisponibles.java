@@ -14,6 +14,9 @@ import java.util.List;
 
 @WebServlet(name = "SvLibrosDisponibles", urlPatterns = {"/SvLibrosDisponibles"})
 public class SvLibrosDisponibles extends HttpServlet {
+    
+    LogicController control = new LogicController();
+    List<Libro> listaLibros = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -24,19 +27,21 @@ public class SvLibrosDisponibles extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        LogicController control = new LogicController();
-        List<Libro> listaLibros = control.listaLibros();
-        
-        HttpSession miSesion = request.getSession();
-        miSesion.setAttribute("listaLibros", listaLibros);
-        
-        response.sendRedirect("./librosDisponibles.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        listaLibros = control.listaLibros();
+
+        HttpSession miSesionListaLibros = request.getSession();
+        miSesionListaLibros.setAttribute("listaLibros", listaLibros);
+
+        response.sendRedirect("./librosDisponibles.jsp");
+
+        listaLibros = null;
     }
 
     @Override

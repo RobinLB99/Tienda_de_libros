@@ -47,7 +47,7 @@
                     <div
                         class="accordion-body d-flex flex-column gap-2"
                     >
-                        <form action="SvLibrosDisponibles" method="get">
+                        <form action="SvLibrosDisponibles" method="POST">
                             <button
                                 type="submit"
                                 class="d-flex flex-row gap-2 align-items-center"
