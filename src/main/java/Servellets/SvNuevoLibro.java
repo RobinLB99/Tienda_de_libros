@@ -59,7 +59,6 @@ public class SvNuevoLibro extends HttpServlet {
             System.out.println(e.getMessage());
             response.sendRedirect("index.jsp?accion=error");
         }
-
     }
 
     @Override
