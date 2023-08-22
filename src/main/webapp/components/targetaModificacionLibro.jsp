@@ -9,7 +9,7 @@
     <div class="card-body card-body-modificar-libro">
         <form
             action="SvModificarLibro" method="POST"
-            class="d-flex flex-column gap-3 justify-content-center formulario-modificar-libro"
+            class="d-flex flex-column gap-3 mb-3 justify-content-center formulario-modificar-libro"
         >
             <input
                 type="text"
@@ -170,33 +170,9 @@
                 >* Verfique la valides de los datos antes de
                 enviar las modificaciones
             </span>
-            <div class="row m-0 botones-mod-libro">
-                <button
-                    class="btn btn-primary"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#alertRequeriments"
-                    id="validarDatos"
-                >
-                    Verificar para modificar
-                </button>
-            </div>
             <div
                 class="d-flex justify-content-between gap-3 m-0"
             >
-                <form
-                    style="width: 100%"
-                    action="SvLibrosDisponibles"
-                    method="POST"
-                >
-                    <button
-                        style="width: 100%"
-                        class="btn btn-secondary"
-                        type="submit"
-                    >
-                        Cancelar
-                    </button>
-                </form>
                 <button
                     style="width: 100%"
                     class="btn btn-secondary btn-primary"
@@ -208,7 +184,28 @@
                 </button>
             </div>
         </form>
-    </div>
+        <form
+            class="row gap-3 m-0"
+            action="SvLibrosDisponibles"
+            method="POST"
+        >
+            <button
+                class="col btn btn-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#alertRequeriments"
+                id="validarDatos"
+            >
+                Verificar para modificar
+            </button>
+            <button
+                class="col btn btn-secondary"
+                type="submit"
+            >
+                Cancelar
+            </button>
+        </form>
+</div>
 </div>
 <!-- Modal -->
 <div

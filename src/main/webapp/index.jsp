@@ -15,6 +15,8 @@
             </header>
             <main class="p-3 m-0">
                 <div class="contenedor-contenido container-fluid p-0">
+                    <!--Aqui va el menu principal -->
+                    <!-- ------------------------ -->
                     <%@include file="./components/modalesAccionesRealizadas.jsp" %>
                 </div>
             </main>

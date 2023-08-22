@@ -17,7 +17,7 @@ public class SvLibrosDisponibles extends HttpServlet {
     
     LogicController control = new LogicController();
     List<Libro> listaLibros = null;
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
@@ -41,11 +41,11 @@ public class SvLibrosDisponibles extends HttpServlet {
             miSesionListaLibros.setAttribute("listaLibros", listaLibros);
 
             response.sendRedirect("./librosDisponibles.jsp");
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
             response.sendRedirect("./index.jsp?accion=error");
         }
-        
 
         listaLibros = null;
     }
