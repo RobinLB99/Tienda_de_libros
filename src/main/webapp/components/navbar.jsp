@@ -1,5 +1,5 @@
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
-<nav class="text-light d-flex flex-column pb-2 z-1">
+<nav class="text-light d-flex flex-column pb-2 z-1 gap-3">
     <div class="d-flex flex-column gap-0 nav-menu">
         <div class="d-flex flex-row gap-3 p-3">
             <p
@@ -170,4 +170,14 @@
             </div>
         </div>
     </div>
+    <form class="container-fluid m-0 p-0" action="SvCerrarSesion" method="POST">
+        <div class="border opacity-25"></div>
+        <button class="btn btn-primary d-flex justify-content-start align-items-center gap-3"
+                type="submit" 
+                style="width: 100%; height: 50px;"
+        >
+            <i class="fa-solid fa-sign-out-alt"></i>
+            <span>Cerrar sesión</span>
+        </button>
+    </form>
 </nav>

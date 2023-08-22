@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 @WebServlet(name = "SvNuevoLibro", urlPatterns = {"/SvNuevoLibro"})
 public class SvNuevoLibro extends HttpServlet {
-    
+
     LogicController control = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -23,19 +23,18 @@ public class SvNuevoLibro extends HttpServlet {
 
     }
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         control = new LogicController();
-            
+
         try {
             String codigo = (String) request.getParameter("codigo_");
             String nombre = (String) request.getParameter("nombreLibro_");
@@ -53,14 +52,14 @@ public class SvNuevoLibro extends HttpServlet {
             libro.setUnidades(unidades);
 
             control.crearLibro(libro);
-            
+
             response.sendRedirect("index.jsp?accion=nuevo_libro_ingresado");
-            
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             response.sendRedirect("index.jsp?accion=error");
         }
-        
+
     }
 
     @Override
