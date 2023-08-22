@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     inputs();
 
-    const enableSendingButton = () => {
+    validarDatos.addEventListener("click", () => {
         inputs();
 
         let datosVacios =
@@ -37,14 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
             inpYear.value === "" ||
             inpPrice.value === "" ||
             inpUnits.value === "";
-
-        console.log(regExpCode.test(inpCode.value));
-        console.log(regExpName.test(inpName.value));
-        console.log(regExpAutor.test(inpAutor.value));
-        console.log(regExpYear.test(inpYear.value));
-        console.log(regExpPrice.test(inpPrice.value));
-        console.log(regExpPrice.test(inpUnits.value));
-        console.log(regExpUnits.test(inpUnits.value));
 
         switch (
             regExpCode.test(inpCode.value) &&
@@ -83,9 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btnEnviar.disabled = true;
                 break;
         }
-    };
-
-    validarDatos.addEventListener("click", enableSendingButton);
+    });
 
     const disableSendingButton = () => {
         btnEnviar.disabled = true;

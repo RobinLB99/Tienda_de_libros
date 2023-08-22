@@ -23,15 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
             new bootstrap.Modal(
                 document.getElementById("modalUnidades")
             ).show();
+
+            inputUnidadesAgregar.value = inputMasUnidades.value;
+            m_idLibro.value = idLibro.value;
+            textUnidadesAgregarModal.innerHTML =
+                inputMasUnidades.value + " unidades";
         }
     });
 
-    btn_agregarUnidades.addEventListener("click", () => {
-        inputUnidadesAgregar.value = inputMasUnidades.value;
-        m_idLibro.value = idLibro.value;
-        textUnidadesAgregarModal.innerHTML =
-            inputMasUnidades.value + " unidades";
-    });
+    // btn_agregarUnidades.addEventListener("click", () => {
+    //     inputUnidadesAgregar.value = inputMasUnidades.value;
+    //     m_idLibro.value = idLibro.value;
+    //     textUnidadesAgregarModal.innerHTML =
+    //         inputMasUnidades.value + " unidades";
+    // });
 
     // boton_enviarModal.addEventListener("click", () => {
     //     console.log("EL numero de unidades a agregar son:" + inputUnidadesAgregar.value)

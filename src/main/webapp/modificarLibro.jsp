@@ -28,6 +28,5 @@
             </main>
             <%@include file="./components/footer.jsp" %>
         </div>
-        <script src="./assets/validarDatosFormularios.js"></script>
     </body>
 </html>

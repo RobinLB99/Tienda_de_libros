@@ -31,6 +31,7 @@
                                                     name="userName_"
                                                     id="exampleInputEmail"
                                                     placeholder="Ingrese su nombre de usuario..."
+                                                    required
                                                 />
                                             </div>
                                             <div class="form-group login mb-4">
@@ -40,6 +41,7 @@
                                                     name="password_"
                                                     id="exampleInputPassword"
                                                     placeholder="Contraseña"
+                                                    required
                                                 />
                                             </div>
                                             <button
@@ -57,6 +59,5 @@
                 </div>
             </div>
         </div>
-        <script src="./assets/validarSesion.js"></script>
     </body>
 </html>
