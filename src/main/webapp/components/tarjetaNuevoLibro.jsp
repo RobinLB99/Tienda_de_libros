@@ -1,23 +1,13 @@
-<%@page import="Logica.Libro"%>
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
-<%
-    Libro libro = (Libro) request.getSession().getAttribute("libro_");
-%>
-<!-- Modificar libro -->
-<div class="card shadow-sm card-modificar-libro">
-    <div class="card-header">Modificar datos del libro</div>
-    <div class="card-body card-body-modificar-libro">
+<!-- Nuevo libro -->
+<div class="card shadow-sm card-nuevo-libro">
+    <div class="card-header">Nuevo libro</div>
+    <div class="card-body card-body-nuevo-libro">
         <form
-            action="SvModificarLibro" method="POST"
+            action="SvNuevoLibro"
+            method="POST"
             class="d-flex flex-column gap-3 mb-3 justify-content-center formulario-modificar-libro"
         >
-            <input
-                type="text"
-                name="id_"
-                id="i_id"
-                value="<%= libro.getId() %>"
-                hidden
-            />
             <div class="d-flex flex-column gap-3">
                 <div class="d-flex flex-column">
                     <input
@@ -25,7 +15,7 @@
                         type="text"
                         name="codigo_"
                         id="i_code"
-                        value="<%= libro.getCodigo() %>"
+                        value=""
                         placeholder="Codigo"
                         required
                     />
@@ -46,9 +36,9 @@
                     <input
                         class="form-control"
                         type="text"
-                        name="nombre_"
+                        name="nombreLibro_"
                         id="i_nombre"
-                        value="<%= libro.getNombre() %>"
+                        value=""
                         placeholder="Nombre del libro"
                         required
                     />
@@ -61,7 +51,7 @@
                     >
                         <span
                             >No debe contener solo valores
-                            numericos. Ejem: Cien aÃ±os de
+                            numericos. Ejem: Cien años de
                             soledad.</span
                         >
                     </div>
@@ -72,7 +62,7 @@
                         type="text"
                         name="autor_"
                         id="i_autor"
-                        value="<%= libro.getAutor() %>"
+                        value=""
                         placeholder="Autor"
                         required
                     />
@@ -85,7 +75,7 @@
                     >
                         <span
                             >Nombre propio o pseudonimo.
-                            Ejem: Gabriel GarcÃ­a MÃ¡rquez o
+                            Ejem: Gabriel Garci­a Marquez o
                             Pepito71.</span
                         >
                     </div>
@@ -94,9 +84,9 @@
                     <input
                         class="form-control"
                         type="text"
-                        name="anio_"
+                        name="anioPublicacion_"
                         id="i_anio"
-                        value="<%= libro.getAnio() %>"
+                        value=""
                         placeholder="Año de publicación"
                         required
                     />
@@ -119,7 +109,7 @@
                         type="text"
                         name="precio_"
                         id="i_precio"
-                        value="<%= libro.getPrecio() %>"
+                        value=""
                         placeholder="Precio"
                         required
                     />
@@ -143,7 +133,7 @@
                         type="number"
                         name="unidades_"
                         id="i_unidades"
-                        value="<%= libro.getUnidades() %>"
+                        value=""
                         max="100"
                         min="1"
                         placeholder="Unidades disponibles"
@@ -180,7 +170,7 @@
                     id="btn-enviar-datos"
                     disabled
                 >
-                    Modificar libro
+                    Ingresar libro
                 </button>
             </div>
         </form>
@@ -205,7 +195,7 @@
                 Cancelar
             </button>
         </form>
-</div>
+    </div>
 </div>
 <!-- Modal -->
 <div
@@ -237,7 +227,10 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <span class="m-0 text-secondary" id="message_"></span>
+                <span
+                    class="m-0 text-secondary"
+                    id="message_"
+                ></span>
             </div>
             <div class="modal-footer">
                 <button

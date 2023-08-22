@@ -9,7 +9,7 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
     ("use strict");
-    const btnEnviar = document.getElementById("btn-modificarLibro");
+    const btnEnviar = document.getElementById("btn-enviar-datos");
     const validarDatos = document.getElementById("validarDatos");
     const tituloAlerta = document.querySelector("#title-alert");
     const mensaje = document.querySelector("#message_");
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 tituloAlerta.classList.add("text-success");
                 tituloAlerta.innerHTML = "¡Validación exitosa!";
                 mensaje.innerHTML =
-                    "Los datos parecen ser correctos. Puede continuar con la modificación.";
+                    "Los datos parecen ser correctos. Puede continuar con la acción.";
                 break;
 
             default:

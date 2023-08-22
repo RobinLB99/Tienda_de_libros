@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById("libroEliminadoExito")
                 ).show();
                 break;
+            
+            case "nuevo_libro_ingresado":
+                new bootstrap.Modal(
+                    document.getElementById("nuevoLibroCorrecto")
+                ).show();
+                break;
 
             case "error":
                 new bootstrap.Modal(

@@ -136,7 +136,8 @@ div.contenedor-contenido {
     width: 100%;
 }
 
-.card-modificar-libro {
+.card-modificar-libro,
+.card-nuevo-libro {
     height: fit-content;
     max-height: 100%;
     max-width: 650px;
@@ -144,7 +145,8 @@ div.contenedor-contenido {
     margin: 0 auto;
 }
 
-.card-body-modificar-libro {
+.card-body-modificar-libro,
+.card-body-nuevo-libro {
     overflow: hidden;
     overflow-y: visible;
 }
@@ -165,4 +167,3 @@ div.contenedor-contenido {
 .botones-mod-libro form {
     width: fit-content;
 }
-

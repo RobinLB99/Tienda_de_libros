@@ -15,7 +15,15 @@
             </header>
             <main class="p-3 m-0">
                 <div class="contenedor-contenido container-fluid p-0">
-                    
+                    <%
+                        try {
+                    %>
+                    <%@include file="./components/tarjetaNuevoLibro.jsp" %>
+                    <%
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
+                    %>
                 </div>
             </main>
             <%@include file="./components/footer.jsp" %>

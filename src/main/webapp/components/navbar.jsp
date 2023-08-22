@@ -58,7 +58,7 @@
                                 <span>Libros disponibles</span>
                             </button>
                         </form>
-                        <form action="#">
+                        <form action="SvRedirigirAgregarLibro" method="GET">
                             <button
                                 type="submit"
                                 class="d-flex flex-row gap-2 align-items-center"
