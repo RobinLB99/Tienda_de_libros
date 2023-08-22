@@ -37,11 +37,12 @@ public class SvNuevoLibro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String codigo = request.getParameter("codigo");
-        String nombre = request.getParameter("nombreLibro");
-        String autor = request.getParameter("autor");
-        String anio = request.getParameter("anioPublicacion");
-        Double precio = Double.parseDouble(request.getParameter("precio"));
+        String codigo = (String) request.getParameter("codigo_");
+        String nombre = (String) request.getParameter("nombreLibro_");
+        String autor = (String) request.getParameter("autor_");
+        String anio = (String) request.getParameter("anioPublicacion_");
+        double precio = Double.parseDouble((String) request.getParameter("precio_"));
+        int unidades = Integer.parseInt((String) request.getParameter("unidades_"));
         
         Libro libro = new Libro();
         libro.setCodigo(codigo);

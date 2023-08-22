@@ -287,7 +287,7 @@
                     </div>
                     <!-- -------------- -->
                     <!-- Añadir unidades al libro -->
-                    <div class="card shadow-sm agregar-unidades-libros" hidden>
+                    <div class="card shadow-sm agregar-unidades-libros">
                         <div class="card-header">Agregar unidades al libro</div>
                         <div class="card-body card-body-agregar-unidades">
                             <h5 class="card-title">Titulo del libro</h5>
@@ -337,8 +337,6 @@
                                             <button
                                                 class="btn btn-primary"
                                                 type="button"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop"
                                                 id="btn-agregar-unidades"
                                             >
                                                 Agregar
@@ -363,13 +361,13 @@
                     <!-- Modal -->
                     <div
                         class="modal fade"
-                        id="staticBackdrop"
+                        id="modalUnidades"
                         data-bs-backdrop="static"
                         data-bs-keyboard="false"
                         tabindex="-1"
                         aria-labelledby="staticBackdropLabel"
                         aria-hidden="true"
-                        hidden
+                        
                     >
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -433,7 +431,7 @@
                     </div>
                     <!-- -------------- -->
                     <!-- Modificar libro -->
-                    <div class="card shadow-sm card-modificar-libro">
+                    <div class="card shadow-sm card-modificar-libro" hidden>
                         <div class="card-header">Modificar datos del libro</div>
                         <div class="card-body card-body-modificar-libro">
                             <form

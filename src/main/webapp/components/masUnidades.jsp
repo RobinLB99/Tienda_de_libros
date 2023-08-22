@@ -52,8 +52,6 @@
                         <button
                             class="btn btn-primary"
                             type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop"
                             id="btn-agregar-unidades"
                         >
                             Agregar
@@ -78,7 +76,7 @@
 <!-- Modal -->
 <div
     class="modal fade"
-    id="staticBackdrop"
+    id="modalUnidades"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
     tabindex="-1"
