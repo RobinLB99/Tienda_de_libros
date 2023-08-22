@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="./src/js/main.js"></script>
+        <title>Software de gestión de libreria</title>
+    </head>
+    <body>
+        <nav class="text-light d-flex flex-column pb-2 z-1">
+            <div class="d-flex flex-column gap-0 nav-menu">
+                <div class="d-flex flex-row gap-3 p-3">
+                    <p
+                        class="h2 m-0 d-flex flex-row gap-3 titulo-nav align-items-center"
+                    >
+                        <i
+                            class="fontawesome fa-solid fa-book-open d-flex justify-content-center align-items-center"
+                        ></i>
+                        <span>Libreria</span>
+                    </p>
+                </div>
+                <div class="border opacity-25"></div>
+                <form action="#">
+                    <button
+                        type="submit"
+                        class="d-flex flex-row gap-2 align-items-center menu-principal text-light p-3"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                        <span>Menú principal</span>
+                    </button>
+                </form>
+                <div class="border opacity-25"></div>
+                <div class="accordion mt-3" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button d-flex flex-row align-items-center justify-content-center gap-2"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne"
+                            >
+                                <i
+                                    class="fontawesome fa-solid fa-book d-flex flex-row align-items-center justify-content-center"
+                                ></i>
+                                <span>Libros</span>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample"
+                        >
+                            <div
+                                class="accordion-body d-flex flex-column gap-2"
+                            >
+                                <form action="#">
+                                    <button
+                                        type="submit"
+                                        class="d-flex flex-row gap-2 align-items-center"
+                                    >
+                                        <i
+                                            class="fontawesome fa-solid fa-list-check"
+                                        ></i>
+                                        <span>Libros disponibles</span>
+                                    </button>
+                                </form>
+                                <form action="#">
+                                    <button
+                                        type="submit"
+                                        class="d-flex flex-row gap-2 align-items-center"
+                                    >
+                                        <i
+                                            class="fontawesome fa-solid fa-circle-plus"
+                                        ></i>
+                                        <span>Agregar libro</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed d-flex flex-row align-items-center justify-content-center gap-2"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                            >
+                                <i
+                                    class="fontawesome fa-solid fa-cash-register d-flex flex-row align-items-center justify-content-center"
+                                ></i>
+                                <span>Ventas</span>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                        >
+                            <div
+                                class="accordion-body d-flex flex-column gap-2"
+                            >
+                                <form action="#">
+                                    <button
+                                        type="submit"
+                                        class="d-flex flex-row gap-2 align-items-center"
+                                    >
+                                        <i
+                                            class="fontawesome fa-solid fa-list-check"
+                                        ></i>
+                                        <span>Historial de ventas</span>
+                                    </button>
+                                </form>
+                                <form action="#">
+                                    <button
+                                        type="submit"
+                                        class="d-flex flex-row gap-2 align-items-center"
+                                    >
+                                        <i
+                                            class="fontawesome fa-solid fa-cart-shopping"
+                                        ></i>
+                                        <span>Realizar venta</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed d-flex flex-row align-items-center justify-content-center gap-2"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree"
+                                aria-expanded="false"
+                                aria-controls="collapseThree"
+                            >
+                                <i class="fontawesome fa-solid fa-users"></i>
+                                <span>Personal</span>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseThree"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                        >
+                            <div
+                                class="accordion-body d-flex flex-column gap-2"
+                            >
+                                <form action="#">
+                                    <button
+                                        type="submit"
+                                        class="d-flex flex-row gap-2 align-items-center"
+                                    >
+                                        <i
+                                            class="fontawesome fa-solid fa-user-gear"
+                                        ></i>
+                                        <span>Gestionar personal</span>
+                                    </button>
+                                </form>
+                                <form action="#">
+                                    <button
+                                        type="submit"
+                                        class="d-flex flex-row gap-2 align-items-center"
+                                    >
+                                        <i
+                                            class="fontawesome fa-solid fa-circle-plus"
+                                        ></i>
+                                        <span>Nuevo empleado</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="contenedor-principal bg-body-tertiary">
+            <header
+                class="p-3 m-0 shadow d-flex flex-row align-items-center justify-content-between"
+            >
+                <p class="h5 m-0">Software de gestión de libreria</p>
+            </header>
+            <main class="p-3 m-0">
+                <div class="contenedor-contenido container-fluid p-0">
+                    <!-- Pagina principal -->
+                    <!-- --------------- -->
+                    <!-- Tabla de libros -->
+                    <div class="card m-0 card-tabla shadow-sm" hidden>
+                        <div class="card-header text-primary">
+                            Libros disponibles
+                        </div>
+                        <div class="card-body card-tabla-body">
+                            <table
+                                class="table"
+                                id="TablaLibros"
+                                class="display"
+                                style="width: 100%"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Nombre</th>
+                                        <th>Autor</th>
+                                        <th>Año de publicación</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad disponible</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1920145786</td>
+                                        <td>Cien años de soledad</td>
+                                        <td>Gabriel García Márquez</td>
+                                        <td>1967</td>
+                                        <td>$29.99</td>
+                                        <td>30 unidades</td>
+                                        <td>
+                                            <div class="d-flex flex-row gap-3">
+                                                <form action="#" method="GET">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        hidden
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-success"
+                                                    >
+                                                        <i
+                                                            class="fa-solid fa-plus"
+                                                        ></i>
+                                                    </button>
+                                                </form>
+                                                <form action="#" method="GET">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        hidden
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-primary"
+                                                    >
+                                                        <i
+                                                            class="fa-regular fa-pen-to-square"
+                                                        ></i>
+                                                    </button>
+                                                </form>
+                                                <form action="#" method="GET">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        hidden
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-danger"
+                                                    >
+                                                        <i
+                                                            class="fa-regular fa-trash-can"
+                                                        ></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Nombre</th>
+                                        <th>Autor</th>
+                                        <th>Año de publicación</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad disponible</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- -------------- -->
+                    <!-- Añadir unidades al libro -->
+                    <div class="card shadow-sm agregar-unidades-libros" hidden>
+                        <div class="card-header">Agregar unidades al libro</div>
+                        <div class="card-body card-body-agregar-unidades">
+                            <h5 class="card-title">Titulo del libro</h5>
+                            <div
+                                class="d-flex flex-row gap-3 align-items-center"
+                            >
+                                <input
+                                    type="text"
+                                    name="idLibro"
+                                    id="idLibro"
+                                    value="5"
+                                    hidden
+                                />
+                                <ul
+                                    class="list-group list-group-flush d-flex align-items-center"
+                                >
+                                    <li
+                                        class="list-group-item d-flex flex-row gap-3 align-items-center"
+                                    >
+                                        <p class="h6 m-0">
+                                            <strong
+                                                >Unidades disponibles:</strong
+                                            >
+                                        </p>
+                                        <p class="m-0"># unidades</p>
+                                    </li>
+                                </ul>
+                                <ul
+                                    class="list-group list-group-flush d-flex align-items-center"
+                                >
+                                    <li
+                                        class="list-group-item d-flex flex-row gap-3 align-items-center"
+                                    >
+                                        <p class="h6 m-0">
+                                            <strong>Unidades a agregar:</strong>
+                                        </p>
+                                        <form class="d-flex flex-row gap-3 m-0">
+                                            <input
+                                                class="form-control m-0"
+                                                type="number"
+                                                name="mas-unidades"
+                                                id="unidades-agregar"
+                                                value="1"
+                                                min="1"
+                                                max="50"
+                                            />
+                                            <button
+                                                class="btn btn-primary"
+                                                type="button"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#staticBackdrop"
+                                                id="btn-agregar-unidades"
+                                            >
+                                                Agregar
+                                            </button>
+                                        </form>
+                                        <form
+                                            class="d-flex flex-row gap-3 m-0"
+                                            action="#"
+                                        >
+                                            <button
+                                                class="btn btn-danger"
+                                                type="submit"
+                                            >
+                                                Cancelar
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="staticBackdrop"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                        hidden
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        Agregar unidades
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span class="m-0"
+                                        >Se agregaran
+                                        <strong id="t-masUnidades"
+                                            ># unidades</strong
+                                        >
+                                        del libro
+                                        <strong>Titulo del libro</strong></span
+                                    >
+                                    <span>¿Esta seguro de continuar?</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Cerrar
+                                    </button>
+                                    <form action="#">
+                                        <input
+                                            type="text"
+                                            id="f-idLibro"
+                                            value=""
+                                            hidden
+                                        />
+                                        <input
+                                            type="text"
+                                            id="f-unidadesAgregar"
+                                            value=""
+                                            hidden
+                                        />
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary"
+                                            id="btn_enviarDatosModal"
+                                        >
+                                            Confirmar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -------------- -->
+                    <!-- Modificar libro -->
+                    <div class="card shadow-sm card-modificar-libro">
+                        <div class="card-header">Modificar datos del libro</div>
+                        <div class="card-body card-body-modificar-libro">
+                            <form
+                                action="#"
+                                class="d-flex flex-column gap-3 justify-content-center formulario-modificar-libro"
+                            >
+                                <input
+                                    type="text"
+                                    name="id_"
+                                    id="i_id"
+                                    hidden
+                                />
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex flex-column">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="code_"
+                                            id="i_code"
+                                            value=""
+                                            placeholder="Codigo"
+                                            required
+                                        />
+                                        <div
+                                            class="text-secondary"
+                                            style="
+                                                font-size: small;
+                                                padding-left: 15px;
+                                            "
+                                        >
+                                            <span
+                                                >Valor numerio de diez digitos.
+                                                Ejem: 1254789652</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="nombre_"
+                                            id="i_nombre"
+                                            value=""
+                                            placeholder="Nombre del libro"
+                                            required
+                                        />
+                                        <div
+                                            class="text-secondary"
+                                            style="
+                                                font-size: small;
+                                                padding-left: 15px;
+                                            "
+                                        >
+                                            <span
+                                                >No debe contener solo valores
+                                                numericos. Ejem: Cien años de
+                                                soledad.</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="autor_"
+                                            id="i_autor"
+                                            value=""
+                                            placeholder="Autor"
+                                            required
+                                        />
+                                        <div
+                                            class="text-secondary"
+                                            style="
+                                                font-size: small;
+                                                padding-left: 15px;
+                                            "
+                                        >
+                                            <span
+                                                >Nombre propio o pseudonimo.
+                                                Ejem: Gabriel García Márquez o
+                                                Pepito71.</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="anio_"
+                                            id="i_anio"
+                                            value=""
+                                            placeholder="Año de publicación"
+                                            required
+                                        />
+                                        <div
+                                            class="text-secondary"
+                                            style="
+                                                font-size: small;
+                                                padding-left: 15px;
+                                            "
+                                        >
+                                            <span
+                                                >Valor numerico de 4 digitos.
+                                                Ejem: 1999</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="precio_"
+                                            id="i_precio"
+                                            value=""
+                                            placeholder="Precio"
+                                            required
+                                        />
+                                        <div
+                                            class="text-secondary"
+                                            style="
+                                                font-size: small;
+                                                padding-left: 15px;
+                                            "
+                                        >
+                                            <span
+                                                >Valor numerico entero o decimal
+                                                de dos decimales. Ejem: 15 o
+                                                22.99</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <input
+                                            class="form-control"
+                                            type="number"
+                                            name="unidades_"
+                                            id="i_unidades"
+                                            value=""
+                                            max="100"
+                                            min="1"
+                                            placeholder="Unidades disponibles"
+                                            required
+                                        />
+                                        <div
+                                            class="text-secondary"
+                                            style="
+                                                font-size: small;
+                                                padding-left: 15px;
+                                            "
+                                        >
+                                            <span
+                                                >Valor numerico entero de 1 a
+                                                100.</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border opacity-25"></div>
+                                <span
+                                    class="text-secondary"
+                                    style="font-size: small"
+                                    >* Verfique la valides de los datos antes de
+                                    enviar las modificaciones
+                                </span>
+                                <div class="row m-0 botones-mod-libro">
+                                    <button
+                                        class="btn btn-primary"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#alertRequeriments"
+                                        id="validarDatos"
+                                    >
+                                        Verificar para modificar
+                                    </button>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between gap-3 m-0"
+                                >
+                                    <form
+                                        style="width: 100%"
+                                        action="#"
+                                        method="post"
+                                    >
+                                        <button
+                                            style="width: 100%"
+                                            class="btn btn-secondary"
+                                            type="submit"
+                                        >
+                                            Cancelar
+                                        </button>
+                                    </form>
+                                    <form
+                                        style="width: 100%"
+                                        action="#"
+                                        method="post"
+                                    >
+                                        <button
+                                            style="width: 100%"
+                                            class="btn btn-secondary btn-primary"
+                                            type="submit"
+                                            id="btn-modificarLibro"
+                                            disabled
+                                        >
+                                            Modificar libro
+                                        </button>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="alertRequeriments"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                        hidden
+                                    ></h1>
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="title-alert"
+                                    ></h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span class="m-0 text-secondary" id="message_"></span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Continuar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -------- -->
+                    <!-- Modales de acciones realizadas -->
+                    <div
+                        class="modal fade"
+                        id="unidadesAgregadasCorrecto"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        ¡Unidades del libro añadidas!
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span
+                                        >Las unidades fueron añadidas
+                                        correctamente al stock del libro</span
+                                    >
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Aceptar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="modal fade"
+                        id="libroModificadoExito"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        ¡Libro modificado!
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span>El libro se modifico con exito.</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Aceptar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="modal fade"
+                        id="libroEliminadoExito"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        ¡Libro eliminado!
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span>El libro se elimino con exito.</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Aceptar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="modal fade"
+                        id="errorPeticion"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        ¡Error!
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span
+                                        >Hubo un error al procesar la petición.
+                                        ¡Por favor, intentelo otra vez!</span
+                                    >
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Aceptar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ELiminar un libro -->
+                    <div
+                        class="card shadow-sm m-auto"
+                        style="max-width: 80%; width: 100%"
+                        hidden
+                    >
+                        <div class="card-header">Eliminar libro</div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="m-0 p-0 row">
+                                <div class="col">
+                                    <span>Codigo</span><br />
+                                    <span
+                                        ><strong>Nombre del libro</strong></span
+                                    ><br />
+                                    <span>Autor</span><br />
+                                </div>
+                                <div class="col-4">
+                                    <span>Año de publicación</span><br />
+                                    <span>Precio</span><br />
+                                    <span>Unidades disponibles</span>
+                                </div>
+                            </div>
+                            <div
+                                class="botones d-flex gap-2 align-items-center"
+                            >
+                                <form action="#" method="get">
+                                    <button
+                                        class="btn btn-secondary"
+                                        type="submit"
+                                    >
+                                        Cancelar
+                                    </button>
+                                </form>
+                                <div>
+                                    <button
+                                        type="button"
+                                        class="btn btn-danger"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdropModalDeleteBook"
+                                        id="btn-eliminar-libro"
+                                    >
+                                        Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="modal fade"
+                        id="staticBackdropModalDeleteBook"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        Eliminar libro
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Se eliminar
+                                        <strong>Nombre del libro</strong> del
+                                        inventario. <br />
+                                        ¿Está segúro de continuar?
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Cerrar
+                                    </button>
+                                    <form action="#">
+                                        <input
+                                            type="text"
+                                            id="id_book_delete"
+                                            value=""
+                                            hidden
+                                        />
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary"
+                                            id="btn_enviarDatosModal"
+                                        >
+                                            Confirmar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer
+                class="p-3 m-0 d-flex align-items-center justify-content-center"
+            >
+                <p class="m-0 p-0 fst-italic">
+                    Copyright © 2023 por
+                    <a
+                        class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                        href="https://github.com/robinlb99"
+                        target="_blank"
+                    >
+                        Robin Joel Lugo Boero
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

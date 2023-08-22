@@ -26,7 +26,10 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <span>Las unidades fueron añadidas correctamente al stock del libro</span>
+                <span
+                    >Las unidades fueron añadidas
+                    correctamente al stock del libro</span
+                >
             </div>
             <div class="modal-footer">
                 <button
@@ -146,7 +149,10 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <span>Hubo un error al procesar la petición. ¡Por favor, intentelo otra vez!</span>
+                <span
+                    >Hubo un error al procesar la peticiÃ³n.
+                    ¡Por favor, intentelo otra vez!</span
+                >
             </div>
             <div class="modal-footer">
                 <button

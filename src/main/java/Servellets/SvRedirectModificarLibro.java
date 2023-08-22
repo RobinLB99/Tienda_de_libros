@@ -16,7 +16,6 @@ import jakarta.servlet.http.HttpSession;
  */
 @WebServlet(name = "SvRedirectModificarLibro", urlPatterns = {"/SvRedirectModificarLibro"})
 public class SvRedirectModificarLibro extends HttpServlet {
-    
     LogicController control = null;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -24,23 +23,22 @@ public class SvRedirectModificarLibro extends HttpServlet {
         
     }
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         
         control = new LogicController();
-        long id_libro_mod = Long.parseLong(request.getParameter("modificar_"));
         
         try {
+            long id_libro_mod = Long.parseLong((String) request.getParameter("modificar_"));
+            
             Libro libroMod = control.buscarLibro(id_libro_mod);
             
             HttpSession mySessionIdBookMod = request.getSession();

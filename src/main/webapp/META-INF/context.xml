@@ -1,4 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/BookStoreCatalog">
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="db_libros" password="0211995022" type="javax.sql.DataSource" url="jdbc:mysql://192.168.137.11:3306/db_libros?serverTimezone=UTC" username="RobinLB99"/>
-</Context>
+<Context path="/BookStoreCatalog"/>

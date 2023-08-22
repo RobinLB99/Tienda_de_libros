@@ -34,12 +34,18 @@ public class SvLibrosDisponibles extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        listaLibros = control.listaLibros();
+        try {
+            listaLibros = control.listaLibros();
 
-        HttpSession miSesionListaLibros = request.getSession();
-        miSesionListaLibros.setAttribute("listaLibros", listaLibros);
+            HttpSession miSesionListaLibros = request.getSession();
+            miSesionListaLibros.setAttribute("listaLibros", listaLibros);
 
-        response.sendRedirect("./librosDisponibles.jsp");
+            response.sendRedirect("./librosDisponibles.jsp");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            response.sendRedirect("./index.jsp?accion=error");
+        }
+        
 
         listaLibros = null;
     }

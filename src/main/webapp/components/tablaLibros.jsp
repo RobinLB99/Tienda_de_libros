@@ -1,18 +1,21 @@
-<%@page import="Logica.Libro"%>
 <%@page import="java.util.List"%>
+<%@page import="Logica.Libro"%>
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
+<!-- Tabla de libros -->
 <div class="card m-0 card-tabla shadow-sm">
     <div class="card-header text-primary">
         Libros disponibles
     </div>
     <div class="card-body card-tabla-body">
-        <%
-            List<Libro> libros = (List) request.getSession().getAttribute("listaLibros");
-        %>
-        <table class="table" id="TablaLibros" class="display" style="width: 100%" >
+        <table
+            class="table"
+            id="TablaLibros"
+            class="display"
+            style="width: 100%"
+        >
             <thead>
                 <tr>
-                    <th>Codigo</th>
+                    <th>Código</th>
                     <th>Nombre</th>
                     <th>Autor</th>
                     <th>Año de publicación</th>
@@ -22,20 +25,27 @@
                 </tr>
             </thead>
             <tbody>
-                <% 
-                    for (Libro book : libros) {
+                <%
+                    List<Libro> libros = (List) request.getSession().getAttribute("listaLibros");
+                    
+                    for (Libro libro : libros) {
                 %>
                 <tr>
-                    <td><%= book.getCodigo() %></td>
-                    <td><%= book.getNombre() %></td>
-                    <td><%= book.getAutor() %></td>
-                    <td><%= book.getAnio() %></td>
-                    <td>$<%= book.getPrecio() %></td>
-                    <td><%= book.getUnidades() %> unidades</td>
+                    <td><%= libro.getCodigo() %></td>
+                    <td><%= libro.getNombre() %></td>
+                    <td><%= libro.getAutor() %></td>
+                    <td><%= libro.getAnio() %></td>
+                    <td>$<%= libro.getPrecio() %></td>
+                    <td><%= libro.getUnidades() %> unidades</td>
                     <td>
                         <div class="d-flex flex-row gap-3">
                             <form action="SvRedirigirAgregarUnidad" method="POST">
-                                <input type="text" value="<%= book.getId() %>" name="agregar_" hidden>
+                                <input
+                                    type="text"
+                                    name="idLibro_"
+                                    value="<%= libro.getId() %>"
+                                    hidden
+                                />
                                 <button
                                     type="submit"
                                     class="btn btn-success"
@@ -46,7 +56,12 @@
                                 </button>
                             </form>
                             <form action="SvRedirectModificarLibro" method="POST">
-                                <input type="text" value="<%= book.getId() %>" name="modificar_" hidden>
+                                <input
+                                    type="text"
+                                    name="modificar_"
+                                    value="<%= libro.getId() %>"
+                                    hidden
+                                />
                                 <button
                                     type="submit"
                                     class="btn btn-primary"
@@ -57,7 +72,12 @@
                                 </button>
                             </form>
                             <form action="SvEliminarLibro" method="GET">
-                                <input type="text" value="<%= book.getId() %>" name="eliminar_" hidden>
+                                <input
+                                    type="text"
+                                    value="<%= libro.getId() %>"
+                                    name="eliminar_"
+                                    hidden
+                                />
                                 <button
                                     type="submit"
                                     class="btn btn-danger"
@@ -72,12 +92,11 @@
                 </tr>
                 <%
                     }
-                    libros = null;
                 %>
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Codigo</th>
+                    <th>Código</th>
                     <th>Nombre</th>
                     <th>Autor</th>
                     <th>Año de publicación</th>
@@ -89,3 +108,4 @@
         </table>
     </div>
 </div>
+<!-- -------------- -->

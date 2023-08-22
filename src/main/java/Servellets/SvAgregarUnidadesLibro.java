@@ -36,8 +36,8 @@ public class SvAgregarUnidadesLibro extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        long idLibro = Long.parseLong((String) request.getParameter("idLibro_"));
-        int unidadesAgregar = Integer.parseInt((String) request.getParameter("unidadesAgregar_"));
+        long idLibro = Long.parseLong((String) request.getParameter("agregar_"));
+        int unidadesAgregar = Integer.parseInt((String) request.getParameter("masUnidades_"));
         
         try {
             Libro book_m = control.buscarLibro(idLibro);

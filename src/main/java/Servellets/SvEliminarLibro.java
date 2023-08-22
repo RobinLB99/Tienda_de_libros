@@ -29,13 +29,19 @@ public class SvEliminarLibro extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        long id_libro = Long.parseLong(request.getParameter("eliminar_"));
-        Libro libro = control.buscarLibro(id_libro);
-        
-        HttpSession sessionIdLibroEliminar = request.getSession();
-        sessionIdLibroEliminar.setAttribute("libroEliminar", libro);
-        
-        response.sendRedirect("eliminarLibro.jsp");
+        try {
+            long id_libro = Long.parseLong((String) request.getParameter("eliminar_"));
+            Libro libro = control.buscarLibro(id_libro);
+
+            HttpSession sessionIdLibroEliminar = request.getSession();
+            sessionIdLibroEliminar.setAttribute("libroEliminar", libro);
+
+            response.sendRedirect("eliminarLibro.jsp");
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            response.sendRedirect("index.jsp?accion=error");
+        }
     }
 
     
@@ -44,11 +50,12 @@ public class SvEliminarLibro extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        long idLibro_eliminar = Long.parseLong(request.getParameter("id_book_delete"));
-        
         try {
+            long idLibro_eliminar = Long.parseLong((String) request.getParameter("id_book_delete"));
+            
             control.eliminarLibro(idLibro_eliminar);
             response.sendRedirect("index.jsp?accion=libro_eliminado");
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
             response.sendRedirect("index.jsp?accion=error");

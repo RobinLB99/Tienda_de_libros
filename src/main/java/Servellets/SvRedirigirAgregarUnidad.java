@@ -30,15 +30,20 @@ public class SvRedirigirAgregarUnidad extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        control = new LogicController();
-        
-        long id = Long.parseLong(request.getParameter("agregar_"));
-        Libro libroMod = control.buscarLibro(id);
-        
-        HttpSession libroModSession = request.getSession();
-        libroModSession.setAttribute("libroAModificar", libroMod);
-        
-        response.sendRedirect("aniadirCantidadLibro.jsp");
+        try {
+            control = new LogicController();
+
+            long id = Long.parseLong((String) request.getParameter("idLibro_"));
+            Libro libroMod = control.buscarLibro(id);
+
+            HttpSession libroModSession = request.getSession();
+            libroModSession.setAttribute("libroAModificar", libroMod);
+
+            response.sendRedirect("aniadirCantidadLibro.jsp");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            response.sendRedirect("index.jsp?accion=error");
+        }
         
     }
     
