@@ -30,11 +30,11 @@
                     </button>
                 </form>
                 <div class="border opacity-25"></div>
-                <div class="accordion mt-3" id="accordionExample">
+                <div class="accordion mt-3" id="acordionActions">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button
-                                class="accordion-button d-flex flex-row align-items-center justify-content-center gap-2"
+                                class="accordion-button d-flex flex-row align-items-center justify-content-center gap-2 group-actions"
                                 type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne"
@@ -50,7 +50,7 @@
                         <div
                             id="collapseOne"
                             class="accordion-collapse collapse show"
-                            data-bs-parent="#accordionExample"
+                            data-bs-parent="#acordionActions"
                         >
                             <div
                                 class="accordion-body d-flex flex-column gap-2"
@@ -99,7 +99,7 @@
                         <div
                             id="collapseTwo"
                             class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample"
+                            data-bs-parent="#acordionActions"
                         >
                             <div
                                 class="accordion-body d-flex flex-column gap-2"
@@ -146,7 +146,7 @@
                         <div
                             id="collapseThree"
                             class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample"
+                            data-bs-parent="#acordionActions"
                         >
                             <div
                                 class="accordion-body d-flex flex-column gap-2"
@@ -195,7 +195,7 @@
                     <span>Nombre de usuario</span>
                 </a>
 
-                <ul class="dropdown-menu shadow p-auto dm-opc-session" style="width: 100%;">
+                <ul class="dropdown-menu shadow p-auto dm-opc-session" id="menu-sesion" style="width: 100%;">
                     <li>
                         <form class="dropdown-item">
                             <button

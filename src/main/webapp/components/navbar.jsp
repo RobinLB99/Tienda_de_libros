@@ -22,7 +22,7 @@
             </button>
         </form>
         <div class="border opacity-25"></div>
-        <div class="accordion mt-3" id="accordionExample">
+        <div class="accordion mt-3" id="acordionActions">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button
@@ -42,7 +42,7 @@
                 <div
                     id="collapseOne"
                     class="accordion-collapse collapse show"
-                    data-bs-parent="#accordionExample"
+                    data-bs-parent="#acordionActions"
                 >
                     <div
                         class="accordion-body d-flex flex-column gap-2"
@@ -91,7 +91,7 @@
                 <div
                     id="collapseTwo"
                     class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
+                    data-bs-parent="#acordionActions"
                 >
                     <div
                         class="accordion-body d-flex flex-column gap-2"
@@ -138,7 +138,7 @@
                 <div
                     id="collapseThree"
                     class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
+                    data-bs-parent="#acordionActions"
                 >
                     <div
                         class="accordion-body d-flex flex-column gap-2"
@@ -191,7 +191,7 @@
             </div>
         </a>
 
-        <ul class="dropdown-menu shadow p-auto" style="width: 100%;">
+        <ul class="dropdown-menu shadow p-auto" id="menu-sesion" style="width: 100%;">
             <li>
                 <form class="dropdown-item" action="SvCerrarSesion" method="POST">
                     <button
