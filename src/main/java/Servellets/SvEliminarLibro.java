@@ -16,34 +16,41 @@ import jakarta.servlet.http.HttpSession;
  */
 @WebServlet(name = "SvEliminarLibro", urlPatterns = {"/SvEliminarLibro"})
 public class SvEliminarLibro extends HttpServlet {
-
-    LogicController control = new LogicController();
+    
+    LogicController control = null;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
     }
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         
         try {
-            long id_libro = Long.parseLong((String) request.getParameter("eliminar_"));
-            Libro libro = control.buscarLibro(id_libro);
-
-            HttpSession sessionIdLibroEliminar = request.getSession();
-            sessionIdLibroEliminar.setAttribute("libroEliminar", libro);
-
-            response.sendRedirect("eliminarLibro.jsp");
+            control = new LogicController();
             
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            response.sendRedirect("index.jsp?accion=error");
+            try {
+                long id_libro = Long.parseLong((String) request.getParameter("eliminar_"));
+                Libro libro = control.buscarLibro(id_libro);
+                
+                HttpSession sessionIdLibroEliminar = request.getSession();
+                sessionIdLibroEliminar.setAttribute("libroEliminar", libro);
+                
+                response.sendRedirect("eliminarLibro.jsp");
+                
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                response.sendRedirect("index.jsp?accion=error");
+            }
+            
+        } catch (Exception a) {
+            response.sendRedirect("error500.jsp");
         }
+        
     }
-
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -51,17 +58,24 @@ public class SvEliminarLibro extends HttpServlet {
         processRequest(request, response);
         
         try {
-            long idLibro_eliminar = Long.parseLong((String) request.getParameter("id_book_delete"));
-            
-            control.eliminarLibro(idLibro_eliminar);
-            response.sendRedirect("index.jsp?accion=libro_eliminado");
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            response.sendRedirect("index.jsp?accion=error");
-        }
-    }
+            control = new LogicController();
 
+            try {
+                long idLibro_eliminar = Long.parseLong((String) request.getParameter("id_book_delete"));
+
+                control.eliminarLibro(idLibro_eliminar);
+                response.sendRedirect("index.jsp?accion=libro_eliminado");
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                response.sendRedirect("index.jsp?accion=error");
+            }
+            
+        } catch (Exception a) {
+            response.sendRedirect("error500.jsp");
+        }
+        
+    }
     
     @Override
     public String getServletInfo() {

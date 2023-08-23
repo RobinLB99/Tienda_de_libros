@@ -15,7 +15,7 @@ import java.util.List;
 @WebServlet(name = "SvLibrosDisponibles", urlPatterns = {"/SvLibrosDisponibles"})
 public class SvLibrosDisponibles extends HttpServlet {
     
-    LogicController control = new LogicController();
+    LogicController control = null;
     List<Libro> listaLibros = null;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -35,19 +35,27 @@ public class SvLibrosDisponibles extends HttpServlet {
         processRequest(request, response);
         
         try {
-            listaLibros = control.listaLibros();
-
-            HttpSession miSesionListaLibros = request.getSession();
-            miSesionListaLibros.setAttribute("listaLibros", listaLibros);
-
-            response.sendRedirect("./librosDisponibles.jsp");
             
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            response.sendRedirect("./index.jsp?accion=error");
-        }
+            control = new LogicController();
 
-        listaLibros = null;
+            try {
+                listaLibros = control.listaLibros();
+
+                HttpSession miSesionListaLibros = request.getSession();
+                miSesionListaLibros.setAttribute("listaLibros", listaLibros);
+
+                response.sendRedirect("./librosDisponibles.jsp");
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                response.sendRedirect("./index.jsp?accion=error");
+            }
+
+            listaLibros = null;
+            
+        } catch (Exception a) {
+            response.sendRedirect("error500.jsp");
+        }
     }
 
     @Override

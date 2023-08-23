@@ -33,32 +33,38 @@ public class SvNuevoLibro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        control = new LogicController();
-
         try {
-            String codigo = (String) request.getParameter("codigo_");
-            String nombre = (String) request.getParameter("nombreLibro_");
-            String autor = (String) request.getParameter("autor_");
-            String anio = (String) request.getParameter("anioPublicacion_");
-            double precio = Double.parseDouble((String) request.getParameter("precio_"));
-            int unidades = Integer.parseInt((String) request.getParameter("unidades_"));
+            control = new LogicController();
 
-            Libro libro = new Libro();
-            libro.setCodigo(codigo);
-            libro.setNombre(nombre);
-            libro.setAutor(autor);
-            libro.setAnio(anio);
-            libro.setPrecio(precio);
-            libro.setUnidades(unidades);
+            try {
+                String codigo = (String) request.getParameter("codigo_");
+                String nombre = (String) request.getParameter("nombreLibro_");
+                String autor = (String) request.getParameter("autor_");
+                String anio = (String) request.getParameter("anioPublicacion_");
+                double precio = Double.parseDouble((String) request.getParameter("precio_"));
+                int unidades = Integer.parseInt((String) request.getParameter("unidades_"));
 
-            control.crearLibro(libro);
+                Libro libro = new Libro();
+                libro.setCodigo(codigo);
+                libro.setNombre(nombre);
+                libro.setAutor(autor);
+                libro.setAnio(anio);
+                libro.setPrecio(precio);
+                libro.setUnidades(unidades);
 
-            response.sendRedirect("index.jsp?accion=nuevo_libro_ingresado");
+                control.crearLibro(libro);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            response.sendRedirect("index.jsp?accion=error");
+                response.sendRedirect("index.jsp?accion=nuevo_libro_ingresado");
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                response.sendRedirect("index.jsp?accion=error");
+            }
+            
+        } catch (Exception a) {
+            response.sendRedirect("error500.jsp");
         }
+        
     }
 
     @Override

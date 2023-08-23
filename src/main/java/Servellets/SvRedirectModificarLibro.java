@@ -34,21 +34,26 @@ public class SvRedirectModificarLibro extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        control = new LogicController();
-        
         try {
-            long id_libro_mod = Long.parseLong((String) request.getParameter("modificar_"));
-            
-            Libro libroMod = control.buscarLibro(id_libro_mod);
-            
-            HttpSession mySessionIdBookMod = request.getSession();
-            mySessionIdBookMod.setAttribute("libro_", libroMod);
+            control = new LogicController();
 
-            response.sendRedirect("modificarLibro.jsp");
+            try {
+                long id_libro_mod = Long.parseLong((String) request.getParameter("modificar_"));
+
+                Libro libroMod = control.buscarLibro(id_libro_mod);
+
+                HttpSession mySessionIdBookMod = request.getSession();
+                mySessionIdBookMod.setAttribute("libro_", libroMod);
+
+                response.sendRedirect("modificarLibro.jsp");
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                response.sendRedirect("index.jsp?accion=error");
+            }
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            response.sendRedirect("index.jsp?accion=error");
+            response.sendRedirect("error500.jsp");
         }
         
     }

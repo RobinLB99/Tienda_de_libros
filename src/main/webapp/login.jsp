@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
 <html lang="es">
     <head>
         <%@include file="./components/head.jsp" %>
@@ -20,7 +21,7 @@
                                     <div class="p-5">
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">
-                                                ¡Bienvenido!
+                                                Â¡Bienvenido!
                                             </h1>
                                         </div>
                                         <form class="user" action="SvLogin" method="post">
@@ -40,7 +41,7 @@
                                                     class="form-control form-control-user"
                                                     name="password_"
                                                     id="exampleInputPassword"
-                                                    placeholder="Contraseña"
+                                                    placeholder="ContraseÃ±a"
                                                     required
                                                 />
                                             </div>
@@ -48,7 +49,7 @@
                                                 type="submit"
                                                 class="btn login btn-primary btn-user btn-block "
                                             >
-                                                Inicar sesión
+                                                Inicar sesiÃ³n
                                             </button>
                                         </form>
                                     </div>

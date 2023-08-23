@@ -14,39 +14,45 @@ import jakarta.servlet.http.HttpSession;
 public class SvRedirigirAgregarUnidad extends HttpServlet {
 
     LogicController control = null;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         try {
             control = new LogicController();
 
-            long id = Long.parseLong((String) request.getParameter("idLibro_"));
-            Libro libroMod = control.buscarLibro(id);
+            try {
+                long id = Long.parseLong((String) request.getParameter("idLibro_"));
+                Libro libroMod = control.buscarLibro(id);
 
-            HttpSession libroModSession = request.getSession();
-            libroModSession.setAttribute("libroAModificar", libroMod);
+                HttpSession libroModSession = request.getSession();
+                libroModSession.setAttribute("libroAModificar", libroMod);
 
-            response.sendRedirect("aniadirCantidadLibro.jsp");
+                response.sendRedirect("aniadirCantidadLibro.jsp");
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                response.sendRedirect("index.jsp?accion=error");
+            }
+            
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            response.sendRedirect("index.jsp?accion=error");
+            response.sendRedirect("error500.jsp");
         }
-        
+
     }
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";
