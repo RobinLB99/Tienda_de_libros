@@ -15,7 +15,7 @@
         <form action="SvMenuPrincipal" method="get">
             <button
                 type="submit"
-                class="d-flex flex-row gap-3 align-items-center menu-principal text-light p-3"
+                class="btn btn-primary d-flex flex-row gap-2 align-items-center menu-principal p-3"
             >
                 <i class="fa-solid fa-bars"></i>
                 <span>Inicio</span>

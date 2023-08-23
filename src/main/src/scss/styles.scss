@@ -43,16 +43,10 @@ nav {
     height: 60px;
 
     border-radius: 5px;
-
-    background-color: transparent;
-    border: 1px solid transparent;
-
     transition-duration: 0.3s;
 }
 
 .menu-principal:hover {
-    background-color: var(--bs-light);
-    color: var(--bs-primary-text-emphasis) !important;
     transition-duration: 0.3s;
 }
 
