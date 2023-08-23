@@ -176,17 +176,19 @@
     <div class="dropdown container-fluid m-0 p-0">
         <div class="border opacity-25"></div>
         <a
-            class="btn btn-primary dropdown-toggle d-flex justify-content-start align-items-center gap-3"
+            class="btn btn-primary dropdown-toggle d-flex justify-content-between align-items-center"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             style="width: 100%; height: 50px"
         >
-            <i
-                class="fa-solid fa-circle-user"
-                style="font-size: 25px"
-            ></i>
-            <span><%= nameUser %></span>
+            <div class="d-flex align-items-center gap-3">
+                <i
+                    class="fa-solid fa-circle-user"
+                    style="font-size: 25px"
+                ></i>
+                <span><%= nameUser %></span>
+            </div>
         </a>
 
         <ul class="dropdown-menu shadow p-auto" style="width: 100%;">

@@ -3,4 +3,4 @@
 
 <title>Software de gestión de libreria</title>
 <script type="module" crossorigin src="./assets/main-056562ec.js"></script>
-<link rel="stylesheet" href="./assets/main-6c3a3d8a.css">
+<link rel="stylesheet" href="./assets/main-a56a1e92.css">

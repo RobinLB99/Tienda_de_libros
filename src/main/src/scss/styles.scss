@@ -63,14 +63,9 @@ nav {
     transition-duration: 0.3s;
 }
 
-.contenedor-usuario {
-    font-size: 15px;
-
-    width: 100%;
-    height: 30px;
-
-    img {
-        height: 100%;
+.dropdown-item {
+    button:active {
+        color: whitesmoke;
     }
 }
 
