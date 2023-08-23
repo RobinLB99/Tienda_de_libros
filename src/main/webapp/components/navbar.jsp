@@ -170,14 +170,38 @@
             </div>
         </div>
     </div>
-    <form class="container-fluid m-0 p-0" action="SvCerrarSesion" method="POST">
+    <%
+    String nameUser = (String) request.getSession().getAttribute("usuario");
+    %>
+    <div class="dropdown container-fluid m-0 p-0">
         <div class="border opacity-25"></div>
-        <button class="btn btn-primary d-flex justify-content-start align-items-center gap-3"
-                type="submit" 
-                style="width: 100%; height: 50px;"
+        <a
+            class="btn btn-primary dropdown-toggle d-flex justify-content-start align-items-center gap-3"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="width: 100%; height: 50px"
         >
-            <i class="fa-solid fa-sign-out-alt"></i>
-            <span>Cerrar sesión</span>
-        </button>
-    </form>
+            <i
+                class="fa-solid fa-circle-user"
+                style="font-size: 25px"
+            ></i>
+            <span><%= nameUser %></span>
+        </a>
+
+        <ul class="dropdown-menu shadow p-auto" style="width: 100%;">
+            <li>
+                <form class="dropdown-item" action="SvCerrarSesion" method="POST">
+                    <button
+                        class="d-flex justify-content-start align-items-center gap-3 m-0 p-0"
+                        type="submit"
+                        style="width: 100%; height: 25px; background-color: transparent; border: none;"
+                    >
+                        <i class="fa-solid fa-sign-out-alt"></i>
+                        <span>Cerrar sesión</span>
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
 </nav>
