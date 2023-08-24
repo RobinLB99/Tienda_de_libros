@@ -1,10 +1,10 @@
-= Librería - Software de Gestión =
+# Librería - Software de Gestión
 
-== Descripción ==
+## Descripción
 
 Este es un repositorio para el proyecto de software de gestión de librería. El proyecto se ha desarrollado como parte del curso de JSP de TodoCode. Se trata de una aplicación de gestión que cubre tres áreas principales: gestión de libros, ventas y empleados.
 
-== Características ==
+## Características
 
 * **Gestión de Libros:**
   - Alta, eliminación y modificación de libros en la base de datos.
@@ -18,7 +18,7 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
   - Agregar empleados al sistema con credenciales únicas.
   - Gestión de usuarios y permisos.
 
-== Tecnologías Utilizadas ==
+## Tecnologías Utilizadas
 
 * **Backend:**
   - Java 17: Lenguaje de programación principal.
@@ -31,20 +31,20 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
 * **Base de Datos:**
   - MySQL: Sistema de gestión de base de datos.
 
-== Requisitos del Entorno ==
+## Requisitos del Entorno
 
 * Java Development Kit (JDK) 17 o superior.
 * Servidor de aplicaciones compatible con JSP.
 * MySQL Server.
 
-== Instrucciones de Uso ==
+## Instrucciones de Uso
 
 1. Clona este repositorio en tu máquina local.
 2. Configura una instancia de MySQL Server y crea una base de datos llamada "db_library".
 3. Actualiza el archivo de configuración de la base de datos en `src/main/resources/META-INF/persistence.xml` con tus credenciales y detalles de conexión.
 4. Ejecuta la aplicación en un servidor de aplicaciones compatible con JSP.
 
-== Contribución ==
+## Contribución
 
 Si deseas contribuir al proyecto, sigue estos pasos:
 
@@ -54,6 +54,6 @@ Realiza modificaciones y pruebas.
 Asegúrate de cumplir con los estándares de estilo y formato.
 Crea un pull request describiendo tus cambios.
 
-== Contacto ==
+## Contacto
 
 Para preguntas o problemas, contáctanos en rjlb991102@hotmail.com.
