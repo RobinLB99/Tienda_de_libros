@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este es un repositorio para el proyecto de software de gestión de librería. El proyecto se ha desarrollado como parte del curso de JSP de TodoCode. Se trata de una aplicación de gestión que cubre tres áreas principales: gestión de libros, ventas y empleados.
+Este es un repositorio para el proyecto de software de gestión de librería. El proyecto se ha desarrollado como iniciativa personal para aplicar los conocimientos adquiridos en el curso de JSP de TodoCode. Se trata de una aplicación de gestión que cubre tres áreas principales: gestión de libros, ventas y empleados.
 
 ## Características
 
