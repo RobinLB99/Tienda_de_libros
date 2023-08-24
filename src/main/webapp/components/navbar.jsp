@@ -159,9 +159,7 @@
                                 type="submit"
                                 class="d-flex flex-row gap-2 align-items-center"
                             >
-                                <i
-                                    class="fontawesome fa-solid fa-circle-plus"
-                                ></i>
+                                <i class="fa-solid fa-user-plus"></i>
                                 <span>Nuevo empleado</span>
                             </button>
                         </form>
