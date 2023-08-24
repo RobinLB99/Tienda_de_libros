@@ -41,7 +41,7 @@
                 </h2>
                 <div
                     id="collapseOne"
-                    class="accordion-collapse collapse show"
+                    class="accordion-collapse collapse"
                     data-bs-parent="#acordionActions"
                 >
                     <div
