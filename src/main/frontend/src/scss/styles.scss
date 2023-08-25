@@ -155,7 +155,8 @@ div.contenedor-contenido {
 }
 
 .card-modificar-libro,
-.card-nuevo-libro {
+.card-nuevo-libro,
+.card-nuevo-empleado {
     height: fit-content;
     max-height: 100%;
     max-width: 650px;
@@ -164,7 +165,8 @@ div.contenedor-contenido {
 }
 
 .card-body-modificar-libro,
-.card-body-nuevo-libro {
+.card-body-nuevo-libro,
+.card-body-nuevo-empleado {
     overflow: hidden;
     overflow-y: visible;
 }
@@ -172,16 +174,34 @@ div.contenedor-contenido {
 .formulario-modificar-libro {
     width: 100%;
     height: 100%;
-
     margin: auto;
-}
 
-.formulario-modificar-libro input.form-control {
-    height: 50px;
-    border-radius: 50px;
-    padding-left: 20px;
+    input {
+        height: 40px;
+        border-radius: 50px;
+        padding-left: 20px;
+    }
 }
 
 .botones-mod-libro form {
     width: fit-content;
+}
+
+.form-persons {
+    label {
+        input {
+            height: 40px;
+            border-radius: 50px;
+            padding-left: 20px;
+        }
+
+        span {
+            font-size: 12px;
+            padding-left: 10px;
+        }
+    }
+
+    div > button {
+        width: 100%;
+    }
 }
