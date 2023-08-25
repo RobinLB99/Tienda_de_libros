@@ -154,7 +154,7 @@
                                 <span>Gestionar personal</span>
                             </button>
                         </form>
-                        <form action="#">
+                        <form action="SvRedirigirIngresarEmpleado" method="POST">
                             <button
                                 type="submit"
                                 class="d-flex flex-row gap-2 align-items-center"
