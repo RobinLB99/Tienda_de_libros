@@ -1,5 +1,5 @@
 .bg-login-image {
-    background-image: url(../img/libro.png) !important;
+    background-image: url(../assets/img/libro.png) !important;
     background-position: center !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
@@ -9,11 +9,18 @@
     background-color: var(--bs-primary);
 }
 
-.form-group.login input,
-.btn.login {
-    height: 40px;
-}
+form.user {
+    input {
+        padding-left: 20px;
+    }
 
-.btn.login {
-    width: 100%;
+    input,
+    button {
+        height: 40px;
+        border-radius: 50px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
