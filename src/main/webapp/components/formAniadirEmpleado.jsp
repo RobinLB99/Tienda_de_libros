@@ -71,6 +71,28 @@
                     >Ingrese el número telefónico. 10 digitos. Ejm: <strong>09</strong>54875698.</span
                 >
             </label>
+            <label class="container p-0">
+                <select
+                    class="form-select"
+                    name="cargo_"
+                    id="cargo"
+                >
+                    <option value="0">
+                        ----- Seleccione un cargo -----
+                    </option>
+                    <option value="cajero">Cajero</option>
+                    <option value="perchero">
+                        Perchero
+                    </option>
+                    <option value="admin">
+                        Administrador
+                    </option>
+                </select>
+                <span class="text-secondary" id="txt-cargo"
+                    >Seleccione un cargo para el
+                    empleado.</span
+                >
+            </label>
             <div class="container-fluid p-0">
                 <div class="border opacity-25 mb-3"></div>
                 <button
@@ -85,8 +107,8 @@
         </form>
         <form
             class="row gap-3 m-0"
-            action="#"
-            method="POST"
+            action="SvMenuPrincipal"
+            method="GET"
         >
             <button
                 class="col btn btn-primary"
