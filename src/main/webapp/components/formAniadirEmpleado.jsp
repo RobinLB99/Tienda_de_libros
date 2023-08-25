@@ -3,8 +3,8 @@
     <div class="card-header">Ingresar empleado</div>
     <div class="card-body card-body-nuevo-libro">
         <form
-            action="#"
-            method="post"
+            action="SvCrearEmpleado"
+            method="POST"
             class="form-persons d-flex flex-column gap-3 mb-3"
         >
             <label class="container p-0">
