@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inpApellidos = document.querySelector("#apellidos");
     const inpNacimiento = document.querySelector("#fechaNacimiento");
     const inpTelefono = document.querySelector("#telefono");
+    const selectCargo = document.querySelector("#cargo");
 
     const btnVerificar = document.querySelector("#verficarDatosEmpleado");
     const btnEnviar = document.querySelector("#enviarEmpleado");
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const spanApellidos = document.querySelector("#txt-apellidos");
     const spanNacimiento = document.querySelector("#txt-nacimiento");
     const spanTelefono = document.querySelector("#txt-telefono");
+    const spanCargo = document.querySelector("#txt-cargo");
 
     // Modal y sus elementos
     const modal = new bootstrap.Modal(
@@ -65,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (inpTelefono.value === "") {
             inpTelefono.style.borderColor = rojo;
             spanTelefono.classList.add("text-danger");
+        }
+
+        if (selectCargo.value === "0") {
+            selectCargo.style.borderColor = rojo;
+            spanCargo.classList.add("text-danger");
         }
     };
 
@@ -119,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
             inpNombres.value === "" ||
             inpApellidos.value === "" ||
             inpNacimiento.value === "" ||
-            inpTelefono.value === ""
+            inpTelefono.value === "" ||
+            selectCargo.value === "0"
         ) {
             camposLlenar();
         } else {
@@ -161,6 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
     inpTelefono.addEventListener("focus", function () {
         inpTelefono.style.borderColor = "";
         spanTelefono.classList.remove("text-danger");
+        bloquerBotonEnvio();
+    });
+
+    selectCargo.addEventListener("focus", function () {
+        selectCargo.style.borderColor = "";
+        spanCargo.classList.remove("text-danger");
         bloquerBotonEnvio();
     });
 });
