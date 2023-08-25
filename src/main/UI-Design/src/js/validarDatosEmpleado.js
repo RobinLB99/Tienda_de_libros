@@ -4,6 +4,7 @@ import {
     regExpNombres,
     regExpApellidos,
     regExpCedula,
+    regExpFechaNacimiento,
 } from "./regularExpresions";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -80,7 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
             !regExpCedula.test(inpCedula.value) ||
             !regExpNombres.test(inpNombres.value) ||
             !regExpApellidos.test(inpApellidos.value) ||
-            !regExpTelefono.test(inpTelefono.value)
+            !regExpTelefono.test(inpTelefono.value) ||
+            !regExpFechaNacimiento.test(inpNacimiento.value)
         ) {
             if (!regExpCedula.test(inpCedula.value)) {
                 inpCedula.style.borderColor = rojo;
@@ -100,6 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!regExpTelefono.test(inpTelefono.value)) {
                 inpTelefono.style.borderColor = rojo;
                 spanTelefono.classList.add("text-danger");
+            }
+
+            if (!regExpFechaNacimiento.test(inpNacimiento.value)) {
+                regExpFechaNacimiento.style.borderColor = rojo;
+                spanNacimiento.classList.add("text-danger");
             }
 
             titulo.innerHTML = "¡Datos invalidos!";
@@ -175,6 +182,12 @@ document.addEventListener("DOMContentLoaded", () => {
     selectCargo.addEventListener("focus", function () {
         selectCargo.style.borderColor = "";
         spanCargo.classList.remove("text-danger");
+        bloquerBotonEnvio();
+    });
+
+    inpNacimiento.addEventListener("focus", function () {
+        inpNacimiento.style.borderColor = "";
+        spanNacimiento.classList.remove("text-danger");
         bloquerBotonEnvio();
     });
 });
