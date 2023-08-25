@@ -25,7 +25,7 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
   - JSP (JavaServer Pages): Para contenido dinámico en el servidor.
   
 * **Frontend:**
-  - HTML, CSS y JavaScript: Tecnologías web estándar para la interfaz de usuario.
+  - HTML, CSS/SASS y JavaScript: Tecnologías web estándar para la interfaz de usuario.
   - Bootstrap: Framework de diseño para una experiencia visual atractiva y receptiva.
 
 * **Base de Datos:**
