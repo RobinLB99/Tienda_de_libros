@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogicController {
+
     PersistenceController perControl = new PersistenceController();
 
     // Empleados
@@ -27,7 +28,7 @@ public class LogicController {
     public List listaEmpleados() {
         return perControl.listaEmpleados();
     }
-   
+
     //Usuario
     public void crearUsuario(Usuario user) {
         perControl.crearUsuario(user);
@@ -48,28 +49,28 @@ public class LogicController {
     public List listaUsuarios() {
         return perControl.listaUsuarios();
     }
-    
+
     // Libro
     public void crearLibro(Libro libro) {
         perControl.crearLibro(libro);
     }
-    
+
     public void editarLibro(Libro libro) {
         perControl.editarLibro(libro);
     }
-    
+
     public void eliminarLibro(long id) {
         perControl.eliminarLibro(id);
     }
-    
+
     public Libro buscarLibro(long id) {
         return perControl.buscarLibro(id);
     }
-    
+
     public List<Libro> listaLibros() {
         return perControl.listaLibros();
     }
-    
+
     // Sesion
     public boolean valSession(String user, String password) {
         List<Usuario> listaUsuarios = new ArrayList<Usuario>();
@@ -86,8 +87,8 @@ public class LogicController {
                 }
             }
         }
-        
+
         return ingresar;
     }
-    
+
 }

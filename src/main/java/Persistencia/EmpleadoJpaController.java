@@ -12,16 +12,20 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+/**
+ *
+ * @author joel
+ */
 public class EmpleadoJpaController implements Serializable {
 
     public EmpleadoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
+
     public EmpleadoJpaController() {
         emf = Persistence.createEntityManagerFactory("BookStoreCatalog_war_PU");
     }
-    
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -131,5 +135,5 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

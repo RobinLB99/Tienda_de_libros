@@ -1,28 +1,33 @@
 package Logica;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Persona {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String cedula;
     private String nombre;
     private String apellidos;
-    private String fechaNacimiento;
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
     private String telefono;
 
-    public Persona(){
+    public Persona() {
     }
 
-    public Persona(long id, String cedula, String nombre, String apellidos, String fechaNacimiento, String telefono) {
+    public Persona(long id, String cedula, String nombre, String apellidos, Date fechaNacimiento, String telefono) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -30,7 +35,6 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.telefono = telefono;
     }
-    
 
     public long getId() {
         return id;
@@ -64,14 +68,13 @@ public class Persona {
         this.apellidos = apellidos;
     }
 
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-    
 
     public String getTelefono() {
         return telefono;
@@ -86,5 +89,4 @@ public class Persona {
         return "Persona{" + "id=" + id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellidos=" + apellidos + ", telefono=" + telefono + '}';
     }
 
-    
 }

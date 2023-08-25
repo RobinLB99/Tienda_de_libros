@@ -8,8 +8,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuario implements Serializable {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
     private String userName;
     private String password;
@@ -56,7 +57,5 @@ public class Usuario implements Serializable {
     public void setAdmin(boolean admin) {
         this.admin = admin;
     }
-    
-    
-    
+
 }
