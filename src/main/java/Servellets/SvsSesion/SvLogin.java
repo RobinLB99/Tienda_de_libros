@@ -43,6 +43,7 @@ public class SvLogin extends HttpServlet {
                 HttpSession mySession = request.getSession();
                 mySession.setAttribute("usuario", username);
                 response.sendRedirect("index.jsp");
+
             } else {
                 response.sendRedirect("login.jsp?user_password=incorrect");
             }
