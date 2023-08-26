@@ -10,7 +10,7 @@
             <header
                 class="p-3 m-0 shadow d-flex flex-row align-items-center justify-content-between"
             >
-                <p class="h5 m-0">Software de gestión de libreria</p>
+                <p class="h5 m-0">Software de gestión de librería</p>
             </header>
             <main class="p-3 m-0">
                 <div class="contenedor-contenido container-fluid p-0">

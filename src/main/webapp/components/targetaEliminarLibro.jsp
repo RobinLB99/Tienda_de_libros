@@ -12,7 +12,7 @@
     <div class="card-body d-flex justify-content-between">
         <div class="m-0 p-0 row">
             <div class="col">
-                <span><strong>Codigo: </strong><%= libro.getCodigo() %></span><br />
+                <span><strong>Código: </strong><%= libro.getCodigo() %></span><br />
                 <span><strong>Nombre del libro: </strong><%= libro.getNombre() %></span><br />
                 <span><strong>Autor: </strong><%= libro.getAutor() %></span><br />
                 <span><strong>Año de publicación: </strong><%= libro.getAnio() %></span><br />
@@ -77,7 +77,7 @@
                     Se eliminar
                     <strong><%= libro.getNombre() %></strong> del
                     inventario. <br />
-                    ¿Estas segúro de continuar?
+                    ¿Estas seguro de continuar?
                 </p>
             </div>
             <div class="modal-footer">

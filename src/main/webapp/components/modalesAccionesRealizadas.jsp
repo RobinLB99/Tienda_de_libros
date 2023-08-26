@@ -69,7 +69,7 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <span>El libro se modifico con exito.</span>
+                <span>El libro se modifico con éxito.</span>
             </div>
             <div class="modal-footer">
                 <button
@@ -109,7 +109,7 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <span>El libro se elimino con exito.</span>
+                <span>El libro se elimino con éxito.</span>
             </div>
             <div class="modal-footer">
                 <button
@@ -150,8 +150,8 @@
             </div>
             <div class="modal-body">
                 <span
-                    >Hubo un error al procesar la peticiÃ³n.
-                    ¡Por favor, intentelo otra vez!</span
+                    >Hubo un error al procesar la petición.
+                    ¡Por favor, inténtelo otra vez!</span
                 >
             </div>
             <div class="modal-footer">
@@ -182,7 +182,7 @@
                     class="modal-title fs-5"
                     id="staticBackdropLabel"
                 >
-                    ¡Ingreso de libro exito!
+                    ¡Ingreso de libro éxito!
                 </h1>
                 <button
                     type="button"
@@ -193,7 +193,7 @@
             </div>
             <div class="modal-body">
                 <span
-                    >EL libro fue ingresado al inventario con exito.</span
+                    >EL libro fue ingresado al inventario con éxito.</span
                 >
             </div>
             <div class="modal-footer">
@@ -236,7 +236,7 @@
             <div class="modal-body">
                 <span
                     >El empleado se registro
-                    correctamente.<br /> Debera crear
+                    correctamente.<br /> Deberá crear
                     credenciales a continuación si quiere darle acceso al
                     sistema.</span
                 >

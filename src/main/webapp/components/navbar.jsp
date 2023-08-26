@@ -8,7 +8,7 @@
                 <i
                     class="fontawesome fa-solid fa-book-open d-flex justify-content-center align-items-center"
                 ></i>
-                <span>Libreria</span>
+                <span>Librería</span>
             </p>
         </div>
         <div class="border opacity-25"></div>

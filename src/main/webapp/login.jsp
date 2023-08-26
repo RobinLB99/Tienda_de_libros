@@ -49,7 +49,7 @@
                                                 type="submit"
                                                 class="btn login btn-primary btn-user btn-block "
                                             >
-                                                Inicar sesión
+                                                Iniciar sesión
                                             </button>
                                         </form>
                                     </div>

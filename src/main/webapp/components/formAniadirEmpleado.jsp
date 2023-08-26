@@ -17,7 +17,7 @@
                     required
                 />
                 <span class="text-secondary" id="txt-cedula"
-                    >Ingrese el número de cedula de 10 digitos. Ejm: <strong>09</strong>25478023 o <strong>193</strong>7854523.</span
+                    >Ingrese el número de cédula de 10 dígitos. Ejm: <strong>09</strong>25478023 o <strong>193</strong>7854523.</span
                 >
             </label>
             <label class="container p-0">
@@ -30,7 +30,7 @@
                     required
                 />
                 <span class="text-secondary" id="txt-nombres"
-                    >Ingrése dos nombres. No olvide las mayúsculas.</span
+                    >Ingrese dos nombres. No olvide las mayúsculas.</span
                 >
             </label>
             <label class="container p-0">
@@ -68,7 +68,7 @@
                     required
                 />
                 <span class="text-secondary" id="txt-telefono"
-                    >Ingrese el número telefónico. 10 digitos. Ejm: <strong>09</strong>54875698.</span
+                    >Ingrese el número telefónico. 10 dígitos. Ejm: <strong>09</strong>54875698.</span
                 >
             </label>
             <label class="container p-0">

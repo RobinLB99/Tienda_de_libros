@@ -37,7 +37,7 @@
                         "
                     >
                         <span
-                            >Valor numerio de diez digitos.
+                            >Valor numérico de diez dígitos.
                             Ejem: 1254789652</span
                         >
                     </div>
@@ -61,7 +61,7 @@
                     >
                         <span
                             >No debe contener solo valores
-                            numericos. Ejem: Cien aÃ±os de
+                            numéricos. Ejem: Cien años de
                             soledad.</span
                         >
                     </div>
@@ -84,8 +84,8 @@
                         "
                     >
                         <span
-                            >Nombre propio o pseudonimo.
-                            Ejem: Gabriel GarcÃ­a MÃ¡rquez o
+                            >Nombre propio o pseudónimo.
+                            Ejem: Gabriel García­ Márquez o
                             Pepito71.</span
                         >
                     </div>
@@ -108,7 +108,7 @@
                         "
                     >
                         <span
-                            >Valor numerico de 4 digitos.
+                            >Valor numérico de 4 dígitos.
                             Ejem: 1999</span
                         >
                     </div>
@@ -131,7 +131,7 @@
                         "
                     >
                         <span
-                            >Valor numerico entero o decimal
+                            >Valor numérico entero o decimal
                             de dos decimales. Ejem: 15 o
                             22.99</span
                         >
@@ -157,7 +157,7 @@
                         "
                     >
                         <span
-                            >Valor numerico entero de 1 a
+                            >Valor numérico entero de 1 a
                             100.</span
                         >
                     </div>
@@ -167,7 +167,7 @@
             <span
                 class="text-secondary"
                 style="font-size: small"
-                >* Verfique la valides de los datos antes de
+                >* Verifique la valides de los datos antes de
                 enviar las modificaciones
             </span>
             <div
