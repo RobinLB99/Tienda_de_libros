@@ -54,9 +54,14 @@ public class SvCrearEmpleado extends HttpServlet {
             try {
                 control = new LogicController();
                 empleado = new Empleado();
-                user = new Usuario();
                 
+                /* Crea al empleado credenciales vacias sin acceso al sistema. */
+                user = new Usuario();
+                user.setUserName("-");
+                user.setPassword("-");
+                user.setAdmin(false);
                 control.crearUsuario(user);
+                /**/
                 
                 empleado.setCedula(cedula);
                 empleado.setNombre(nombres);
@@ -68,7 +73,7 @@ public class SvCrearEmpleado extends HttpServlet {
                 
                 control.crearEmpleado(empleado);
                 
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("index.jsp?accion=empleado_ingresado");
                 
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
