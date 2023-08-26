@@ -79,11 +79,18 @@ public class LogicController {
         boolean ingresar = false;
 
         for (Usuario usuario : listaUsuarios) {
-            if (usuario.getUserName().equals(user)) {
-                if (usuario.getPassword().equals(password)) {
-                    ingresar = true;
-                } else {
-                    ingresar = false;
+            if (user.equals("-")) {
+                ingresar = false;
+                break;
+            } else {
+                if (usuario.getUserName().equals(user)) {
+                    if (usuario.getPassword().equals(password)) {
+                        ingresar = true;
+                        break;
+                    } else {
+                        ingresar = false;
+                        break;
+                    }
                 }
             }
         }
