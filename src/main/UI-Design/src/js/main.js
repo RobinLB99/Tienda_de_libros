@@ -1,8 +1,9 @@
 // Import our custom CSS
 import "../scss/styles.scss";
 
-//Import all of Fortawesome's JS
-import "@fortawesome/fontawesome-free/js/all";
+//Import Fortawesome's JS necessary
+import "@fortawesome/fontawesome-free/js/fontawesome";
+import "@fortawesome/fontawesome-free/js/solid";
 
 import "./datatables"
 

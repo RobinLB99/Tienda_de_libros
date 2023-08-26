@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = new URL(url_string);
 
     let accionRealizada = url.searchParams.get("accion");
+    let errorCargaEmpleado = url.searchParams.get("error");
 
     if (accionRealizada) {
         switch (accionRealizada) {
@@ -48,5 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
             default:
                 break;
         }
+    }
+
+    if (errorCargaEmpleado === "true") {
+        new bootstrap.Modal(
+            document.getElementById("errorCargaEmpleado")
+        ).show();
     }
 });
