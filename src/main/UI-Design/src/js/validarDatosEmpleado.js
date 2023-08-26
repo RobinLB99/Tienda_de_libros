@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let rojo = "#dc3545";
 
     const camposLlenar = () => {
-        titulo.innerHTML = "¡Campos vacios!";
+        titulo.innerHTML = "¡Campos vacíos!";
         titulo.classList.remove("text-success");
         titulo.classList.add("text-danger");
         mensaje.innerHTML =
-            "Uno o mas campos estan vacios. Por favor, llena los campos faltantes.";
+            "Uno o mas campos están vacíos. Por favor, llena los campos faltantes.";
 
         if (inpCedula.value === "") {
             inpCedula.style.borderColor = rojo;
@@ -105,21 +105,21 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (!regExpFechaNacimiento.test(inpNacimiento.value)) {
-                regExpFechaNacimiento.style.borderColor = rojo;
+                inpNacimiento.style.borderColor = rojo;
                 spanNacimiento.classList.add("text-danger");
             }
 
-            titulo.innerHTML = "¡Datos invalidos!";
+            titulo.innerHTML = "¡Datos inválidos!";
             titulo.classList.remove("text-success");
             titulo.classList.add("text-danger");
             mensaje.innerHTML =
-                "Uno o varios campos tienen datos invalidos. Por favor, corrige y verifica que los datos sean correctos.";
+                "Uno o varios campos tienen datos inválidos. Por favor, corrige y verifica que los datos sean correctos.";
         } else {
             btnEnviar.classList.remove("btn-secondary");
             btnEnviar.classList.add("btn-success");
             btnEnviar.disabled = false;
 
-            titulo.innerHTML = "¡Verificacion correcta!";
+            titulo.innerHTML = "¡Verificación correcta!";
             titulo.classList.remove("text-danger");
             titulo.classList.add("text-success");
             mensaje.innerHTML = "Los datos son correctos, puede continuar.";
