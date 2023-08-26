@@ -82,7 +82,7 @@ public class SvCrearEmpleado extends HttpServlet {
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            response.sendRedirect("aniadirEmpleado.jsp"); /*Añadir mensaje por url*/
+            response.sendRedirect("aniadirEmpleado.jsp?error=true");
         }
 
     }
