@@ -208,3 +208,48 @@
         </div>
     </div>
 </div>
+<div
+    class="modal fade"
+    id="empleadoIngresado"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1
+                    class="modal-title fs-5"
+                    id="staticBackdropLabel"
+                >
+                    ¡Empleado ingresado!
+                </h1>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <span
+                    >El empleado se registro
+                    correctamente.<br /> Debera crear
+                    credenciales a continuación si quiere darle acceso al
+                    sistema.</span
+                >
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                >
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
