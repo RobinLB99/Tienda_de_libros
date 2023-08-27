@@ -18,7 +18,7 @@
                 class="btn btn-primary d-flex flex-row gap-2 align-items-center menu-principal p-3"
             >
                 <i class="fa-solid fa-bars"></i>
-                <span>Inicio</span>
+                <span>Dashboard</span>
             </button>
         </form>
         <div class="border opacity-25"></div>
@@ -143,7 +143,7 @@
                     <div
                         class="accordion-body d-flex flex-column gap-2"
                     >
-                        <form action="#">
+                        <form action="SvRedirigirGestionEmpleados" method="POST">
                             <button
                                 type="submit"
                                 class="d-flex flex-row gap-2 align-items-center"
