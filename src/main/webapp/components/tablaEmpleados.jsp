@@ -36,7 +36,7 @@
                     } else {
                         userName = empleado.getUsuario().getUserName();
                     }
-                    
+                                        
                     if (empleado.getFuncion().equals("admin")) {
                         cargo = "Administrador";
                     }
