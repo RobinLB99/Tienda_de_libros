@@ -1,3 +1,6 @@
+<%@page import="Logica.LogicController"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="Logica.Empleado"%>
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
@@ -25,11 +28,17 @@
             <tbody>
                 <%
                 List<Empleado> listaEmpleados = (List<Empleado>) request.getSession().getAttribute("listaEmpleados");
+                LogicController control = new LogicController();
                 
                 for (Empleado empleado : listaEmpleados) {
                 
                     String cargo = null;
                     String userName = null;
+                    
+                    /* Convertir Fecha en fecha corta */
+                    Date fecha = empleado.getFechaNacimiento();
+                    String fechaCorta = control.getShortDateString(fecha);
+                    
                     
                     if (empleado.getUsuario().getUserName().equals("-")) {
                         userName = "<p class='text-secondary m-0'>No asignado</p>";
@@ -54,7 +63,7 @@
                     <td><%= empleado.getCedula() %></td>
                     <td><%= empleado.getNombre() %></td>
                     <td><%= empleado.getApellidos() %></td>
-                    <td><%= empleado.getFechaNacimiento() %></td>
+                    <td><%= fechaCorta %></td>
                     <td><%= cargo %></td>
                     <td><%= empleado.getTelefono() %></td>
                     <td><%= userName %></td>
@@ -92,7 +101,7 @@
                                     ></i>
                                 </button>
                             </form>
-                            <form action="#" method="POST">
+                            <form action="SvRedirigirEliminarEmpleado" method="POST">
                                 <input
                                     type="text"
                                     name="id_usuario_empleado"
