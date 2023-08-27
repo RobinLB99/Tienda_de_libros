@@ -2,6 +2,7 @@ package Logica;
 
 import Persistencia.PersistenceController;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class LogicController {
@@ -98,4 +99,28 @@ public class LogicController {
         return ingresar;
     }
 
+    /**
+     * ----- Seteo de valores ----- *
+     */
+    // Usuario
+    public Usuario setCredentialsValues(String userName, String password, boolean isAdmin) {
+        Usuario usuario = new Usuario();
+        usuario.setUserName(userName);
+        usuario.setPassword(password);
+        usuario.setAdmin(isAdmin);
+        return usuario;
+    }
+
+    // Empleado
+    public Empleado setEmployData(String cedula, String nombres, String apellidos, Date nacimiento, String telefono, String cargo, Usuario credenciales) {
+        Empleado empleado = new Empleado();
+        empleado.setCedula(cedula);
+        empleado.setNombre(nombres);
+        empleado.setApellidos(apellidos);
+        empleado.setFechaNacimiento(nacimiento);
+        empleado.setTelefono(telefono);
+        empleado.setFuncion(cargo);
+        empleado.setUsuario(credenciales);
+        return empleado;
+    }
 }
