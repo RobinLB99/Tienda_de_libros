@@ -1,6 +1,5 @@
 package Servellets.ServelletsEmpleados;
 
-import Logica.Fecha;
 import Logica.Empleado;
 import Logica.LogicController;
 import Logica.Usuario;
@@ -40,6 +39,8 @@ public class SvCrearEmpleado extends HttpServlet {
         processRequest(request, response);
 
         try {
+            control = new LogicController();
+            
             String cedula = request.getParameter("cedula_");
             String nombres = request.getParameter("nombres_");
             String apellidos = request.getParameter("apellidos_");
@@ -48,11 +49,9 @@ public class SvCrearEmpleado extends HttpServlet {
             String cargo = request.getParameter("cargo_");
 
             /* Convertir a tipo Date */
-            Fecha fecha = new Fecha(fechaNacimiento);
-            Date nacimiento = fecha.getTypeDate();
+            Date nacimiento = control.getTypeDate(fechaNacimiento);
 
             try {
-                control = new LogicController();
                 empleado = new Empleado();
 
                 /* Crea credenciales nulas sin acceso al sistema. */
