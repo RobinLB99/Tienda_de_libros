@@ -41,7 +41,8 @@ public class SvRedirigirGestionEmpleados extends HttpServlet {
             control = new LogicController();
             listaEmpleados = control.listaEmpleados();
 
-            HttpSession empleados = request.getSession();
+            HttpSession empleados = null;
+            empleados = request.getSession();
             empleados.setAttribute("listaEmpleados", listaEmpleados);
 
             response.sendRedirect("GestionarEmpleados.jsp");
