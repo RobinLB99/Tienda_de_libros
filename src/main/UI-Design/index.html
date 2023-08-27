@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script type="module" src="./src/js/main.js"></script>
-        <title>Software de gestión de libreria</title>
+        <title>Software de gestión de librería</title>
     </head>
     <body>
         <nav class="text-light d-flex flex-column pb-2 z-1 gap-3">
@@ -224,7 +224,7 @@
             <header
                 class="p-3 m-0 shadow d-flex flex-row align-items-center justify-content-between"
             >
-                <p class="h5 m-0">Software de gestión de libreria</p>
+                <p class="h5 m-0">Software de gestión de librería</p>
             </header>
             <main class="p-3 m-0">
                 <!-- <div class="contenedor-contenido container-fluid p-0">
@@ -1251,7 +1251,7 @@
 
                 </div> -->
 
-                <div class="contenedor-contenido container-fluid p-0">
+                <!-- <div class="contenedor-contenido container-fluid p-0">
                     <div class="card shadow-sm card-nuevo-empleado">
                         <div class="card-header">Ingresar empleado</div>
                         <div class="card-body card-body-nuevo-libro">
@@ -1349,7 +1349,7 @@
                                             ----- Seleccione un cargo -----
                                         </option>
                                         <option value="cajero">Cajero</option>
-                                        <option value="perchero">
+                                        <option value="Perchero">
                                             Perchero
                                         </option>
                                         <option value="admin">
@@ -1527,11 +1527,245 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="contenedor-contenido container-fluid p-0">
-                    
+                    <div class="card m-0 card-tabla shadow-sm">
+                        <div class="card-header text-primary">
+                            Tabla de personal
+                        </div>
+                        <div class="card-body card-tabla-body">
+                            <table
+                                class="table"
+                                id="tablaEmpleados"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th>Cédula</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>F. nacimiento</th>
+                                        <th>Cargo</th>
+                                        <th>Teléfono</th>
+                                        <th>Usuario</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1931547589</td>
+                                        <td>Robin Joel</td>
+                                        <td>Lugo Boero</td>
+                                        <td>02 nov 1999</td>
+                                        <td>Administrador</td>
+                                        <td>0968116547</td>
+                                        <td><p class="text-secondary m-0">No asignado</p></td>
+                                        <td>
+                                            <div class="d-flex flex-row gap-3">
+                                                <form action="#" method="GET">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        hidden
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-primary"
+                                                    >
+                                                        <i
+                                                            class="fa-solid fa-user"
+                                                        ></i>
+                                                    </button>
+                                                </form>
+                                                <form action="#" method="GET">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        hidden
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-primary"
+                                                    >
+                                                        <i
+                                                            class="fa-regular fa-pen-to-square"
+                                                        ></i>
+                                                    </button>
+                                                </form>
+                                                <form action="#" method="GET">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        hidden
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-danger"
+                                                    >
+                                                        <i
+                                                            class="fa-regular fa-trash-can"
+                                                        ></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Cédula</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>F. nacimiento</th>
+                                        <th>Cargo</th>
+                                        <th>Teléfono</th>
+                                        <th>Usuario</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                 </div> -->
+
+                <div class="contenedor-contenido container-fluid p-0">
+                    <div class="card shadow-sm" id="cardDeleteEmploy">
+                        <div class="card-header">Empleado a eliminar</div>
+                        <div class="card-body">
+                            <div
+                                class="contenido row row-cols-1 row-cols-lg-2 g-lg-3 mb-3"
+                                style="width: 100%"
+                            >
+                                <div class="col">
+                                    <p class="row m-0">
+                                        <strong class="col-5">Cédula: </strong
+                                        ><span class="col">0944149020</span>
+                                    </p>
+                                    <p class="row m-0">
+                                        <strong class="col-5">Nombres: </strong
+                                        ><span class="col">Robin Joel</span>
+                                    </p>
+                                    <p class="row m-0">
+                                        <strong class="col-5"
+                                            >Apellidos: </strong
+                                        ><span class="col">Lugo Boero</span>
+                                    </p>
+                                    <p class="row m-0">
+                                        <strong class="col-5"
+                                            >F. Nacimiento: </strong
+                                        ><span class="col">nov 02, 1999</span>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="row m-0">
+                                        <strong class="col-5">Cargo:</strong
+                                        ><span class="col">Administrador</span>
+                                    </p>
+                                    <p class="row m-0">
+                                        <strong class="col-5">Teléfono: </strong
+                                        ><span class="col">0968161160</span>
+                                    </p>
+                                    <p class="row m-0">
+                                        <strong class="col-5">Usuario: </strong
+                                        ><span class="col">RobinLB99</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-end">
+                                <div
+                                    class="actions d-flex gap-3 justify-content-end"
+                                    style="width: 100%"
+                                >
+                                    <form action="#" method="post">
+                                        <button
+                                            class="btn btn-secondary"
+                                            type="submit"
+                                        >
+                                            Cancelar
+                                        </button>
+                                    </form>
+                                    <div>
+                                        <button
+                                            class="btn btn-danger"
+                                            type="button"
+                                            id="eliminarE"
+                                        >
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="modal fade"
+                        id="modalEliminarEmpleado"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        Eliminar empleado
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span class="m-0"
+                                        >Eliminara a
+                                        <strong>Empleado</strong>
+                                        del registro.</span
+                                    >
+                                    <br />
+                                    <span>¿Esta seguro de continuar?</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Cerrar
+                                    </button>
+                                    <form action="#" method="post">
+                                        <input
+                                            type="text"
+                                            id="id_empleado"
+                                            value=""
+                                            hidden
+                                        />
+                                        <input
+                                            type="text"
+                                            id="id_credentials"
+                                            value=""
+                                            hidden
+                                        />
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary"
+                                            id="btn_enviarDatosModal"
+                                        >
+                                            Confirmar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
             <footer
                 class="p-3 m-0 d-flex align-items-center justify-content-center"
