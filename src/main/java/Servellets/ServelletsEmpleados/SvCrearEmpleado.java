@@ -1,6 +1,6 @@
 package Servellets.ServelletsEmpleados;
 
-import Logica.ConvertirFecha;
+import Logica.Fecha;
 import Logica.Empleado;
 import Logica.LogicController;
 import Logica.Usuario;
@@ -18,7 +18,7 @@ import java.util.Date;
  */
 @WebServlet(name = "SvCrearEmpleado", urlPatterns = {"/SvCrearEmpleado"})
 public class SvCrearEmpleado extends HttpServlet {
-    
+
     LogicController control = null;
     Empleado empleado = null;
     Usuario user = null;
@@ -43,43 +43,32 @@ public class SvCrearEmpleado extends HttpServlet {
             String cedula = request.getParameter("cedula_");
             String nombres = request.getParameter("nombres_");
             String apellidos = request.getParameter("apellidos_");
-            String nacimiento = request.getParameter("fechaNacimiento_");
+            String fechaNacimiento = request.getParameter("fechaNacimiento_");
             String telefono = request.getParameter("telefono_");
             String cargo = request.getParameter("cargo_");
 
             /* Convertir a tipo Date */
-            ConvertirFecha convert = new ConvertirFecha(nacimiento);
-            Date fechaNacimiento = convert.getDate();
-            
+            Fecha fecha = new Fecha(fechaNacimiento);
+            Date nacimiento = fecha.getTypeDate();
+
             try {
                 control = new LogicController();
                 empleado = new Empleado();
-                
-                /* Crea al empleado credenciales vacias sin acceso al sistema. */
-                user = new Usuario();
-                user.setUserName("-");
-                user.setPassword("-");
-                user.setAdmin(false);
+
+                /* Crea credenciales nulas sin acceso al sistema. */
+                user = control.setCredentialsValues("-", "-", false);
                 control.crearUsuario(user);
-                /**/
-                
-                empleado.setCedula(cedula);
-                empleado.setNombre(nombres);
-                empleado.setApellidos(apellidos);
-                empleado.setFechaNacimiento(fechaNacimiento);
-                empleado.setTelefono(telefono);
-                empleado.setFuncion(cargo);
-                empleado.setUsuario(user);
-                
+
+                empleado = control.setEmployData(cedula, nombres, apellidos, nacimiento, telefono, cargo, user);
                 control.crearEmpleado(empleado);
-                
+
                 response.sendRedirect("index.jsp?accion=empleado_ingresado");
-                
+
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
                 response.sendRedirect("index.jsp?accion=error");
             }
-            
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             response.sendRedirect("aniadirEmpleado.jsp?error=true");
