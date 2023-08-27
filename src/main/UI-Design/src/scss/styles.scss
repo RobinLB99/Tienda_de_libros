@@ -99,6 +99,13 @@ nav {
     }
 }
 
+div.dataTables_info {
+    height: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
 div.contenedor-principal {
     width: var(--width-content-main);
     height: 100%;
@@ -126,7 +133,8 @@ div.contenedor-contenido {
 }
 
 .card-tabla {
-    height: 100% !important;
+    height: fit-content !important;
+    max-height: 100% !important;
 }
 
 .card-tabla-body {
@@ -205,5 +213,23 @@ div.contenedor-contenido {
 
     div > button {
         width: 100%;
+    }
+}
+
+#cardDeleteEmploy {
+    width: 100%;
+    max-width: 900px;
+    height: fit-content;
+    max-height: 100%;
+
+    margin: 0 auto;
+
+    .card-body {
+        overflow: hidden;
+        overflow-y: visible;
+
+        .contenido {
+            padding-left: 2rem !important;
+        }
     }
 }
