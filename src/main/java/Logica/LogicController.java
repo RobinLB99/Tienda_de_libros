@@ -1,6 +1,10 @@
 package Logica;
 
 import Persistencia.PersistenceController;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -97,6 +101,30 @@ public class LogicController {
         }
 
         return ingresar;
+    }
+    
+    /**
+     * ----- Metodos para fechas -----
+     */
+    /* Obtine la la fecha de tipo string "1985-05-06" convertida a tipo Date */
+    public Date getTypeDate(String stringFecha) {
+        String[] arrStringDate = stringFecha.split("-");
+
+        LocalDate fechaPersonalizada = LocalDate.of(
+                Integer.parseInt(arrStringDate[0]),
+                Integer.parseInt(arrStringDate[1]),
+                Integer.parseInt(arrStringDate[2])
+        );
+
+        Instant instant = fechaPersonalizada.atStartOfDay(ZoneId.systemDefault()).toInstant();
+
+        return Date.from(instant);
+    }
+    
+    /* Convierte la fecha larga de tipo Date a un String de formato corto */
+    public String getShortDateString(Date longDate) {
+        SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("MMM dd, yyyy");
+        return formatoFechaSimple.format(longDate);
     }
 
     /**
