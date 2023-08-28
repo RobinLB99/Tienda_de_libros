@@ -2,7 +2,7 @@ package Servellets.ServelletsEmpleados;
 
 import Logica.Empleado;
 import Logica.LogicController;
-import Logica.Usuario;
+import Logica.Acceso;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,7 +20,7 @@ public class SvCrearEmpleado extends HttpServlet {
 
     LogicController control = null;
     Empleado empleado = null;
-    Usuario user = null;
+    Acceso user = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -55,8 +55,8 @@ public class SvCrearEmpleado extends HttpServlet {
                 empleado = new Empleado();
 
                 /* Crea credenciales nulas sin acceso al sistema. */
-                user = control.setCredentialsValues("-", "-", false);
-                control.crearUsuario(user);
+                user = control.setCredentialsValues("-", "-", false, false);
+                control.crearAcceso(user);
 
                 empleado = control.setEmployData(cedula, nombres, apellidos, nacimiento, telefono, cargo, user);
                 control.crearEmpleado(empleado);
