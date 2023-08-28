@@ -196,7 +196,8 @@ div.contenedor-contenido {
     width: fit-content;
 }
 
-.form-persons {
+.form-persons,
+.form-credentials {
     label {
         input,
         select {
@@ -232,4 +233,10 @@ div.contenedor-contenido {
             padding-left: 2rem !important;
         }
     }
+}
+
+#card-user {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
