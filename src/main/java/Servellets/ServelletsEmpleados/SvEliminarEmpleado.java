@@ -42,7 +42,7 @@ public class SvEliminarEmpleado extends HttpServlet {
             long idUsuario = Long.parseLong((String) request.getParameter("id_credentials"));
 
             control.eliminarEmpleado(idEmpleado);
-            control.eliminarUsuario(idUsuario);
+            control.eliminarAcceso(idUsuario);
 
             response.sendRedirect("index.jsp?accion=empleado_eliminado");
 
