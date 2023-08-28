@@ -131,11 +131,12 @@ public class LogicController {
      * ----- Seteo de valores ----- *
      */
     // Usuario
-    public Usuario setCredentialsValues(String userName, String password, boolean isAdmin) {
+    public Usuario setCredentialsValues(String userName, String password, boolean isAdmin, boolean newOrChangePassword) {
         Usuario usuario = new Usuario();
         usuario.setUserName(userName);
         usuario.setPassword(password);
         usuario.setAdmin(isAdmin);
+        usuario.setNewOrChangePassword(newOrChangePassword);
         return usuario;
     }
 
