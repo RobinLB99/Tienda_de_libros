@@ -15,15 +15,17 @@ public class Usuario implements Serializable {
     private String userName;
     private String password;
     private boolean admin;
+    private boolean newOrChangePassword;
 
     public Usuario() {
     }
 
-    public Usuario(long id, String userName, String password, boolean admin) {
+    public Usuario(long id, String userName, String password, boolean admin, boolean newOrChangePassword) {
         this.id = id;
         this.userName = userName;
         this.password = password;
         this.admin = admin;
+        this.newOrChangePassword = newOrChangePassword;
     }
 
     public long getId() {
@@ -56,6 +58,14 @@ public class Usuario implements Serializable {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public boolean isNewOrChangePassword() {
+        return newOrChangePassword;
+    }
+
+    public void setNewOrChangePassword(boolean newOrChangePassword) {
+        this.newOrChangePassword = newOrChangePassword;
     }
 
 }
