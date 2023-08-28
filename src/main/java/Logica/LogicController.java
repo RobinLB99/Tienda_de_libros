@@ -35,24 +35,24 @@ public class LogicController {
     }
 
     //Usuario
-    public void crearUsuario(Usuario user) {
-        perControl.crearUsuario(user);
+    public void crearUsuario(Acceso credencial) {
+        perControl.crearAcceso(credencial);
     }
 
-    public void editarUsuario(Usuario user) {
-        perControl.editarUsuario(user);
+    public void editarUsuario(Acceso credencial) {
+        perControl.editarAcceso(credencial);
     }
 
     public void eliminarUsuario(long id) {
-        perControl.eliminarUsuario(id);
+        perControl.eliminarAcceso(id);
     }
 
-    public Usuario buscarUsuario(long id) {
-        return perControl.buscarUsuario(id);
+    public Acceso buscarUsuario(long id) {
+        return perControl.buscarAcceso(id);
     }
 
     public List listaUsuarios() {
-        return perControl.listaUsuarios();
+        return perControl.listaAccesos();
     }
 
     // Libro
@@ -78,18 +78,18 @@ public class LogicController {
 
     // Sesion
     public boolean valSession(String user, String password) {
-        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
-        listaUsuarios = perControl.listaUsuarios();
+        List<Acceso> listaAccesos = new ArrayList<Acceso>();
+        listaAccesos = perControl.listaAccesos();
 
         boolean ingresar = false;
 
-        for (Usuario usuario : listaUsuarios) {
+        for (Acceso credencial : listaAccesos) {
             if (user.equals("-")) {
                 ingresar = false;
                 break;
             } else {
-                if (usuario.getUserName().equals(user)) {
-                    if (usuario.getPassword().equals(password)) {
+                if (credencial.getUserName().equals(user)) {
+                    if (credencial.getPassword().equals(password)) {
                         ingresar = true;
                         break;
                     } else {
@@ -130,18 +130,27 @@ public class LogicController {
     /**
      * ----- Seteo de valores ----- *
      */
-    // Usuario
-    public Usuario setCredentialsValues(String userName, String password, boolean isAdmin, boolean newOrChangePassword) {
-        Usuario usuario = new Usuario();
-        usuario.setUserName(userName);
-        usuario.setPassword(password);
-        usuario.setAdmin(isAdmin);
-        usuario.setNewOrChangePassword(newOrChangePassword);
-        return usuario;
+    // Establece Acceso y sus valores
+    public Acceso setCredentialsValues(String userName, String password, boolean isAdmin, boolean newOrChangePassword) {
+        Acceso credencial = new Acceso();
+        credencial.setUserName(userName);
+        credencial.setPassword(password);
+        credencial.setAdmin(isAdmin);
+        credencial.setNewOrChangePassword(newOrChangePassword);
+        return credencial;
+    }
+    
+    // Modifica todos los valores de la credencial activa
+    public Acceso modCredentialsValues(Acceso credencial, String userName, String password, boolean isAdmin, boolean newOrChangePassword) {
+        credencial.setUserName(userName);
+        credencial.setPassword(password);
+        credencial.setAdmin(isAdmin);
+        credencial.setNewOrChangePassword(newOrChangePassword);
+        return credencial;
     }
 
     // Empleado
-    public Empleado setEmployData(String cedula, String nombres, String apellidos, Date nacimiento, String telefono, String cargo, Usuario credenciales) {
+    public Empleado setEmployData(String cedula, String nombres, String apellidos, Date nacimiento, String telefono, String cargo, Acceso credenciales) {
         Empleado empleado = new Empleado();
         empleado.setCedula(cedula);
         empleado.setNombre(nombres);
