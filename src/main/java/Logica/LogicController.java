@@ -34,24 +34,24 @@ public class LogicController {
         return perControl.listaEmpleados();
     }
 
-    //Usuario
-    public void crearUsuario(Acceso credencial) {
+    //Acceso
+    public void crearAcceso(Acceso credencial) {
         perControl.crearAcceso(credencial);
     }
 
-    public void editarUsuario(Acceso credencial) {
+    public void editarAcceso(Acceso credencial) {
         perControl.editarAcceso(credencial);
     }
 
-    public void eliminarUsuario(long id) {
+    public void eliminarAcceso(long id) {
         perControl.eliminarAcceso(id);
     }
 
-    public Acceso buscarUsuario(long id) {
+    public Acceso buscarAcceso(long id) {
         return perControl.buscarAcceso(id);
     }
 
-    public List listaUsuarios() {
+    public List listaAccesos() {
         return perControl.listaAccesos();
     }
 
