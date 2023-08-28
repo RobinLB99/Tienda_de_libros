@@ -4,9 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Logica.Libro</class>
     <class>Logica.Empleado</class>
-    <class>Logica.Usuario</class>
     <class>Logica.Cliente</class>
     <class>Logica.Venta</class>
+    <class>Logica.Acceso</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_library?serverTimezone=UTC"/>
