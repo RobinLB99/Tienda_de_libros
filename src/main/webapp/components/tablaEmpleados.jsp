@@ -40,10 +40,10 @@
                     String fechaCorta = control.getShortDateString(fecha);
                     
                     
-                    if (empleado.getUsuario().getUserName().equals("-")) {
+                    if (empleado.getCredencial().getUserName().equals("-")) {
                         userName = "<p class='text-secondary m-0'>No asignado</p>";
                     } else {
-                        userName = empleado.getUsuario().getUserName();
+                        userName = empleado.getCredencial().getUserName();
                     }
                                         
                     if (empleado.getFuncion().equals("admin")) {
@@ -69,7 +69,7 @@
                     <td><%= userName %></td>
                     <td>
                         <div class="d-flex flex-row gap-3">
-                            <form action="#" method="POST">
+                            <form action="SvRedirigirGestionCredenciales" method="POST">
                                 <input
                                     type="text"
                                     name="id_usuario_empleado"
