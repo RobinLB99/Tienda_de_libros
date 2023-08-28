@@ -9,10 +9,10 @@
     String cargo = null;
     String userName = null;
     
-    if (empleado.getUsuario().getUserName().equals("-")) {
+    if (empleado.getCredencial().getUserName().equals("-")) {
         userName = "<span class='text-secondary m-0' style='width: fit-content;'>No asignado</span>";
     } else {
-        userName = empleado.getUsuario().getUserName();
+        userName = empleado.getCredencial().getUserName();
     }
 
     if (empleado.getFuncion().equals("admin")) {
@@ -152,7 +152,7 @@
                     <input
                         type="text"
                         name="id_credentials"
-                        value="<%= empleado.getUsuario().getId() %>"
+                        value="<%= empleado.getCredencial().getId() %>"
                         hidden
                     />
                     <button
