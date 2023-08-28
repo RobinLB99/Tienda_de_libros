@@ -158,7 +158,7 @@ public class LogicController {
         empleado.setFechaNacimiento(nacimiento);
         empleado.setTelefono(telefono);
         empleado.setFuncion(cargo);
-        empleado.setUsuario(credenciales);
+        empleado.setCredencial(credenciales);
         return empleado;
     }
 }
