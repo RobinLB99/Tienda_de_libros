@@ -49,8 +49,7 @@ public class SvChangePasswordRequired extends HttpServlet {
             
             /**
              * Una vez cambiada la contraseña, se establece el atributo de sesion "idCredencial" en null
-             * para producir error en NuevaClaveUsuario.jsp, si se accede por URL y que verifique
-             * si existe una sesion activa. 
+             * para producir error en NuevaClaveUsuario.jsp, si se accede por URL. 
              */
             String id = null;
             HttpSession idAccessSession = request.getSession();
