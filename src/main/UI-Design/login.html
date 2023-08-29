@@ -51,15 +51,93 @@
                                             </div>
                                             <button
                                                 type="submit"
-                                                class="btn login btn-primary btn-user btn-block "
+                                                class="btn login btn-primary btn-user btn-block"
                                             >
-                                                Inicar sesión
-                                            </a>
+                                                Iniciar sesión
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal usuarios y contraseña incorrectos -->
+        <div
+            class="modal fade"
+            id="AccessValuesIncorrect"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">
+                            ¡Error de acceso!
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>EL nombre de usuario y/o contraseña es incorrecto.<br>Por favor, ingresa el usuario y contraseña correctamente.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal cambio de clave requerido exitoso -->
+        <div
+            class="modal fade"
+            id="PasswordRequiredChange"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-success" id="staticBackdropLabel">
+                            ¡Cambio de clave requerido exitoso!
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>La contraseña se cambio correctamente.<br>Por favor, ingrese su usuario y nueva contraseña.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            Continuar
+                        </button>
                     </div>
                 </div>
             </div>

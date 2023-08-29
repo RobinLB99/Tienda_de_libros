@@ -16,3 +16,4 @@ import "./validarSesion";
 import "./modalEliminarEmpleado";
 import "./modalesGestionUsuario";
 import "./modalRecuperarPassword";
+import "./modalesLogin";
