@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
-<% long id = (long) request.getSession().getAttribute("idCredencial"); %>
 <html lang="es">
     <head>
         <%@include file="./components/head.jsp" %>
     </head>
 
     <body class="bg-gradient-primary">
+        <%
+            /**
+            * Verifica antes si exite atributo idCredencial en la sesion activa creado por SvLogin con el valor del
+                id de la credencial que requiere cambio de clave.
+            */
+            String id;
+            try { id = String.valueOf((long) request.getSession().getAttribute("idCredencial"));
+            } catch (Exception ex) { id = null;}
+            
+            /**
+             * En caso de que que se detecte un error (por tipo de dato), el valor id se vuelve null.
+             */ 
+            
+            if (id == null) {
+                response.sendRedirect("index.jsp");
+            }
+        %>
+        
         <div class="container">
             <!-- Outer Row -->
             <div class="row justify-content-center">
