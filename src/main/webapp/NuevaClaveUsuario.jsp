@@ -8,7 +8,7 @@
     <body class="bg-gradient-primary">
         <%
             /**
-            * Verifica antes si exite atributo idCredencial en la sesion activa creado por SvLogin con el valor del
+            * Verifica antes si exite el atributo idCredencial en la sesion activa creado por SvLogin con el valor del
                 id de la credencial que requiere cambio de clave.
             */
             String id;
