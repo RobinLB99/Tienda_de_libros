@@ -75,7 +75,7 @@ public class SvLogin extends HttpServlet {
                 }
 
             } else {
-                response.sendRedirect("login.jsp?user_password=incorrect");
+                response.sendRedirect("login.jsp?access=incorrect");
             }
 
         } catch (Exception e) {
