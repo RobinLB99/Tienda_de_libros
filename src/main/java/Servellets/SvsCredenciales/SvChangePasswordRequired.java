@@ -55,7 +55,7 @@ public class SvChangePasswordRequired extends HttpServlet {
             HttpSession idAccessSession = request.getSession();
             idAccessSession.setAttribute("idCredencial", id);
             
-            response.sendRedirect("login.jsp?passwordChange=true");
+            response.sendRedirect("login.jsp?access=password_change");
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
