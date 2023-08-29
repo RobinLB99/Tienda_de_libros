@@ -102,7 +102,7 @@ public class LogicController {
 
         return ingresar;
     }
-    
+
     /**
      * ----- Metodos para fechas -----
      */
@@ -120,7 +120,7 @@ public class LogicController {
 
         return Date.from(instant);
     }
-    
+
     /* Convierte la fecha larga de tipo Date a un String de formato corto */
     public String getShortDateString(Date longDate) {
         SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("MMM dd, yyyy");
@@ -139,7 +139,7 @@ public class LogicController {
         credencial.setNewOrChangePassword(newOrChangePassword);
         return credencial;
     }
-    
+
     // Modifica todos los valores de la credencial activa
     public Acceso modCredentialsValues(Acceso credencial, String userName, String password, boolean isAdmin, boolean newOrChangePassword) {
         credencial.setUserName(userName);
