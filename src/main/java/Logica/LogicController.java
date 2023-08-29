@@ -78,6 +78,12 @@ public class LogicController {
 
     // Sesion
     public boolean valSession(String user, String password) {
+        /**
+         * Valida si existe un usuario.
+         * Devuele false si una credencial tiene como username "-"
+         * Devuelve false si la contraseña ingresada no coincide con la del registro encontrado.
+         * Devuelve true si el username y password ingresado coinciden con un registro.
+         */
         List<Acceso> listaAccesos = new ArrayList<Acceso>();
         listaAccesos = perControl.listaAccesos();
 
@@ -106,8 +112,10 @@ public class LogicController {
     /**
      * ----- Metodos para fechas -----
      */
-    /* Obtine la la fecha de tipo string "1985-05-06" convertida a tipo Date */
     public Date getTypeDate(String stringFecha) {
+        /**
+         * Obtine la la fecha de tipo string "1985-05-06" convertida a tipo Date
+         */
         String[] arrStringDate = stringFecha.split("-");
 
         LocalDate fechaPersonalizada = LocalDate.of(
@@ -120,9 +128,11 @@ public class LogicController {
 
         return Date.from(instant);
     }
-
-    /* Convierte la fecha larga de tipo Date a un String de formato corto */
+    
     public String getShortDateString(Date longDate) {
+        /**
+         * Convierte la fecha larga de tipo Date a un String de formato corto
+         */
         SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("MMM dd, yyyy");
         return formatoFechaSimple.format(longDate);
     }
