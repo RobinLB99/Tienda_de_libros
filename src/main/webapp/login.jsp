@@ -6,6 +6,7 @@
     </head>
 
     <body class="bg-gradient-primary">
+        <%@include file="./components/isOpenedSession.jsp" %>
         <div class="container">
             <!-- Outer Row -->
             <div class="row justify-content-center">
