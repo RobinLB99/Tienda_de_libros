@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -39,12 +40,21 @@ public class SvChangePasswordRequired extends HttpServlet {
         
         long idAccess = Long.parseLong((String) request.getParameter("idAccess_"));
         String password = (String) request.getParameter("password_");
-        
+                
         try {
             credencial = control.buscarAcceso(idAccess);
             credencial.setPassword(password);
             credencial.setNewOrChangePassword(false);
             control.editarAcceso(credencial);
+            
+            /**
+             * Una vez cambiada la contraseña, se establece el atributo de sesion "idCredencial" en null
+             * para producir error en NuevaClaveUsuario.jsp, si se accede por URL y que verifique
+             * si existe una sesion activa. 
+             */
+            String id = null;
+            HttpSession idAccessSession = request.getSession();
+            idAccessSession.setAttribute("idCredencial", id);
             
             response.sendRedirect("login.jsp?passwordChange=true");
             
