@@ -12,7 +12,6 @@ import "./accionesRealizadas";
 import "./enviarDatosAModalAgregarUnidades";
 import "./validarDatosFormularios";
 import "./validarDatosEmpleado";
-import "./validarSesion";
 import "./modalEliminarEmpleado";
 import "./modalesGestionUsuario";
 import "./modalRecuperarPassword";
