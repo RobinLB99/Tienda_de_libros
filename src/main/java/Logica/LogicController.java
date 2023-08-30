@@ -136,6 +136,14 @@ public class LogicController {
         SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("MMM dd, yyyy");
         return formatoFechaSimple.format(longDate);
     }
+    
+    public String getShortDateStringForInput(Date longDate) {
+        /**
+         * Convierte la fecha larga de tipo Date a un String de formato corto para un input de tipo fecha
+         */
+        SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("yyyy-MM-dd");
+        return formatoFechaSimple.format(longDate);
+    }
 
     /**
      * ----- Seteo de valores ----- *
