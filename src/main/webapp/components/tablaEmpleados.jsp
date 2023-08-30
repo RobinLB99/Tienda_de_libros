@@ -85,7 +85,7 @@
                                     ></i>
                                 </button>
                             </form>
-                            <form action="#" method="POST">
+                            <form action="SvRedirigirModificarEmpleado" method="POST">
                                 <input
                                     type="text"
                                     name="id_usuario_empleado"
