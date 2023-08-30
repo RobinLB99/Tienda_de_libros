@@ -1,4 +1,4 @@
-import * as bootstrap from "bootstrap";
+import { Modal } from "bootstrap";
 
 document.addEventListener("DOMContentLoaded", () => {
     ("use strict");
@@ -11,37 +11,43 @@ document.addEventListener("DOMContentLoaded", () => {
     if (accionRealizada) {
         switch (accionRealizada) {
             case "unidades_agregadas":
-                new bootstrap.Modal(
+                new Modal(
                     document.getElementById("unidadesAgregadasCorrecto")
                 ).show();
                 break;
 
             case "libro_modificado":
-                new bootstrap.Modal(
+                new Modal(
                     document.getElementById("libroModificadoExito")
                 ).show();
                 break;
 
             case "libro_eliminado":
-                new bootstrap.Modal(
+                new Modal(
                     document.getElementById("libroEliminadoExito")
                 ).show();
                 break;
 
             case "nuevo_libro_ingresado":
-                new bootstrap.Modal(
+                new Modal(
                     document.getElementById("nuevoLibroCorrecto")
                 ).show();
                 break;
 
             case "empleado_ingresado":
-                new bootstrap.Modal(
+                new Modal(
                     document.getElementById("empleadoIngresado")
+                ).show();
+                break;
+            
+            case "empleado_modificado":
+                new Modal(
+                    document.getElementById("ModalEmpleadoModificado")
                 ).show();
                 break;
 
             case "error":
-                new bootstrap.Modal(
+                new Modal(
                     document.getElementById("errorPeticion")
                 ).show();
                 break;
