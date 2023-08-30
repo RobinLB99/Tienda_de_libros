@@ -139,7 +139,7 @@
         </form>
         <form
             class="row gap-3 m-0"
-            action="SvRedirigirGestionEmpleado"
+            action="SvRedirigirGestionEmpleados"
             method="POST"
         >
             <button
