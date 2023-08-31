@@ -113,7 +113,7 @@
                         ----- Seleccione un cargo -----
                     </option>
                     <option value="cajero" >Cajero</option>
-                    <option value="Perchero">
+                    <option value="perchero">
                         Perchero
                     </option>
                     <option value="admin">
