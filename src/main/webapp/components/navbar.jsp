@@ -1,3 +1,4 @@
+<%@page import="Logica.Acceso"%>
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
 <nav class="text-light d-flex flex-column pb-2 z-1 gap-3">
     <div class="d-flex flex-column gap-0 nav-menu">
@@ -168,9 +169,7 @@
             </div>
         </div>
     </div>
-    <%
-    String nameUser = (String) request.getSession().getAttribute("usuario");
-    %>
+    
     <div class="dropdown container-fluid m-0 p-0">
         <div class="border opacity-25"></div>
         <a
@@ -185,7 +184,14 @@
                     class="fa-solid fa-circle-user"
                     style="font-size: 25px"
                 ></i>
-                <span><%= nameUser %></span>
+                <%
+                try {
+                Acceso credencial = (Acceso) request.getSession().getAttribute("credencial");
+                %>
+                <span><%= credencial.getUserName() %></span>
+                <%
+                    } catch (Exception e) {}
+                %>
             </div>
         </a>
 

@@ -1,7 +1,6 @@
 package Servellets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -33,7 +32,7 @@ public class SvCerrarSesion extends HttpServlet {
         processRequest(request, response);
         
         HttpSession mySession = request.getSession();
-        mySession.setAttribute("usuario", null);
+        mySession.setAttribute("credencial", null);
         response.sendRedirect("login.jsp");
         
     }

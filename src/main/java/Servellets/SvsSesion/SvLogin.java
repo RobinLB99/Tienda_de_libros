@@ -45,6 +45,7 @@ public class SvLogin extends HttpServlet {
             if (sessionValida) {
                 
                 try {
+                    Acceso cAcceso = null;
                     boolean isChangePasswordRequired = false;
                     long id = 0;
                     
@@ -52,6 +53,7 @@ public class SvLogin extends HttpServlet {
                     List<Acceso> listaCredenciales = control.listaAccesos();
                     for (Acceso credencial : listaCredenciales) {
                         if (credencial.getUserName().equals(username)) {
+                            cAcceso = credencial;
                             isChangePasswordRequired = credencial.isNewOrChangePassword();
                             id = credencial.getId();
                             break;
@@ -66,7 +68,7 @@ public class SvLogin extends HttpServlet {
                         
                     } else {
                         HttpSession mySession = request.getSession();
-                        mySession.setAttribute("usuario", username);
+                        mySession.setAttribute("credencial", cAcceso);
                         response.sendRedirect("index.jsp");
                     }
                     

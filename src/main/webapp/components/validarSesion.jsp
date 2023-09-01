@@ -1,10 +1,11 @@
+<%@page import="Logica.Acceso"%>
 <%
     /**
      * Verfica si existe una sesion activa.
      * En caso de que no exista sesion activa, redirige a login.jsp.
      */
-    String user = (String) request.getSession().getAttribute("usuario");
-    if (user == null) {
+    Acceso cAccess = (Acceso) request.getSession().getAttribute("credencial");
+    if (cAccess == null) {
         response.sendRedirect("login.jsp");
     }
 %>
