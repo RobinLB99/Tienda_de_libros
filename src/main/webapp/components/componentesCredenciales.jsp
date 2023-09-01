@@ -144,7 +144,7 @@
                         tabindex="0"
                     >
                         <div class="row mb-3 mt-3">
-                            <form action="#" method="post">
+                            <form action="SvChangePrivileges" method="post">
                                 <input
                                     type="text"
                                     name="id_"
