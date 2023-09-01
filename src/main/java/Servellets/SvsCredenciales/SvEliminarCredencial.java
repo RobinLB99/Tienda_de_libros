@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpSession;
  */
 @WebServlet(name = "SvEliminarCredencial", urlPatterns = {"/SvEliminarCredencial"})
 public class SvEliminarCredencial extends HttpServlet {
-    
+
     LogicController control = null;
     Acceso credencial = null;
 
@@ -37,28 +37,26 @@ public class SvEliminarCredencial extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
+
         long id = Long.parseLong((String) request.getParameter("id_"));
-        
+
         try {
             control = new LogicController();
-            
+
             credencial = control.buscarAcceso(id);
             credencial.setUserName("-");
             credencial.setPassword("-");
             credencial.setAdmin(false);
             control.editarAcceso(credencial);
-            
-            String actionString = "eliminar";
-            HttpSession accion = request.getSession();
-            accion.setAttribute("accion", actionString);
-            
+
+            control.setActionSessionAttribute(request, "eliminar");
+
             // Redirige a otro Servellet mediante la encapsulacion de la solicitud y seteo de atributo.
             RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/SvRedirigirGestionEmpleados");
             HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request);
             wrapper.setAttribute("method", "doPost");
             dispatcher.forward(wrapper, response);
-            
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             response.sendRedirect("error500.jsp");
