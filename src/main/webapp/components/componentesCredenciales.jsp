@@ -204,7 +204,7 @@
                         <div class="row mb-3 mt-3">
                             <form
                                 class="d-flex flex-column"
-                                action="#"
+                                action="SvChangePassword"
                                 method="post"
                             >
                                 <span>Nueva contraseña:</span>
