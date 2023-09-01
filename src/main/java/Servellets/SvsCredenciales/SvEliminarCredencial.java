@@ -51,11 +51,14 @@ public class SvEliminarCredencial extends HttpServlet {
 
             control.setActionSessionAttribute(request, "eliminar");
 
-            // Redirige a otro Servellet mediante la encapsulacion de la solicitud y seteo de atributo.
-            RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/SvRedirigirGestionEmpleados");
-            HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request);
-            wrapper.setAttribute("method", "doPost");
-            dispatcher.forward(wrapper, response);
+            try {
+                // Redirige a otro Servellet mediante la encapsulacion de la solicitud y seteo de atributo.
+                control.redirectToServellet(request, response, "/SvRedirigirGestionEmpleados");
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+                response.sendError(404);
+            }
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
