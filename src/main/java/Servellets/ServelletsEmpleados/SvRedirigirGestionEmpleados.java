@@ -48,6 +48,7 @@ public class SvRedirigirGestionEmpleados extends HttpServlet {
             empleados.setAttribute("listaEmpleados", listaEmpleados);
 
             if (actionString != null) {
+                //Retorna a null el valor del atributo de sesión "accion"
                 HttpSession accion = request.getSession();
                 accion.setAttribute("accion", null);
 
