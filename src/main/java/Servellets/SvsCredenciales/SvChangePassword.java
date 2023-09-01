@@ -47,9 +47,7 @@ public class SvChangePassword extends HttpServlet {
 
             control.editarAcceso(credencial);
 
-            String actionString = "password";
-            HttpSession accion = request.getSession();
-            accion.setAttribute("accion", actionString);
+            control.setActionSessionAttribute(request, "password");
 
             control.redirectToServellet(request, response, "/SvRedirigirGestionEmpleados");
 
