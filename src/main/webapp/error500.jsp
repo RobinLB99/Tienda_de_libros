@@ -6,9 +6,9 @@
     </head>
     <body>
         <div class="container-fluid">
-            <!-- 404 Error Text -->
+            <!-- 500 Error Text -->
             <form class="text-center" action="SvMenuPrincipal" method="get">
-                <div class="error mx-auto" style="font-size: 70px" data-text="404">500</div>
+                <div class="error mx-auto" style="font-size: 70px">500</div>
                 <p class="lead text-gray-800 mb-5">
                     Base de datos fuera de linea
                 </p>
