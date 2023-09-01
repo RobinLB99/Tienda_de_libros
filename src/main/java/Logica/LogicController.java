@@ -1,6 +1,12 @@
 package Logica;
 
 import Persistencia.PersistenceController;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequestWrapper;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -107,6 +113,19 @@ public class LogicController {
         }
 
         return ingresar;
+    }
+    
+    
+    /**
+     * Metodos para Servellets
+     */
+    public void redirectToServellet(HttpServletRequest request, HttpServletResponse response, String URL)
+            throws ServletException, IOException {
+        // Redirige a otro Servellet mediante la encapsulacion de la solicitud y seteo de atributo.
+        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(URL);
+        HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request);
+        wrapper.setAttribute("method", "doPost");
+        dispatcher.forward(wrapper, response);
     }
 
     /**
