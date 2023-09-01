@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -85,10 +86,10 @@ public class LogicController {
     // Sesion
     public boolean valSession(String user, String password) {
         /**
-         * Valida si existe un usuario.
-         * Devuele false si una credencial tiene como username "-"
-         * Devuelve false si la contraseña ingresada no coincide con la del registro encontrado.
-         * Devuelve true si el username y password ingresado coinciden con un registro.
+         * Valida si existe un usuario. Devuele false si una credencial tiene
+         * como username "-" Devuelve false si la contraseña ingresada no
+         * coincide con la del registro encontrado. Devuelve true si el username
+         * y password ingresado coinciden con un registro.
          */
         List<Acceso> listaAccesos = new ArrayList<Acceso>();
         listaAccesos = perControl.listaAccesos();
@@ -114,8 +115,15 @@ public class LogicController {
 
         return ingresar;
     }
-    
-    
+
+    /**
+     * Metodos para el valor del atributo de sesión "accion"
+     */
+    public void setActionSessionAttribute(HttpServletRequest request, String attribute) {
+        HttpSession accion = request.getSession();
+        accion.setAttribute("accion", attribute);
+    }
+
     /**
      * Metodos para Servellets
      */
@@ -132,9 +140,7 @@ public class LogicController {
      * ----- Metodos para fechas -----
      */
     public Date getTypeDate(String stringFecha) {
-        /**
-         * Obtine la la fecha de tipo string "1985-05-06" convertida a tipo Date
-         */
+        // Obtine la la fecha de tipo string "1985-05-06" convertida a tipo Date
         String[] arrStringDate = stringFecha.split("-");
 
         LocalDate fechaPersonalizada = LocalDate.of(
@@ -147,19 +153,16 @@ public class LogicController {
 
         return Date.from(instant);
     }
-    
+
     public String getShortDateString(Date longDate) {
-        /**
-         * Convierte la fecha larga de tipo Date a un String de formato corto
-         */
+        // Convierte la fecha larga de tipo Date a un String de formato corto
         SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("MMM dd, yyyy");
         return formatoFechaSimple.format(longDate);
     }
-    
+
     public String getShortDateStringForInput(Date longDate) {
-        /**
-         * Convierte la fecha larga de tipo Date a un String de formato corto para un input de tipo fecha
-         */
+        /* Convierte la fecha larga de tipo Date a un String de formato corto
+        para un input de tipo fecha */
         SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("yyyy-MM-dd");
         return formatoFechaSimple.format(longDate);
     }
