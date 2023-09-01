@@ -53,9 +53,7 @@ public class SvChangePrivileges extends HttpServlet {
             
             control.editarAcceso(credencial);
             
-            String actionString = "privilegios";
-            HttpSession accion = request.getSession();
-            accion.setAttribute("accion", actionString);
+            control.setActionSessionAttribute(request, "privilegios");
             
             try {
                 control.redirectToServellet(request, response, "/SvRedirigirGestionEmpleados");
