@@ -20,9 +20,7 @@
                     %>
                     <%@include file="./components/componentesCredenciales.jsp" %>
                     <%
-                        } catch (Exception e) {
-                        
-                        }
+                        } catch (Exception e) {}
                     %>
                 </div>
             </main>
