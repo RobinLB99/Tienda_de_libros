@@ -484,7 +484,7 @@
                 <p>Está por eliminar esta credencial.<br />¿Esta seguro de continuar?</p>
             </div>
             <div class="modal-footer">
-                <form action="#" method="post">
+                <form action="SvEliminarCredencial" method="post">
                     <input
                         type="text"
                         name="id_"
