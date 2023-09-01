@@ -37,6 +37,8 @@ public class SvRedirigirGestionEmpleados extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
 
+        String actionString = (String) request.getSession().getAttribute("accion");
+
         try {
             control = new LogicController();
             listaEmpleados = control.listaEmpleados();
@@ -45,10 +47,28 @@ public class SvRedirigirGestionEmpleados extends HttpServlet {
             empleados = request.getSession();
             empleados.setAttribute("listaEmpleados", listaEmpleados);
 
-            response.sendRedirect("GestionarEmpleados.jsp");
+            if (actionString != null) {
+                HttpSession accion = request.getSession();
+                accion.setAttribute("accion", null);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+                if (actionString.equals("eliminar")) {
+                    response.sendRedirect("GestionarEmpleados.jsp?accion=credencial_eliminada");
+                }
+
+                if (actionString.equals("password")) {
+                    response.sendRedirect("GestionarEmpleados.jsp?accion=password_cambiado");
+                }
+
+                if (actionString.equals("privilegios")) {
+                    response.sendRedirect("GestionarEmpleados.jsp?accion=privilegios_cambiados");
+                }
+
+            } else {
+                response.sendRedirect("GestionarEmpleados.jsp");
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
             response.sendRedirect("error500.jsp");
         }
 
