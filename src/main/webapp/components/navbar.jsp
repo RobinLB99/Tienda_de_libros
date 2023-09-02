@@ -1,3 +1,4 @@
+<%@page import="Logica.Empleado"%>
 <%@page import="Logica.Acceso"%>
 <%@page contentType="text/html" language="java" pageEncoding="UTF-8"%>
 <nav class="text-light d-flex flex-column pb-2 z-1 gap-3">
@@ -24,149 +25,37 @@
         </form>
         <div class="border opacity-25"></div>
         <div class="accordion mt-3" id="acordionActions">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button
-                        class="accordion-button collapsed d-flex flex-row align-items-center justify-content-center gap-2"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
-                        aria-expanded="false"
-                        aria-controls="collapseOne"
-                    >
-                        <i
-                            class="fontawesome fa-solid fa-book d-flex flex-row align-items-center justify-content-center"
-                        ></i>
-                        <span>Libros</span>
-                    </button>
-                </h2>
-                <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#acordionActions"
-                >
-                    <div
-                        class="accordion-body d-flex flex-column gap-2"
-                    >
-                        <form action="SvLibrosDisponibles" method="post">
-                            <button
-                                type="submit"
-                                class="d-flex flex-row gap-2 align-items-center"
-                            >
-                                <i
-                                    class="fontawesome fa-solid fa-list-check"
-                                ></i>
-                                <span>Libros disponibles</span>
-                            </button>
-                        </form>
-                        <form action="SvRedirigirAgregarLibro" method="GET">
-                            <button
-                                type="submit"
-                                class="d-flex flex-row gap-2 align-items-center"
-                            >
-                                <i
-                                    class="fontawesome fa-solid fa-circle-plus"
-                                ></i>
-                                <span>Agregar libro</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button
-                        class="accordion-button collapsed d-flex flex-row align-items-center justify-content-center gap-2"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo"
-                    >
-                        <i
-                            class="fontawesome fa-solid fa-cash-register d-flex flex-row align-items-center justify-content-center"
-                        ></i>
-                        <span>Ventas</span>
-                    </button>
-                </h2>
-                <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#acordionActions"
-                >
-                    <div
-                        class="accordion-body d-flex flex-column gap-2"
-                    >
-                        <form action="#">
-                            <button
-                                type="submit"
-                                class="d-flex flex-row gap-2 align-items-center"
-                            >
-                                <i
-                                    class="fontawesome fa-solid fa-list-check"
-                                ></i>
-                                <span>Historial de ventas</span>
-                            </button>
-                        </form>
-                        <form action="#">
-                            <button
-                                type="submit"
-                                class="d-flex flex-row gap-2 align-items-center"
-                            >
-                                <i
-                                    class="fontawesome fa-solid fa-cart-shopping"
-                                ></i>
-                                <span>Realizar venta</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button
-                        class="accordion-button collapsed d-flex flex-row align-items-center justify-content-center gap-2"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                    >
-                        <i class="fontawesome fa-solid fa-users"></i>
-                        <span>Personal</span>
-                    </button>
-                </h2>
-                <div
-                    id="collapseThree"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#acordionActions"
-                >
-                    <div
-                        class="accordion-body d-flex flex-column gap-2"
-                    >
-                        <form action="SvRedirigirGestionEmpleados" method="POST">
-                            <button
-                                type="submit"
-                                class="d-flex flex-row gap-2 align-items-center"
-                            >
-                                <i
-                                    class="fontawesome fa-solid fa-user-gear"
-                                ></i>
-                                <span>Gestionar personal</span>
-                            </button>
-                        </form>
-                        <form action="SvRedirigirIngresarEmpleado" method="POST">
-                            <button
-                                type="submit"
-                                class="d-flex flex-row gap-2 align-items-center"
-                            >
-                                <i class="fa-solid fa-user-plus"></i>
-                                <span>Nuevo empleado</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            
+            <%
+                Acceso credencial = (Acceso) request.getSession().getAttribute("credencial");
+                String funcion = (String) request.getSession().getAttribute("funcion");
+                
+                try {
+                
+                    if (credencial.isAdmin()) {
+            %>
+            <%@include file="./navbarAccordion/accordionItemBook.jsp" %>
+            <%@include file="./navbarAccordion/accordionItemSales.jsp" %>
+            <%@include file="./navbarAccordion/accordionItemEmploy.jsp" %>
+            <%
+                    } else {
+                        
+                        if (funcion.equals("perchero")) {
+            %>
+            <%@include file="./navbarAccordion/accordionItemBook.jsp" %>
+            <%
+                        }
+
+                        if (funcion.equals("cajero")) {
+            %>
+            <%@include file="./navbarAccordion/accordionItemSales.jsp" %>
+            <%
+                        }
+                    }
+
+                } catch (Exception e) {}
+            %>
+            
         </div>
     </div>
     
@@ -186,7 +75,6 @@
                 ></i>
                 <%
                 try {
-                Acceso credencial = (Acceso) request.getSession().getAttribute("credencial");
                 %>
                 <span><%= credencial.getUserName() %></span>
                 <%
