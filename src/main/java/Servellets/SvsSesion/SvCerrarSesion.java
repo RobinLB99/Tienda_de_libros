@@ -33,6 +33,10 @@ public class SvCerrarSesion extends HttpServlet {
         
         HttpSession mySession = request.getSession();
         mySession.setAttribute("credencial", null);
+        
+        HttpSession mySessionE = request.getSession();
+        mySessionE.setAttribute("funcion", null);
+        
         response.sendRedirect("login.jsp");
         
     }
