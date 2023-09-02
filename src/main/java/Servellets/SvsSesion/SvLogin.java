@@ -1,6 +1,7 @@
 package Servellets;
 
 import Logica.Acceso;
+import Logica.Empleado;
 import Logica.LogicController;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -46,19 +47,31 @@ public class SvLogin extends HttpServlet {
                 
                 try {
                     Acceso cAcceso = null;
+                    String funcion = "";
                     boolean isChangePasswordRequired = false;
                     long id = 0;
                     
-                    // Verfica si la credencial de acceso necesita cambio de clave.
-                    List<Acceso> listaCredenciales = control.listaAccesos();
-                    for (Acceso credencial : listaCredenciales) {
-                        if (credencial.getUserName().equals(username)) {
-                            cAcceso = credencial;
-                            isChangePasswordRequired = credencial.isNewOrChangePassword();
-                            id = credencial.getId();
+                    List<Empleado> listaEmpleados = control.listaEmpleados();
+                    for (Empleado employ : listaEmpleados) {
+                        if (employ.getCredencial().getUserName().equals(username)) {
+                            cAcceso = employ.getCredencial();
+                            isChangePasswordRequired = employ.getCredencial().isNewOrChangePassword();
+                            id = employ.getCredencial().getId();
+                            funcion = employ.getFuncion();
                             break;
                         }
                     }
+                    
+                    // Verfica si la credencial de acceso necesita cambio de clave.
+//                    List<Acceso> listaCredenciales = control.listaAccesos();
+//                    for (Acceso credencial : listaCredenciales) {
+//                        if (credencial.getUserName().equals(username)) {
+//                            cAcceso = credencial;
+//                            isChangePasswordRequired = credencial.isNewOrChangePassword();
+//                            id = credencial.getId();
+//                            break;
+//                        }
+//                    }
 
                     // Si requiere cambio de clave, establece un atributo de sesion y redirige a la pagina de nueva clave.
                     if (isChangePasswordRequired) {
@@ -69,6 +82,10 @@ public class SvLogin extends HttpServlet {
                     } else {
                         HttpSession mySession = request.getSession();
                         mySession.setAttribute("credencial", cAcceso);
+                        
+                        HttpSession mySessionE = request.getSession();
+                        mySessionE.setAttribute("funcion", funcion);
+                        
                         response.sendRedirect("index.jsp");
                     }
                     
