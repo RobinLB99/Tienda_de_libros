@@ -32,6 +32,7 @@
                 
                 for (Empleado empleado : listaEmpleados) {
                 
+                    String obtenerCargo = empleado.getFuncion();
                     String cargo = null;
                     String userName = null;
                     
@@ -39,25 +40,15 @@
                     Date fecha = empleado.getFechaNacimiento();
                     String fechaCorta = control.getShortDateString(fecha);
                     
+                    userName = empleado.getCredencial().getUserName();
                     
                     if (empleado.getCredencial().getUserName().equals("-")) {
                         userName = "<p class='text-secondary m-0'>No asignado</p>";
-                    } else {
-                        userName = empleado.getCredencial().getUserName();
-                    }
-                                        
-                    if (empleado.getFuncion().equals("admin")) {
-                        cargo = "Administrador";
                     }
                     
-                    if (empleado.getFuncion().equals("cajero")) {
-                        cargo = "Cajero";
-                    }
-                    
-                    if (empleado.getFuncion().equals("perchero")) {
-                        cargo = "Perchero";
-                    } 
-
+                    if (obtenerCargo.equals("admin")) cargo = "Administrador";
+                    if (obtenerCargo.equals("cajero")) cargo = "Cajero";
+                    if (obtenerCargo.equals("perchero")) cargo = "Perchero";
                 %>
                 <tr>
                     <td><%= empleado.getCedula() %></td>
