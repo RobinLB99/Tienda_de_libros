@@ -44,7 +44,7 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
 3. Actualiza el archivo de configuración de la base de datos en `src/main/resources/META-INF/persistence.xml` con tus credenciales y detalles de conexión.
 4. Ejecuta la aplicación en un servidor de aplicaciones compatible con JSP.
 5. Una vez arrancada la aplicación, intente iniciar sesión con los campos vacios para que se creen las tablas en la base de datos automaticamente.
-6. En el administrador de MySQL ejecute la siguiente consulta `INSERT INTO `ACCESO` (`ID`, `ADMIN`, `NEWORCHANGEPASSWORD`, `PASSWORD`, `USERNAME`) VALUES ('1', '1', '0', '123456', 'root');`
+6. En el administrador de MySQL ejecute la siguiente consulta ```INSERT INTO `ACCESO` (`ID`, `ADMIN`, `NEWORCHANGEPASSWORD`, `PASSWORD`, `USERNAME`) VALUES ('1', '1', '0', '123456', 'root');```
 7. Inicie sesión con el usuario `root` y contraseña `123456`.
 
 ## Contribución
