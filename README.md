@@ -22,11 +22,11 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
 
 * **Backend:**
   - Java 17: Lenguaje de programación principal.
-  - JSP (JavaServer Pages): Para contenido dinámico en el servidor.
   
 * **Frontend:**
   - HTML, CSS/SASS y JavaScript: Tecnologías web estándar para la interfaz de usuario.
   - Bootstrap: Framework de diseño para una experiencia visual atractiva y receptiva.
+  - JSP (JavaServer Pages): Para contenido dinámico.
 
 * **Base de Datos:**
   - MySQL: Sistema de gestión de base de datos.
