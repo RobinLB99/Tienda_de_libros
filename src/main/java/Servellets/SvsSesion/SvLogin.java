@@ -1,4 +1,4 @@
-package Servellets;
+package Servellets.SvsSesion;
 
 import Logica.Acceso;
 import Logica.Empleado;
@@ -45,54 +45,61 @@ public class SvLogin extends HttpServlet {
 
             if (sessionValida) {
                 
-                try {
-                    Acceso cAcceso = null;
-                    String funcion = "";
-                    boolean isChangePasswordRequired = false;
-                    long id = 0;
-                    
-                    List<Empleado> listaEmpleados = control.listaEmpleados();
-                    for (Empleado employ : listaEmpleados) {
-                        if (employ.getCredencial().getUserName().equals(username)) {
-                            cAcceso = employ.getCredencial();
-                            isChangePasswordRequired = employ.getCredencial().isNewOrChangePassword();
-                            id = employ.getCredencial().getId();
-                            funcion = employ.getFuncion();
-                            break;
+                Acceso cAcceso = null;
+                String funcion = "";
+                boolean isChangePasswordRequired = false;
+                long id = 0;
+                
+                if (username.equals("root")) {
+                    try {
+                        List<Acceso> credenciales = control.listaAccesos();
+                        for (Acceso credencial : credenciales) {
+                            if (credencial.getUserName().equals("root")) {
+                                if (password.equals(credencial.getPassword())) {
+                                    cAcceso = credencial;
+                                    isChangePasswordRequired = credencial.isNewOrChangePassword();
+                                    id = credencial.getId();
+                                    break;
+                                }
+                            }
                         }
+                    } catch (Exception e) {
+                        response.sendRedirect("error500.jsp");
                     }
-                    
-                    // Verfica si la credencial de acceso necesita cambio de clave.
-//                    List<Acceso> listaCredenciales = control.listaAccesos();
-//                    for (Acceso credencial : listaCredenciales) {
-//                        if (credencial.getUserName().equals(username)) {
-//                            cAcceso = credencial;
-//                            isChangePasswordRequired = credencial.isNewOrChangePassword();
-//                            id = credencial.getId();
-//                            break;
-//                        }
-//                    }
+                } else {
+                    try {
+                        List<Empleado> listaEmpleados = control.listaEmpleados();
+                        for (Empleado employ : listaEmpleados) {
+                            if (employ.getCredencial().getUserName().equals(username)) {
+                                cAcceso = employ.getCredencial();
+                                isChangePasswordRequired = employ.getCredencial().isNewOrChangePassword();
+                                id = employ.getCredencial().getId();
+                                funcion = employ.getFuncion();
+                                break;
+                            }
+                        }
 
-                    // Si requiere cambio de clave, establece un atributo de sesion y redirige a la pagina de nueva clave.
-                    if (isChangePasswordRequired) {
-                        HttpSession idAccess = request.getSession();
-                        idAccess.setAttribute("idCredencial", id);
-                        response.sendRedirect("NuevaClaveUsuario.jsp");
-                        
-                    } else {
-                        HttpSession mySession = request.getSession();
-                        mySession.setAttribute("credencial", cAcceso);
-                        
-                        HttpSession mySessionE = request.getSession();
-                        mySessionE.setAttribute("funcion", funcion);
-                        
-                        response.sendRedirect("index.jsp");
+                    } catch (Exception a) {
+                        response.sendRedirect("error500.jsp");
                     }
-                    
-                } catch (Exception a) {
-                    response.sendRedirect("error500.jsp");
                 }
+                
+                // Si requiere cambio de clave, establece un atributo de sesion y redirige a la pagina de nueva clave.
+                if (isChangePasswordRequired) {
+                    HttpSession idAccess = request.getSession();
+                    idAccess.setAttribute("idCredencial", id);
+                    response.sendRedirect("NuevaClaveUsuario.jsp");
 
+                } else {
+                    HttpSession mySession = request.getSession();
+                    mySession.setAttribute("credencial", cAcceso);
+
+                    HttpSession mySessionE = request.getSession();
+                    mySessionE.setAttribute("funcion", funcion);
+
+                    response.sendRedirect("index.jsp");
+                }
+                
             } else {
                 response.sendRedirect("login.jsp?access=incorrect");
             }
