@@ -92,8 +92,6 @@ public class SvLogin extends HttpServlet {
                     response.sendRedirect("NuevaClaveUsuario.jsp");
 
                 } else {
-                    System.out.println(cAcceso);
-                    System.out.println(funcion);
                     HttpSession mySession = request.getSession();
                     mySession.setAttribute("credencial", cAcceso);
 
