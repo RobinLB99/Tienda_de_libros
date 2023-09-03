@@ -1,6 +1,5 @@
 package Servellets.ServelletsEmpleados;
 
-import Logica.Acceso;
 import Logica.Empleado;
 import Logica.LogicController;
 import java.io.IOException;
