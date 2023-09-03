@@ -5,6 +5,8 @@
         <%@include file="./components/head.jsp" %>
     </head>
     <body>
+        <%@include file="./components/validarSesion.jsp" %>
+        <%@include file="./components/accessToBookOptions.jsp" %>
         <%@include file="./components/navbar.jsp" %>
         <div class="contenedor-principal bg-body-tertiary">
             <header

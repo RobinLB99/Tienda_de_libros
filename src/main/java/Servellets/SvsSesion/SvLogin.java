@@ -59,6 +59,7 @@ public class SvLogin extends HttpServlet {
                                     cAcceso = credencial;
                                     isChangePasswordRequired = credencial.isNewOrChangePassword();
                                     id = credencial.getId();
+                                    funcion = "admin";
                                     break;
                                 }
                             }
@@ -91,11 +92,16 @@ public class SvLogin extends HttpServlet {
                     response.sendRedirect("NuevaClaveUsuario.jsp");
 
                 } else {
+                    System.out.println(cAcceso);
+                    System.out.println(funcion);
                     HttpSession mySession = request.getSession();
                     mySession.setAttribute("credencial", cAcceso);
 
                     HttpSession mySessionE = request.getSession();
                     mySessionE.setAttribute("funcion", funcion);
+                    
+                    HttpSession mySessionS = request.getSession();
+                    mySessionS.setAttribute("SessionStarted", "started");
 
                     response.sendRedirect("index.jsp");
                 }
