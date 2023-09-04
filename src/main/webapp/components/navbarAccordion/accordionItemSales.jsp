@@ -12,7 +12,7 @@
             <i
                 class="fontawesome fa-solid fa-cash-register d-flex flex-row align-items-center justify-content-center"
             ></i>
-            <span>Ventas</span>
+            <span>Alquiler y venta</span>
         </button>
     </h2>
     <div
@@ -31,7 +31,7 @@
                     <i
                         class="fontawesome fa-solid fa-list-check"
                     ></i>
-                    <span>Historial de ventas</span>
+                    <span>Registro de alquiler</span>
                 </button>
             </form>
             <form action="#">
@@ -40,9 +40,20 @@
                     class="d-flex flex-row gap-2 align-items-center"
                 >
                     <i
+                        class="fontawesome fa-solid fa-list-check"
+                    ></i>
+                    <span>Registro de venta</span>
+                </button>
+            </form>
+            <form action="SvListaLibrosSeleccionar" method="post">
+                <button
+                    type="submit"
+                    class="d-flex flex-row gap-2 align-items-center"
+                >
+                    <i
                         class="fontawesome fa-solid fa-cart-shopping"
                     ></i>
-                    <span>Realizar venta</span>
+                    <span>Alquilar o vender</span>
                 </button>
             </form>
         </div>
