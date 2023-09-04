@@ -17,3 +17,4 @@ import "./modalesGestionUsuario";
 import "./modalRecuperarPassword";
 import "./modalesLogin";
 import "./validacionesGestionCredenciales";
+import "./retriveValuesFromTablesRecord";
