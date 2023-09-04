@@ -110,8 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     btnValPassword.addEventListener("click", () => {
-        regExpFistPassword.test(password.value) && passwordValido();
-        !regExpFistPassword.test(password.value) && passwordInvalido();
+        regExpFistPassword.test(password.value) ? passwordValido() : passwordInvalido();
     });
 
     password.addEventListener("focus", () => {
