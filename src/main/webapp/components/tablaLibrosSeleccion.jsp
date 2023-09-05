@@ -89,16 +89,15 @@
         </table>
         <div class="border opacity-25 my-3"></div>
         <form
-            action="#"
+            action="SvTomarGuardarListaLibros"
             method="post"
             class="d-flex align-items-center justify-content-end gap-3"
         >
-            <input
-                type="text"
+            <textarea
                 name="arrayObjetos_"
                 id="arrayObjetos"
                 hidden
-            />
+                ></textarea>
             <button
                 type="button"
                 class="btn btn-secondary"
