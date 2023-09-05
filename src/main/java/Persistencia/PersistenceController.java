@@ -3,6 +3,7 @@ package Persistencia;
 import Logica.Empleado;
 import Logica.Libro;
 import Logica.Acceso;
+import Logica.Cliente;
 import Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
 import java.util.logging.Level;
@@ -13,6 +14,7 @@ public class PersistenceController {
     EmpleadoJpaController employJpa = new EmpleadoJpaController();
     AccesoJpaController userJpa = new AccesoJpaController();
     LibroJpaController bookJpa = new LibroJpaController();
+    ClienteJpaController clientJpa = new ClienteJpaController();
 
     /* Libros */
     public void crearLibro(Libro libro) {
@@ -43,6 +45,38 @@ public class PersistenceController {
         return bookJpa.findLibroEntities();
     }
 
+    /**
+     * Clientes
+     */
+    public void crearCliente(Cliente cliente) {
+        clientJpa.create(cliente);
+    }
+
+    public void editarCliente(Cliente cliente) {
+        try {
+            clientJpa.edit(cliente);
+        } catch (Exception ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void eliminarCliente(long id) {
+        try {
+            clientJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Cliente buscarCliente(long id) {
+        return clientJpa.findCliente(id);
+    }
+
+    public List<Cliente> listaClientes() {
+        return clientJpa.findClienteEntities();
+    }
+
+
     /* Empleados */
     public void crearEmpleado(Empleado employ) {
         employJpa.create(employ);
@@ -72,7 +106,7 @@ public class PersistenceController {
         return employJpa.findEmpleadoEntities();
     }
 
-    /* Usuarios */
+    /* Credenciales de acceso */
     public void crearAcceso(Acceso user) {
         userJpa.create(user);
     }
