@@ -1,7 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="Logica.Libro"%>
 <div class="card card-tabla" id="targetaSeleccionarLibro">
-    <div class="card-header">Nueva venta</div>
     <div class="card-body libros-seleccion">
         <h5 class="card-title">Elija los libros</h5>
         <p class="card-text">
