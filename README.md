@@ -37,7 +37,7 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
 * Servidor de aplicaciones compatible con JSP.
 * MySQL Server.
 
-## Instrucciones de Uso
+## Instrucciones de Instalación
 
 1. Clona este repositorio en tu máquina local.
 2. Configura una instancia de MySQL Server y crea una base de datos llamada "db_library".
