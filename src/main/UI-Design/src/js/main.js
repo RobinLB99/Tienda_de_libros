@@ -18,3 +18,9 @@ import "./modalRecuperarPassword";
 import "./modalesLogin";
 import "./validacionesGestionCredenciales";
 import "./retriveValuesFromTablesRecord";
+import "./typeOfClient";
+import "./selectClient"
+import "./validateDataNewClient";
+import "./retriveDataNewClient";
+import "./validateDataForFacture"
+import "./setTypeOfClient";
