@@ -1,5 +1,6 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import javax.persistence.Id;
  * @author joel
  */
 @Entity
-public class Alquiler {
+public class Alquiler implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
