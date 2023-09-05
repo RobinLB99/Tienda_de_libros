@@ -7,7 +7,7 @@ export const regExpYear = /^\d{4}$/;
 export const regExpPrice = /^\d+(.\d{1,2})?$/;
 export const regExpUnits = /\b([1-9]|[1-9][0-9]|100)\b/;
 
-// Validar datos de empleado
+// Validar datos de empleado y cliente
 export const regExpCedula = /^(09\d{8}|193\d{7})$/;
 export const regExpNombres = /^[A-Z][a-záéíóúü]*\s[A-Z][a-záéíóúü]*$/;
 export const regExpApellidos = /^[A-Z][a-záéíóúü]*\s[A-Z][a-záéíóúü]*$/;
