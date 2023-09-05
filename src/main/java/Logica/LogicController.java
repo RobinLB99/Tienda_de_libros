@@ -82,6 +82,27 @@ public class LogicController {
     public List<Libro> listaLibros() {
         return perControl.listaLibros();
     }
+    
+    // Cliente
+    public void crearCliente(Cliente cliente) {
+        perControl.crearCliente(cliente);
+    }
+    
+    public void editarCliente(Cliente cliente) {
+        perControl.editarCliente(cliente);
+    }
+    
+    public void eliminarCliente(long id) {
+        perControl.eliminarCliente(id);
+    }
+    
+    public Cliente buscarCliente(long id) {
+        return perControl.buscarCliente(id);
+    }
+    
+    public List<Cliente> listaClientes() {
+        return perControl.listaClientes();
+    }
 
     // Sesion
     public boolean valSession(String user, String password) {
