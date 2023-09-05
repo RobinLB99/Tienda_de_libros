@@ -21,15 +21,17 @@ public class Alquiler implements Serializable {
     private List<Libro> libros;
     private Cliente cliente;
     private Empleado empleado;
+    private String estadoAlquiler;
 
     public Alquiler() {
     }
 
-    public Alquiler(long id, List<Libro> libros, Cliente cliente, Empleado empleado) {
+    public Alquiler(long id, List<Libro> libros, Cliente cliente, Empleado empleado, String estadoAlquiler) {
         this.id = id;
         this.libros = libros;
         this.cliente = cliente;
         this.empleado = empleado;
+        this.estadoAlquiler = estadoAlquiler;
     }
 
     public long getId() {
@@ -62,6 +64,14 @@ public class Alquiler implements Serializable {
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
+    }
+
+    public String getEstadoAlquiler() {
+        return estadoAlquiler;
+    }
+
+    public void setEstadoAlquiler(String estadoAlquiler) {
+        this.estadoAlquiler = estadoAlquiler;
     }
 
     @Override
