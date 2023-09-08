@@ -4,5 +4,5 @@
 
 <link rel="shortcut icon" href="./assets/libro.ico" type="image/x-icon">
 <title>Software de gestión de librería</title>
-<script type="module" crossorigin src="./assets/main-4579f04d.js"></script>
-<link rel="stylesheet" href="./assets/main-08b598df.css">
+<script type="module" crossorigin src="./assets/main-8155000b.js"></script>
+<link rel="stylesheet" href="./assets/main-1e469f6b.css">
