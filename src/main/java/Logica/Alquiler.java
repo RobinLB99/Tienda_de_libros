@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -18,7 +19,9 @@ public class Alquiler implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private List<Libro> libros;
+    private String numFactura;
+    @OneToMany
+    private List<CantidadLibroPedido> librosPedidos;
     private Cliente cliente;
     private Empleado empleado;
     private String estadoAlquiler;
@@ -26,9 +29,10 @@ public class Alquiler implements Serializable {
     public Alquiler() {
     }
 
-    public Alquiler(long id, List<Libro> libros, Cliente cliente, Empleado empleado, String estadoAlquiler) {
+    public Alquiler(long id, String numFactura, List<CantidadLibroPedido> librosPedidos, Cliente cliente, Empleado empleado, String estadoAlquiler) {
         this.id = id;
-        this.libros = libros;
+        this.numFactura = numFactura;
+        this.librosPedidos = librosPedidos;
         this.cliente = cliente;
         this.empleado = empleado;
         this.estadoAlquiler = estadoAlquiler;
@@ -42,12 +46,20 @@ public class Alquiler implements Serializable {
         this.id = id;
     }
 
-    public List<Libro> getLibros() {
-        return libros;
+    public String getNumFactura() {
+        return numFactura;
     }
 
-    public void setLibros(List<Libro> libros) {
-        this.libros = libros;
+    public void setNumFactura(String numFactura) {
+        this.numFactura = numFactura;
+    }
+
+    public List<CantidadLibroPedido> getLibrosPedidos() {
+        return librosPedidos;
+    }
+
+    public void setLibrosPedidos(List<CantidadLibroPedido> librosPedidos) {
+        this.librosPedidos = librosPedidos;
     }
 
     public Cliente getCliente() {
@@ -76,7 +88,7 @@ public class Alquiler implements Serializable {
 
     @Override
     public String toString() {
-        return "Alquiler{" + "id=" + id + ", libros=" + libros + ", cliente=" + cliente + ", empleado=" + empleado + '}';
+        return "Alquiler{" + "id=" + id + ", numFactura=" + numFactura + ", librosPedidos=" + librosPedidos + ", cliente=" + cliente + ", empleado=" + empleado + ", estadoAlquiler=" + estadoAlquiler + '}';
     }
 
 }
