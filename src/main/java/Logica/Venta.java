@@ -18,16 +18,16 @@ public class Venta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private List<Libro> libros;
+    private List<CantidadLibroPedido> librosPedidos;
     private Cliente cliente;
     private Empleado vendedor;
 
     public Venta() {
     }
 
-    public Venta(long id, List<Libro> libros, Cliente cliente, Empleado vendedor) {
+    public Venta(long id, List<CantidadLibroPedido> librosPedidos, Cliente cliente, Empleado vendedor) {
         this.id = id;
-        this.libros = libros;
+        this.librosPedidos = librosPedidos;
         this.cliente = cliente;
         this.vendedor = vendedor;
     }
@@ -40,12 +40,12 @@ public class Venta implements Serializable {
         this.id = id;
     }
 
-    public List<Libro> getLibros() {
-        return libros;
+    public List<CantidadLibroPedido> getLibrosPedidos() {
+        return librosPedidos;
     }
 
-    public void setLibros(List<Libro> libros) {
-        this.libros = libros;
+    public void setLibrosPedidos(List<CantidadLibroPedido> librosPedidos) {
+        this.librosPedidos = librosPedidos;
     }
 
     public Cliente getCliente() {
@@ -66,7 +66,7 @@ public class Venta implements Serializable {
 
     @Override
     public String toString() {
-        return "Logica.Venta[ id=" + id + " ]";
+        return "Venta{" + "id=" + id + ", librosPedidos=" + librosPedidos + ", cliente=" + cliente + ", vendedor=" + vendedor + '}';
     }
 
 }
