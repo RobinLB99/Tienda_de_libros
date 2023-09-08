@@ -11,8 +11,6 @@
             </p>
             <div class="border opacity-25"></div>
             <form
-                action="#"
-                method="post"
                 class="container-fluid p-3"
             >
                 <p class="card-text">Tipo de cliente</p>
@@ -65,31 +63,103 @@
                     >
                         Cliente no seleccionado
                     </p>
-                    <input
-                        type="text"
-                        name="typeOfClient_"
-                        id="typeOfClient"
-                        hidden
-                    />
-                    <input
-                        type="text"
-                        name="idCliente_"
-                        id="id_clienteSeleccionado"
-                        hidden
-                    />
-                    <input
-                        type="text"
-                        name="datosNuevoCliente_"
-                        id="datos_nuevoCliente"
-                        hidden
-                    />
                 </div>
                 <div class="border opacity-25 my-3"></div>
                 <div class="container-fluid m-0 d-flex justify-content-end gap-3">
                     <button class="btn btn-secondary" type="button" id="verForFacture">Verificar</button>
-                    <button type="submit" class="btn btn-primary" id="createFacture" disabled>Continuar</button>
+                    <button type="button" class="btn btn-primary" id="createFacture" data-bs-toggle="modal" data-bs-target="#tipoFacturaModal" disabled>Continuar</button>
                 </div>
             </form>
+        </div>
+    </div>
+    
+    <div
+        class="modal fade"
+        id="tipoFacturaModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1
+                        class="modal-title fs-5"
+                        id="staticBackdropLabel"
+                    >
+                        Tipo de facturación
+                    </h1>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form action="SvTomarDatosFacturacion" method="post">
+                        <p class="text-card">
+                            Elija el tipo de facturación a
+                            realizar.
+                        </p>
+                        <input
+                            type="text"
+                            name="typeOfClient_"
+                            id="typeOfClient"
+                            hidden
+                        />
+                        <input
+                            type="text"
+                            name="idCliente_"
+                            id="id_clienteSeleccionado"
+                            hidden
+                        />
+                        <input
+                            type="text"
+                            name="datosNuevoCliente_"
+                            id="datos_nuevoCliente"
+                            hidden
+                        />
+                        <div class="d-flex gap-3">
+                            <label class="d-flex gap-3">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="typeFacture_"
+                                    id="factura1"
+                                    value="0"
+                                    checked
+                                />
+                                <p>Vender</p>
+                            </label>
+                            <label class="d-flex gap-3">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="typeFacture_"
+                                    id="factura2"
+                                    value="1"
+                                />
+                                <p>Alquilar</p>
+                            </label>
+                        </div>
+                        <div
+                            class="border opacity-50 mb-3"
+                        ></div>
+                        <div class="d-flex justify-content-end">
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Continuar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" hidden></div>
+            </div>
         </div>
     </div>
 
