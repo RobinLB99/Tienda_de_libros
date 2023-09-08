@@ -38,7 +38,7 @@ public class SvTomarGuardarListaLibros extends HttpServlet {
         String stringJSON = (String) request.getParameter("arrayObjetos_");
         
         HttpSession JSON = request.getSession();
-        JSON.setAttribute("librosSeleccionados", JSON);
+        JSON.setAttribute("librosSeleccionados", stringJSON);
 
         try {
             List<Cliente> clientes = new ArrayList<Cliente>();
