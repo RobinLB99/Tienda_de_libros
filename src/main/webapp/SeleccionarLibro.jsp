@@ -16,7 +16,13 @@
             </header>
             <main class="p-3 m-0">
                 <div class="contenedor-contenido container-fluid p-0">
+                    <%
+                        try {
+                    %>
                     <%@include file="./components/tablaLibrosSeleccion.jsp" %>
+                    <%
+                        } catch(Exception e) {}
+                    %>
                 </div>
             </main>
             <%@include file="./components/footer.jsp" %>
