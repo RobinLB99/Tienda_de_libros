@@ -82,24 +82,45 @@ public class LogicController {
     public List<Libro> listaLibros() {
         return perControl.listaLibros();
     }
-    
+
+    // Cantidad Libros pedidos
+    public void crearCantidadLibro(CantidadLibroPedido nLibroPedido) {
+        perControl.crearRegistroCantidadPedida(nLibroPedido);
+    }
+
+    public void editarCantidadLibro(CantidadLibroPedido nLibroPedido) {
+        perControl.editarRegistroCantidadPedida(nLibroPedido);
+    }
+
+    public void eliminarCantidadLibro(long id) {
+        perControl.eliminarRegistroCantidadPedida(id);
+    }
+
+    public CantidadLibroPedido buscarRegistroCantidadLibro(long id) {
+        return perControl.registroLibroPedido(id);
+    }
+
+    public List<CantidadLibroPedido> listaRegistroCantidaLibrosPedidos() {
+        return perControl.listaRegistroLibroPedidos();
+    }
+
     // Cliente
     public void crearCliente(Cliente cliente) {
         perControl.crearCliente(cliente);
     }
-    
+
     public void editarCliente(Cliente cliente) {
         perControl.editarCliente(cliente);
     }
-    
+
     public void eliminarCliente(long id) {
         perControl.eliminarCliente(id);
     }
-    
+
     public Cliente buscarCliente(long id) {
         return perControl.buscarCliente(id);
     }
-    
+
     public List<Cliente> listaClientes() {
         return perControl.listaClientes();
     }
@@ -186,6 +207,14 @@ public class LogicController {
         para un input de tipo fecha */
         SimpleDateFormat formatoFechaSimple = new SimpleDateFormat("yyyy-MM-dd");
         return formatoFechaSimple.format(longDate);
+    }
+    
+    /**
+     * Obtiene el numero de factura segun la fecha y hora
+     */
+    public String getNumberInvoice(Date longDate) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+        return "FAC10000000000-".concat(format.format(longDate));
     }
 
     /**
