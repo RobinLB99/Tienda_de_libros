@@ -95,7 +95,7 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "Libros{" + "id=" + id
+        return "Libro{" + "id=" + id
                 + ", codigo=" + codigo
                 + ", nombre=" + nombre
                 + ", autor=" + autor
