@@ -40,6 +40,21 @@ public class LogicController {
     public List listaEmpleados() {
         return perControl.listaEmpleados();
     }
+    
+    /**
+     * Obtine el empleado por el usuario
+     */
+    public Empleado getEmployByUserName(String username) {
+        Empleado empleado = null;
+        List<Empleado> empleados = perControl.listaEmpleados();
+        for (Empleado employ : empleados) {
+            if (employ.getCredencial().getUserName().equals(username)) {
+                empleado = employ;
+                break;
+            }
+        }
+        return empleado;
+    }
 
     //Acceso
     public void crearAcceso(Acceso credencial) {
