@@ -139,6 +139,27 @@ public class LogicController {
     public List<Cliente> listaClientes() {
         return perControl.listaClientes();
     }
+    
+    // FacturaAlquiler
+    public void crearFacturaALquiler(Alquiler factura) {
+        perControl.createFacturaAlquiler(factura);
+    }
+    
+    public void editarFacturaAlquiler(Alquiler factura) {
+        perControl.editFacturaAlquiler(factura);
+    }
+    
+    public void eliminarFacturaAlquiler(long id) {
+        perControl.destroyFacturaAlquiler(id);
+    }
+    
+    public Alquiler buscarFacturaAquiler(long id) {
+        return perControl.findFacturaAlquiler(id);
+    }
+    
+    public List<Alquiler> listaFacturasAlquiler() {
+        return perControl.findListaFacturasAlquiler();
+    }
 
     // Sesion
     public boolean valSession(String user, String password) {
