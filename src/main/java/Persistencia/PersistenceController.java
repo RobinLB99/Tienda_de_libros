@@ -3,6 +3,8 @@ package Persistencia;
 import Logica.Empleado;
 import Logica.Libro;
 import Logica.Acceso;
+import Logica.Alquiler;
+import Logica.CantidadLibroPedido;
 import Logica.Cliente;
 import Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -15,6 +17,8 @@ public class PersistenceController {
     AccesoJpaController userJpa = new AccesoJpaController();
     LibroJpaController bookJpa = new LibroJpaController();
     ClienteJpaController clientJpa = new ClienteJpaController();
+    CantidadLibroPedidoJpaController nlibroPedidoJpa = new CantidadLibroPedidoJpaController();
+    AlquilerJpaController alquilerJpa = new AlquilerJpaController();
 
     /* Libros */
     public void crearLibro(Libro libro) {
@@ -43,6 +47,68 @@ public class PersistenceController {
 
     public List<Libro> listaLibros() {
         return bookJpa.findLibroEntities();
+    }
+    
+    /**
+     * Libros pedidos
+     */
+    public void crearRegistroCantidadPedida(CantidadLibroPedido nLibroPedido) {
+        nlibroPedidoJpa.create(nLibroPedido);
+    }
+    
+    public void editarRegistroCantidadPedida(CantidadLibroPedido nLibroPedido) {
+        try {
+            nlibroPedidoJpa.edit(nLibroPedido);
+        } catch (Exception ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void eliminarRegistroCantidadPedida(long id) {
+        try {
+            nlibroPedidoJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public CantidadLibroPedido registroLibroPedido(long id) {
+        return nlibroPedidoJpa.findCantidadLibroPedido(id);
+    }
+    
+    public List<CantidadLibroPedido> listaRegistroLibroPedidos() {
+        return nlibroPedidoJpa.findCantidadLibroPedidoEntities();
+    }
+    
+    /**
+     * Factura Alquiler
+     */
+    public void createFacturaAlquiler(Alquiler alquiler) {
+        alquilerJpa.create(alquiler);
+    }
+    
+    public void editFacturaAlquiler(Alquiler alquiler) {
+        try {
+            alquilerJpa.edit(alquiler);
+        } catch (Exception ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void destroyFacturaAlquiler(long id) {
+        try {
+            alquilerJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public Alquiler findFacturaAlquiler(long id) {
+        return alquilerJpa.findAlquiler(id);
+    }
+    
+    public List<Alquiler> findListaFacturasAlquiler() {
+        return alquilerJpa.findAlquilerEntities();
     }
 
     /**
