@@ -19,7 +19,7 @@ import java.util.List;
 public class SvListaLibrosSeleccionar extends HttpServlet {
     
     LogicController control = null;
-    List<Libro> listaLibros = null;
+    List<Libro> listaLibrosToSelect = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,10 +37,10 @@ public class SvListaLibrosSeleccionar extends HttpServlet {
             throws ServletException, IOException {
         try {
             control = new LogicController();
-            listaLibros = control.listaLibros();
+            listaLibrosToSelect = control.listaLibros();
             
             HttpSession listaLibrosSelect = request.getSession();
-            listaLibrosSelect.setAttribute("listaLibrosSelect", listaLibros);
+            listaLibrosSelect.setAttribute("listaLibrosSelect", listaLibrosToSelect);
             
             response.sendRedirect("SeleccionarLibro.jsp");
             
