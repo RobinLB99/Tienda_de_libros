@@ -47,12 +47,12 @@
                             value="<%= libro.getId() %>"
                         />
                     </td>
-                    <td>1920145786</td>
-                    <td>Cien años de soledad</td>
-                    <td>Gabriel García Márquez</td>
-                    <td>1967</td>
-                    <td>$29.99</td>
-                    <td>30 unidades</td>
+                    <td><%=libro.getCodigo()%></td>
+                    <td><%=libro.getNombre()%></td>
+                    <td><%=libro.getAutor()%></td>
+                    <td><%=libro.getAnio()%></td>
+                    <td>$<%=libro.getPrecio()%></td>
+                    <td><%=libro.getUnidades()%> unidades</td>
                     <td>
                         <input
                             class="form-control inpNumUnit"
@@ -70,8 +70,6 @@
                         }
                     }
                 %>
-                
-                
             </tbody>
             <tfoot>
                 <tr>
