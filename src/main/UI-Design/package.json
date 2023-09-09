@@ -27,6 +27,8 @@
     "datatables.net-scroller-bs5": "^2.2.0",
     "datatables.net-searchpanes-bs5": "^2.2.0",
     "fontawesome-free": "^1.0.4",
-    "jquery": "^3.7.0"
+    "html2canvas": "^1.4.1",
+    "jquery": "^3.7.0",
+    "jspdf": "^2.5.1"
   }
 }
