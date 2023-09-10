@@ -41,7 +41,8 @@ public class SvTomarGuardarListaLibros extends HttpServlet {
         JSON.setAttribute("librosSeleccionados", stringJSON);
 
         try {
-            List<Cliente> clientes = new ArrayList<Cliente>();
+            control = new LogicController();
+            List<Cliente> clientes = control.listaClientes();
             
             HttpSession listaCLientes = request.getSession();
             listaCLientes.setAttribute("listaCLientes", clientes);
@@ -49,6 +50,7 @@ public class SvTomarGuardarListaLibros extends HttpServlet {
             response.sendRedirect("DatosTransaccion.jsp");
             
         } catch (Exception e) {
+            response.sendRedirect("error500.jsp");
         }
     }
 
