@@ -27,7 +27,7 @@ import org.json.JSONException;
 public class SvTomarDatosFacturacion extends HttpServlet {
 
     LogicController control = null;
-    Cliente cliente = null;
+    Cliente cliente = new Cliente();
     Libro book = null;
     CantidadLibroPedido nLibroPedido = null;
     JSONObject json = null;
@@ -55,11 +55,11 @@ public class SvTomarDatosFacturacion extends HttpServlet {
         String datosNuevoCliente = request.getParameter("datosNuevoCliente_");
         String tipoFactura = request.getParameter("typeFacture_");
         
-        if (tipoCliente == "0") {
+        if (tipoCliente.equals("0")) {
             /**Codigo para llenar datos vacios para consumidor final*/
-            cliente = new Cliente();
             cliente.setCedula("-");
             cliente.setNombre("-");
+            cliente.setApellidos("-");
             cliente.setFechaNacimiento(new Date());
             cliente.setTelefono("-");
             cliente.setDireccion("-");
@@ -78,7 +78,6 @@ public class SvTomarDatosFacturacion extends HttpServlet {
                 try {
                     json = new JSONObject(datosNuevoCliente);
 
-                    cliente = new Cliente();
                     cliente.setCedula((String) json.get("cedula"));
                     cliente.setNombre((String) json.get("nombres"));
                     cliente.setApellidos((String) json.get("apellidos"));
@@ -122,14 +121,19 @@ public class SvTomarDatosFacturacion extends HttpServlet {
         String numInvoice = control.getNumberInvoice(new Date());
 
         HttpSession dataFactura = request.getSession();
+        dataFactura.setAttribute("typeOfClient", tipoCliente);
         dataFactura.setAttribute("dataCliente", cliente);
         dataFactura.setAttribute("listaCantidadLibrosPedidos", listaCantidadLibrosPedidos);
         dataFactura.setAttribute("numFactura", numInvoice);
         dataFactura.setAttribute("tipoFactura", tipoFactura);
         
-        if (tipoFactura.equals("0")) {
-//            response.sendRedirect("FacturacionVenta.jsp";
-        } else response.sendRedirect("FacturacionAlquiler.jsp");
+        System.out.println(cliente.toString());
+        System.out.println(tipoFactura);
+        
+        if (tipoFactura.equals("0"))
+            response.sendRedirect("FacturacionVenta.jsp");
+        
+        else response.sendRedirect("FacturacionAlquiler.jsp");
 
     }
 
