@@ -76,7 +76,7 @@
                             <legend class="h2"><strong>Datos del Libro</strong></legend>
                             <div class="row">
                                 <div class="col m-0"><strong>Libro</strong></div>
-                                <div class="col m-0"><strong>V.Alquiler</strong></div>
+                                <div class="col m-0"><strong>Precio</strong></div>
                                 <div class="col m-0"><strong>Cantidad</strong></div>
                                 <div class="col m-0"><strong>V.Total</strong></div>
                             </div>
@@ -88,11 +88,9 @@
                                 <div class="col m-0"><%=nlibros.getLibro().getNombre()%></div>
                                 <%
                                     double plibro = nlibros.getLibro().getPrecio();
-                                    double vAlquiler = 0.25 * plibro;
-                                    double vA2d = Math.round(vAlquiler * 100) / 100d;
-                                    double vATotal = vA2d * (nlibros.getCantidad());
+                                    double vATotal = plibro * (nlibros.getCantidad());
                                 %>
-                                <div class="col m-0">$<%=vA2d%></div>
+                                <div class="col m-0">$<%=plibro%></div>
                                 <div class="col m-0"><%=nlibros.getCantidad()%></div>
                                 <div class="col m-0">$<%= vATotal %></div>
                             </div>
@@ -137,7 +135,7 @@
                 El valor total de la factura es de <strong>$<%=total%></strong>. <br>
                 Confirme el pago para continuar.
             </div>
-            <form action="SvIngresarFacturaAlquiler" method="post" class="modal-footer">
+            <form action="SvIngresarFacturaVenta" method="post" class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-primary" id="retrivePaid">Pago recibido</button>
                 <button type="submit" class="btn btn-primary" id="continue" disabled>Continuar</button>
