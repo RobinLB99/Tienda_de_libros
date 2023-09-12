@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -18,18 +19,21 @@ public class Venta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String numFactura;
+    @OneToMany
     private List<CantidadLibroPedido> librosPedidos;
     private Cliente cliente;
-    private Empleado vendedor;
+    private Empleado empleado;
 
     public Venta() {
     }
 
-    public Venta(long id, List<CantidadLibroPedido> librosPedidos, Cliente cliente, Empleado vendedor) {
+    public Venta(long id, String numFactura, List<CantidadLibroPedido> librosPedidos, Cliente cliente, Empleado empleado) {
         this.id = id;
+        this.numFactura = numFactura;
         this.librosPedidos = librosPedidos;
         this.cliente = cliente;
-        this.vendedor = vendedor;
+        this.empleado = empleado;
     }
 
     public long getId() {
@@ -38,6 +42,14 @@ public class Venta implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getNumFactura() {
+        return numFactura;
+    }
+
+    public void setNumFactura(String numFactura) {
+        this.numFactura = numFactura;
     }
 
     public List<CantidadLibroPedido> getLibrosPedidos() {
@@ -56,17 +68,17 @@ public class Venta implements Serializable {
         this.cliente = cliente;
     }
 
-    public Empleado getVendedor() {
-        return vendedor;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setVendedor(Empleado vendedor) {
-        this.vendedor = vendedor;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     @Override
     public String toString() {
-        return "Venta{" + "id=" + id + ", librosPedidos=" + librosPedidos + ", cliente=" + cliente + ", vendedor=" + vendedor + '}';
+        return "Venta{" + "id=" + id + ", numFactura=" + numFactura + ", librosPedidos=" + librosPedidos + ", cliente=" + cliente + ", empleado=" + empleado + '}';
     }
 
 }
