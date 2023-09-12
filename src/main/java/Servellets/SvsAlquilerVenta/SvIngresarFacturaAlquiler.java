@@ -5,6 +5,7 @@ import Logica.Alquiler;
 import Logica.CantidadLibroPedido;
 import Logica.Cliente;
 import Logica.Empleado;
+import Logica.Libro;
 import Logica.LogicController;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -47,12 +48,18 @@ public class SvIngresarFacturaAlquiler extends HttpServlet {
         try {
             Empleado empleado = control.getEmployByUserName((String) credencial.getUserName());
 
+            List<Libro> libros = new ArrayList();
             Alquiler facALquiler = new Alquiler();
             List<CantidadLibroPedido> listPedido = new ArrayList();
 
             for (CantidadLibroPedido pedido : librosPedidos) {
                 control.crearCantidadLibro(pedido);
                 listPedido.add(pedido);
+                
+                Libro libro = pedido.getLibro();
+
+                libro.setUnidades(libro.getUnidades() - pedido.getCantidad());
+                libros.add(libro);
             }
 
             if (cliente.getId() == 0) {
@@ -66,6 +73,10 @@ public class SvIngresarFacturaAlquiler extends HttpServlet {
             facALquiler.setLibrosPedidos(listPedido);
 
             control.crearFacturaALquiler(facALquiler);
+            
+            for (Libro libro : libros) {
+                control.editarLibro(libro);
+            }
 
             response.sendRedirect("index.jsp?accion=alquilado");
 
