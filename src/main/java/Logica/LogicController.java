@@ -160,6 +160,27 @@ public class LogicController {
     public List<Alquiler> listaFacturasAlquiler() {
         return perControl.findListaFacturasAlquiler();
     }
+    
+    // FacturaAlquiler
+    public void crearFacturaVenta(Venta factura) {
+        perControl.createFacturaVenta(factura);
+    }
+
+    public void editarFacturaVenta(Venta factura) {
+        perControl.editFacturaVenta(factura);
+    }
+
+    public void eliminarFacturaVenta(long id) {
+        perControl.destroyFacturaVenta(id);
+    }
+
+    public Venta buscarFacturaVenta(long id) {
+        return perControl.findFacturaVenta(id);
+    }
+
+    public List<Venta> listaFacturasVentas() {
+        return perControl.findListaFacturasVentas();
+    }
 
     // Sesion
     public boolean valSession(String user, String password) {
