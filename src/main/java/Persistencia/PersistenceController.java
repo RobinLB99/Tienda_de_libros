@@ -6,6 +6,7 @@ import Logica.Acceso;
 import Logica.Alquiler;
 import Logica.CantidadLibroPedido;
 import Logica.Cliente;
+import Logica.Venta;
 import Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
 import java.util.logging.Level;
@@ -19,6 +20,7 @@ public class PersistenceController {
     ClienteJpaController clientJpa = new ClienteJpaController();
     CantidadLibroPedidoJpaController nlibroPedidoJpa = new CantidadLibroPedidoJpaController();
     AlquilerJpaController alquilerJpa = new AlquilerJpaController();
+    VentaJpaController ventaJpa = new VentaJpaController();
 
     /* Libros */
     public void crearLibro(Libro libro) {
@@ -109,6 +111,37 @@ public class PersistenceController {
     
     public List<Alquiler> findListaFacturasAlquiler() {
         return alquilerJpa.findAlquilerEntities();
+    }
+    
+    /**
+     * Factura Venta
+     */
+    public void createFacturaVenta(Venta venta) {
+        ventaJpa.create(venta);
+    }
+
+    public void editFacturaVenta(Venta venta) {
+        try {
+            ventaJpa.edit(venta);
+        } catch (Exception ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void destroyFacturaVenta(long id) {
+        try {
+            ventaJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Venta findFacturaVenta(long id) {
+        return ventaJpa.findVenta(id);
+    }
+
+    public List<Venta> findListaFacturasVentas() {
+        return ventaJpa.findVentaEntities();
     }
 
     /**
