@@ -105,7 +105,7 @@
             </div>
             <div class="border opacity-50"></div>
             <div class="fluid-content p-3">
-                <form action="SvMenuPrincipal" method="POST">
+                <form action="SvMenuPrincipal" method="GET">
                     <button class="btn btn-secondary" type="submit">Cancelar</button>
                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#ConfirmPaid">Confirmar pago</button>
                 </form>
