@@ -220,14 +220,14 @@
                                         class="form-check-input ratioClient"
                                         type="radio"
                                         name="idCliente"
-                                        value="1"
+                                        value="<%= cliente.getId() %>"
                                     />
                                 </td>
-                                <td>0944149020</td>
-                                <td>Robin Joel</td>
-                                <td>Lugo Boero</td>
-                                <td>0968161160</td>
-                                <td>Guayaquil</td>
+                                <td><%= cliente.getCedula() %></td>
+                                <td><%= cliente.getNombre() %></td>
+                                <td><%= cliente.getApellidos() %></td>
+                                <td><%= cliente.getTelefono() %></td>
+                                <td><%= cliente.getDireccion() %></td>
                             </tr>
                             <%
                                 }
