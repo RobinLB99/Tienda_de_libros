@@ -56,7 +56,7 @@ public class SvTomarDatosFacturacion extends HttpServlet {
         String tipoFactura = request.getParameter("typeFacture_");
         
         if (tipoCliente.equals("0")) {
-            /**Codigo para llenar datos vacios para consumidor final*/
+            /**Código para llenar datos vacíos para consumidor final*/
             cliente.setCedula("-");
             cliente.setNombre("-");
             cliente.setApellidos("-");
