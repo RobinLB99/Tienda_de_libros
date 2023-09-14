@@ -1,0 +1,25 @@
+@import "bootstrap/scss/bootstrap";
+
+table.table-register-invoce {
+    td#listaLibros {
+        button.list {
+            height: fit-content !important;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+
+            span {
+                border: 2px solid transparent;
+                transition-duration: 0.3s;
+            }
+        }
+
+        button.list:hover {
+            span {
+                color: var(--bs-primary);
+                border-bottom-color: var(--bs-primary);
+                transition-duration: 0.3s;
+            }
+        }
+    }
+}

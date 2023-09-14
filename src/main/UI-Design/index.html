@@ -2702,7 +2702,7 @@
                     </div>
                 </div> -->
 
-                <div class="contenedor-contenido container-fluid p-0">
+                <div class="contenedor-contenido container-fluid p-0" hidden>
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">Datos para transacción</h5>
@@ -2766,31 +2766,120 @@
                                     >
                                         Cliente no seleccionado
                                     </p>
-                                    <input
-                                        type="text"
-                                        name="typeOfClient_"
-                                        id="typeOfClient"
-                                        hidden
-                                    />
-                                    <input
-                                        type="text"
-                                        name="idCliente_"
-                                        id="id_clienteSeleccionado"
-                                        hidden
-                                    />
-                                    <input
-                                        type="text"
-                                        name="datosNuevoCliente_"
-                                        id="datos_nuevoCliente"
-                                        hidden
-                                    />
                                 </div>
                                 <div class="border opacity-25 my-3"></div>
-                                <div class="container-fluid m-0 d-flex justify-content-end gap-3">
-                                    <button class="btn btn-secondary" type="button" id="verForFacture">Verificar</button>
-                                    <button type="submit" class="btn btn-primary" id="createFacture" disabled>Continuar</button>
+                                <div
+                                    class="container-fluid m-0 d-flex justify-content-end gap-3"
+                                >
+                                    <button
+                                        class="btn btn-secondary"
+                                        type="button"
+                                        id="verForFacture"
+                                    >
+                                        Verificar
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        id="createFacture"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#tipoFacturaModal"
+                                        disabled
+                                    >
+                                        Continuar
+                                    </button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+
+                    <div
+                        class="modal fade"
+                        id="tipoFacturaModal"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        Tipo de facturación
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method="post">
+                                        <p class="text-card">
+                                            Elija el tipo de facturación a
+                                            realizar.
+                                        </p>
+                                        <input
+                                            type="text"
+                                            name="typeOfClient_"
+                                            id="typeOfClient"
+                                            hidden
+                                        />
+                                        <input
+                                            type="text"
+                                            name="idCliente_"
+                                            id="id_clienteSeleccionado"
+                                            hidden
+                                        />
+                                        <input
+                                            type="text"
+                                            name="datosNuevoCliente_"
+                                            id="datos_nuevoCliente"
+                                            hidden
+                                        />
+                                        <div class="d-flex gap-3">
+                                            <label class="d-flex gap-3">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="typeFacture_"
+                                                    id="factura1"
+                                                    value="0"
+                                                    checked
+                                                />
+                                                <p>Vender</p>
+                                            </label>
+                                            <label class="d-flex gap-3">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="typeFacture_"
+                                                    id="factura2"
+                                                    value="1"
+                                                />
+                                                <p>Alquilar</p>
+                                            </label>
+                                        </div>
+                                        <div
+                                            class="border opacity-50 mb-3"
+                                        ></div>
+                                        <div class="d-flex justify-content-end">
+                                            <button
+                                                type="submit"
+                                                class="btn btn-primary"
+                                            >
+                                                Continuar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer" hidden></div>
+                            </div>
                         </div>
                     </div>
 
@@ -2974,7 +3063,10 @@
                                     />
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" id="validarNuevoCliente">
+                                    <button
+                                        class="btn btn-secondary"
+                                        id="validarNuevoCliente"
+                                    >
                                         Validar datos
                                     </button>
                                     <button
@@ -2985,6 +3077,412 @@
                                     >
                                         Continuar
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenedor-contenido container-fluid p-0" hidden>
+                    <div
+                        class="card"
+                        style="
+                            height: 100% !important;
+                            overflow: hidden;
+                            overflow-y: visible;
+                        "
+                    >
+                        <div class="card-body">
+                            <h5 class="card-title">Facturar alquiler</h5>
+                            <p class="card-text">
+                                Confirme la facturación del alquiler del libro.
+                            </p>
+                            <div class="border opacity-25"></div>
+                            <div class="d-flex flex-row gap-3">
+                                <div
+                                    class="content-data-facture p-3"
+                                    id="factura_"
+                                >
+                                    <section class="factura py-3">
+                                        <div class="header">
+                                            <h3 class="m-0">
+                                                Factura de Venta
+                                            </h3>
+                                            <p class="h5 m-0">Librería</p>
+                                            <div class="border my-2"></div>
+                                            <fieldset class="section">
+                                                <legend class="h2">
+                                                    <strong
+                                                        >Datos del
+                                                        Cliente</strong
+                                                    >
+                                                </legend>
+                                                <div class="customer-info">
+                                                    <div class="label">
+                                                        Cédula:
+                                                    </div>
+                                                    <div class="data m-0">
+                                                        123456789
+                                                    </div>
+                                                    <div class="label m-0">
+                                                        Nombres:
+                                                    </div>
+                                                    <div class="data m-0">
+                                                        Juan
+                                                    </div>
+                                                    <div class="label m-0">
+                                                        Apellidos:
+                                                    </div>
+                                                    <div class="data m-0">
+                                                        Pérez
+                                                    </div>
+                                                    <div class="label m-0">
+                                                        Teléfono:
+                                                    </div>
+                                                    <div class="data m-0">
+                                                        555-555-5555
+                                                    </div>
+                                                    <div class="label m-0">
+                                                        Dirección:
+                                                    </div>
+                                                    <div class="data m-0">
+                                                        123 Calle Principal
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="section">
+                                                <legend class="h2">
+                                                    <strong
+                                                        >Datos del Libro</strong
+                                                    >
+                                                </legend>
+                                                <div class="row">
+                                                    <div class="col m-0">
+                                                        <strong>Libro</strong>
+                                                    </div>
+                                                    <div class="col m-0">
+                                                        <strong>Precio</strong>
+                                                    </div>
+                                                    <div class="col m-0">
+                                                        <strong
+                                                            >Cantidad</strong
+                                                        >
+                                                    </div>
+                                                    <div class="col m-0">
+                                                        <strong>V.Total</strong>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="border opacity-25 m-0"
+                                                ></div>
+                                                <div class="row">
+                                                    <div class="col m-0">
+                                                        Cien anios de soledad
+                                                    </div>
+                                                    <div class="col m-0">
+                                                        $0
+                                                    </div>
+                                                    <div class="col m-0">1</div>
+                                                    <div class="col m-0">
+                                                        $0
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="border opacity-25 m-0"
+                                                ></div>
+                                                <div class="row">
+                                                    <div class="col m-0">
+                                                        Libro
+                                                    </div>
+                                                    <div class="col m-0">
+                                                        $0
+                                                    </div>
+                                                    <div class="col m-0">#</div>
+                                                    <div class="col m-0">
+                                                        $0
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="border opacity-25 m-0"
+                                                ></div>
+                                                <div class="row">
+                                                    <div class="col m-0">
+                                                        Libro
+                                                    </div>
+                                                    <div class="col m-0">
+                                                        $0
+                                                    </div>
+                                                    <div class="col m-0">#</div>
+                                                    <div class="col m-0">
+                                                        $0
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div
+                                                class="border opacity-50 my-2"
+                                            ></div>
+                                            <div class="section">
+                                                <div class="row">
+                                                    <div class="col m-0">
+                                                        <strong>TOTAL:</strong>
+                                                    </div>
+                                                    <div class="col m-0"></div>
+                                                    <div class="col m-0"></div>
+                                                    <div class="col m-0">
+                                                        <strong>$0</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="border opacity-50"></div>
+                                <div class="fluid-content p-3">
+                                    <form action="#" method="get">
+                                        <button
+                                            class="btn btn-secondary"
+                                            type="button"
+                                        >
+                                            Cancelar
+                                        </button>
+                                        <button
+                                            class="btn btn-primary"
+                                            type="button"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#ConfirmPaid"
+                                        >
+                                            Confirmar pago
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="modal fade"
+                        id="ConfirmPaid"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        Recibir pago
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        id="x-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    El valor total de la factura es de
+                                    <strong>$0</strong>. <br />
+                                    Confirme el pago para continuar.
+                                </div>
+                                <form
+                                    action="#ads"
+                                    method="post"
+                                    class="modal-footer"
+                                >
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        id="close"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Cancelar
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        id="retrivePaid"
+                                    >
+                                        Pago recibido
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                        id="continue"
+                                        disabled
+                                    >
+                                        Continuar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenedor-contenido container-fluid p-0">
+                    <div
+                        class="card shadow-sm"
+                        style="
+                            max-height: 100%;
+                            overflow: hidden;
+                            overflow-y: visible;
+                        "
+                    >
+                        <div class="card-body">
+                            <h5 class="card-title">Registro de alquiler</h5>
+                            <p class="card-text">
+                                Registro de alquiler de libros por empleado
+                                efectuados.
+                            </p>
+                            <div class="border opacity-25 mb-3"></div>
+                            <table
+                                class="table table-register-invoce"
+                                id="TablaRegistroAlquiler"
+                                class="display"
+                                style="width: 100%"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th>N.Factura</th>
+                                        <th>libros</th>
+                                        <th>Cliente</th>
+                                        <th>Valor de la factura</th>
+                                        <th>Empleado</th>
+                                        <th>Estado</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1920145786</td>
+                                        <td id="listaLibros">
+                                            <button
+                                                class="list m-0"
+                                                type="button"
+                                                tabindex="0"
+                                                data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus"
+                                                data-bs-html="true"
+                                                data-bs-content='
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <strong>Libro</strong>
+                                                            </div>
+                                                            <div class="col">
+                                                                <strong>Cantidad</strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border opacity-25"></div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                Cien años de soledad
+                                                            </div>
+                                                            <div class="col">
+                                                                1
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                '
+                                            >
+                                                <span># Libros</span>
+                                            </button>
+                                        </td>
+                                        <td>Gabriel García Márquez</td>
+                                        <td>$ 14.55</td>
+                                        <td>Robin Joel Lugo Boero</td>
+                                        <td>Devuelto</td>
+                                        <td>
+                                            <div class="d-flex flex-row gap-3">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary ReceptarLibrosBTN d-flex gap-2 align-items-center"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#ReceptarLibros"
+                                                >
+                                                    <input type="text" value="1" hidden>
+                                                    <i
+                                                        class="fa-solid fa-book"
+                                                    ></i>
+                                                    <span>Receptar libros</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>N.Factura</th>
+                                        <th>libros</th>
+                                        <th>Cliente</th>
+                                        <th>Valor de la factura</th>
+                                        <th>Empleado</th>
+                                        <th>Estado</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div
+                        class="modal fade"
+                        id="ReceptarLibros"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="staticBackdropLabel"
+                                    >
+                                        Receptar libros
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    Confirme antes de continuar.
+                                    <br />
+                                    ¿Ha recibido los libros?
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="#" method="post">
+                                        <input
+                                            type="text"
+                                            name="id_facturaAlquiler_"
+                                            id="ID_FacturaALquiler"
+                                            value=""
+                                            hidden
+                                        />
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal"
+                                        >
+                                            Cerrar
+                                        </button>
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary"
+                                        >
+                                            Confirmar
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

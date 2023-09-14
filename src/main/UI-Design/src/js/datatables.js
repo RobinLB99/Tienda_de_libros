@@ -13,3 +13,5 @@ import "datatables.net-searchpanes-bs5";
 let tablaLibros = new DataTable("#TablaLibros");
 let tablaEmpleados = new DataTable("#tablaEmpleados");
 let tablaSeleccion = new DataTable("#TablaLibrosSeleccion");
+let tablaAlquiler = new DataTable("#TablaRegistroAlquiler");
+let tablaVentas = new DataTable("#TablaRegistroVentas");

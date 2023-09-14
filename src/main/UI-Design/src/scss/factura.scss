@@ -1,0 +1,33 @@
+@import "bootstrap/scss/bootstrap";
+
+div.content-data-facture {
+    width: 450px;
+}
+
+section.factura {
+    .header {
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .customer-info,
+        .book-info,
+        .total-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .data {
+            // padding: 5px;
+        }
+    }
+}

@@ -19,8 +19,13 @@ import "./modalesLogin";
 import "./validacionesGestionCredenciales";
 import "./retriveValuesFromTablesRecord";
 import "./typeOfClient";
-import "./selectClient"
+import "./selectClient";
 import "./validateDataNewClient";
 import "./retriveDataNewClient";
-import "./validateDataForFacture"
+import "./validateDataForFacture";
 import "./setTypeOfClient";
+import "./printFacture";
+
+import "./poppers";
+
+import "./receptarLibros";
