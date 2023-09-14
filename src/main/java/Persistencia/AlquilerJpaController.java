@@ -21,11 +21,11 @@ public class AlquilerJpaController implements Serializable {
     public AlquilerJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
+
     public AlquilerJpaController() {
         emf = Persistence.createEntityManagerFactory("BookStoreCatalog_war_PU");
     }
-    
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -135,5 +135,5 @@ public class AlquilerJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
