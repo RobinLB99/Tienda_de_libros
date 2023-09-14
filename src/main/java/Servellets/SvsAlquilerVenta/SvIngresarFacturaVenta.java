@@ -47,6 +47,7 @@ public class SvIngresarFacturaVenta extends HttpServlet {
         Acceso credencial = (Acceso) request.getSession().getAttribute("credencial");
 
         try {
+            double valorFactura = Double.parseDouble((String) request.getParameter("valorFactura_"));
             Empleado empleado = control.getEmployByUserName((String) credencial.getUserName());
 
             List<Libro> libros = new ArrayList(); 
@@ -69,6 +70,7 @@ public class SvIngresarFacturaVenta extends HttpServlet {
 
             facVenta.setNumFactura(numFactura);
             facVenta.setCliente(cliente);
+            facVenta.setValorFactura(valorFactura);
             facVenta.setEmpleado(empleado);
             facVenta.setLibrosPedidos(listPedido);
 
