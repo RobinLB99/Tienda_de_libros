@@ -46,6 +46,7 @@ public class SvIngresarFacturaAlquiler extends HttpServlet {
         Acceso credencial = (Acceso) request.getSession().getAttribute("credencial");
 
         try {
+            double totalFactura = Double.parseDouble((String) request.getParameter("totalFactura_"));
             Empleado empleado = control.getEmployByUserName((String) credencial.getUserName());
 
             List<Libro> libros = new ArrayList();
@@ -55,7 +56,7 @@ public class SvIngresarFacturaAlquiler extends HttpServlet {
             for (CantidadLibroPedido pedido : librosPedidos) {
                 control.crearCantidadLibro(pedido);
                 listPedido.add(pedido);
-                
+
                 Libro libro = pedido.getLibro();
 
                 libro.setUnidades(libro.getUnidades() - pedido.getCantidad());
@@ -68,12 +69,13 @@ public class SvIngresarFacturaAlquiler extends HttpServlet {
 
             facALquiler.setNumFactura(numFactura);
             facALquiler.setCliente(cliente);
+            facALquiler.setValorFactura(totalFactura);
             facALquiler.setEmpleado(empleado);
             facALquiler.setEstadoAlquiler("Activo");
             facALquiler.setLibrosPedidos(listPedido);
 
             control.crearFacturaALquiler(facALquiler);
-            
+
             for (Libro libro : libros) {
                 control.editarLibro(libro);
             }

@@ -126,6 +126,7 @@
                 Confirme el pago para continuar.
             </div>
             <form action="SvIngresarFacturaAlquiler" method="post" class="modal-footer">
+                <input type="text" name="totalFactura_" value="<%=total%>" hidden>
                 <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-primary" id="retrivePaid">Pago recibido</button>
                 <button type="submit" class="btn btn-primary" id="continue" disabled>Continuar</button>
