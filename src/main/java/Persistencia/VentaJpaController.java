@@ -21,11 +21,11 @@ public class VentaJpaController implements Serializable {
     public VentaJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
+
     public VentaJpaController() {
         emf = Persistence.createEntityManagerFactory("BookStoreCatalog_war_PU");
     }
-    
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -135,5 +135,5 @@ public class VentaJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
