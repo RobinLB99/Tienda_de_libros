@@ -23,7 +23,8 @@
         <div
             class="accordion-body d-flex flex-column gap-2"
         >
-            <form action="#">
+            <form action="SVRegistrosFacturas" method="get">
+                <input type="text" name="registro_" value="alquiler" hidden>
                 <button
                     type="submit"
                     class="d-flex flex-row gap-2 align-items-center"
@@ -34,7 +35,8 @@
                     <span>Registro de alquiler</span>
                 </button>
             </form>
-            <form action="#">
+            <form action="SVRegistrosFacturas" method="get">
+                <input type="text" name="registro_" value="venta" hidden>
                 <button
                     type="submit"
                     class="d-flex flex-row gap-2 align-items-center"
