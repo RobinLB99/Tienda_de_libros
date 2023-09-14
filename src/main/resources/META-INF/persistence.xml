@@ -7,6 +7,7 @@
     <class>Logica.Cliente</class>
     <class>Logica.Venta</class>
     <class>Logica.Acceso</class>
+    <class>Logica.CantidadLibroPedido</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_library?serverTimezone=UTC"/>
