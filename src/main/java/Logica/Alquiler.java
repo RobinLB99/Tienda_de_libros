@@ -23,17 +23,19 @@ public class Alquiler implements Serializable {
     @OneToMany
     private List<CantidadLibroPedido> librosPedidos;
     private Cliente cliente;
+    private double valorFactura;
     private Empleado empleado;
     private String estadoAlquiler;
 
     public Alquiler() {
     }
 
-    public Alquiler(long id, String numFactura, List<CantidadLibroPedido> librosPedidos, Cliente cliente, Empleado empleado, String estadoAlquiler) {
+    public Alquiler(long id, String numFactura, List<CantidadLibroPedido> librosPedidos, Cliente cliente, double valorFactura, Empleado empleado, String estadoAlquiler) {
         this.id = id;
         this.numFactura = numFactura;
         this.librosPedidos = librosPedidos;
         this.cliente = cliente;
+        this.valorFactura = valorFactura;
         this.empleado = empleado;
         this.estadoAlquiler = estadoAlquiler;
     }
@@ -70,6 +72,14 @@ public class Alquiler implements Serializable {
         this.cliente = cliente;
     }
 
+    public double getValorFactura() {
+        return valorFactura;
+    }
+
+    public void setValorFactura(double valorFactura) {
+        this.valorFactura = valorFactura;
+    }
+
     public Empleado getEmpleado() {
         return empleado;
     }
@@ -88,7 +98,7 @@ public class Alquiler implements Serializable {
 
     @Override
     public String toString() {
-        return "Alquiler{" + "id=" + id + ", numFactura=" + numFactura + ", librosPedidos=" + librosPedidos + ", cliente=" + cliente + ", empleado=" + empleado + ", estadoAlquiler=" + estadoAlquiler + '}';
+        return "Alquiler{" + "id=" + id + ", numFactura=" + numFactura + ", librosPedidos=" + librosPedidos + ", cliente=" + cliente + ", valorFactura=" + valorFactura + ", empleado=" + empleado + ", estadoAlquiler=" + estadoAlquiler + '}';
     }
 
 }
