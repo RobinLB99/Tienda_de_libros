@@ -23,16 +23,18 @@ public class Venta implements Serializable {
     @OneToMany
     private List<CantidadLibroPedido> librosPedidos;
     private Cliente cliente;
+    private double valorFactura;
     private Empleado empleado;
 
     public Venta() {
     }
 
-    public Venta(long id, String numFactura, List<CantidadLibroPedido> librosPedidos, Cliente cliente, Empleado empleado) {
+    public Venta(long id, String numFactura, List<CantidadLibroPedido> librosPedidos, Cliente cliente, double valorFactura, Empleado empleado) {
         this.id = id;
         this.numFactura = numFactura;
         this.librosPedidos = librosPedidos;
         this.cliente = cliente;
+        this.valorFactura = valorFactura;
         this.empleado = empleado;
     }
 
@@ -66,6 +68,14 @@ public class Venta implements Serializable {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public double getValorFactura() {
+        return valorFactura;
+    }
+
+    public void setValorFactura(double valorFactura) {
+        this.valorFactura = valorFactura;
     }
 
     public Empleado getEmpleado() {
