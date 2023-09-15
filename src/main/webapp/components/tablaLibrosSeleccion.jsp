@@ -32,6 +32,7 @@
                     
                     if (librosToSelect != null) {
                         for (Libro libro : librosToSelect) {
+                            if (libro.getUnidades() > 0) {
                         
                 %>
                 <tr class="RegistroLibro">
@@ -67,6 +68,7 @@
                     </td>
                 </tr>
                 <%
+                            }
                         }
                     }
                 %>
