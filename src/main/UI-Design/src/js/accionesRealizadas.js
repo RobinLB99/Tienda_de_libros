@@ -29,27 +29,61 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
 
             case "nuevo_libro_ingresado":
-                new Modal(
-                    document.getElementById("nuevoLibroCorrecto")
-                ).show();
+                new Modal(document.getElementById("nuevoLibroCorrecto")).show();
                 break;
 
             case "empleado_ingresado":
-                new Modal(
-                    document.getElementById("empleadoIngresado")
-                ).show();
+                new Modal(document.getElementById("empleadoIngresado")).show();
                 break;
-            
+
             case "empleado_modificado":
                 new Modal(
                     document.getElementById("ModalEmpleadoModificado")
                 ).show();
                 break;
 
-            case "error":
+            case "password_cambiado":
                 new Modal(
-                    document.getElementById("errorPeticion")
+                    document.getElementById("passwordChangedMessage")
                 ).show();
+                break;
+
+            case "privilegios_cambiados":
+                new Modal(
+                    document.getElementById("privilegiosCambiadosMensaje")
+                ).show();
+                break;
+
+            case "credencial_eliminada":
+                new Modal(document.getElementById("accessUserDelete")).show();
+                break;
+            
+            case "credenciales_creadas":
+                new Modal(
+                    document.getElementById("credentialAccessCreated")
+                ).show();
+                break;
+            
+            case "vendido":
+                new Modal(
+                    document.getElementById("libroVendido")
+                ).show();
+                break;
+            
+            case "alquilado":
+                new Modal(
+                    document.getElementById("libroAlquilado")
+                ).show();
+                break;
+            
+            case "libros_devueltos":
+                new Modal(
+                    document.getElementById("librosDevueltos")
+                ).show();
+                break;
+
+            case "error":
+                new Modal(document.getElementById("errorPeticion")).show();
                 break;
 
             default:
