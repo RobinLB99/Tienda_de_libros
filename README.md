@@ -81,7 +81,11 @@ Este es un repositorio para el proyecto de software de gestión de librería. El
 8. Inicie sesión con el usuario `mgonzales99` con contraseña `123456` y pruebe la aplicación.
 
 ## Capturas
-![Lista de libros](https://1drv.ms/i/s!AgabAVuKU09xhWvCrdAc0ubos_gI?e=pdee9V)
+![Libros disponibles](https://github.com/RobinLB99/Tienda_de_libros/blob/master/.screenshots/libros_disponibles.png)
+
+![Gestion de usuarios](https://github.com/RobinLB99/Tienda_de_libros/blob/master/.screenshots/gestion_de_usuario.png)
+
+![Libros a elegir](https://github.com/RobinLB99/Tienda_de_libros/blob/master/.screenshots/libros_elegir.png)
 
 
 ## Contribución
