@@ -93,6 +93,9 @@
                     <td><%= registro.getEmpleado().getNombre() %> <%= registro.getEmpleado().getApellidos()%></td>
                     <td><%= registro.getEstadoAlquiler() %></td>
                     <td>
+                        <%
+                            if (registro.getEstadoAlquiler().equals("Activo")) {
+                        %>
                         <div class="d-flex flex-row gap-3">
                             <button
                                 type="button"
@@ -100,13 +103,16 @@
                                 data-bs-toggle="modal"
                                 data-bs-target="#ReceptarLibros"
                                 >
-                                <input type="text" value="<%= registro.getId() %>" hidden>
+                                <input type="text" name="registro_" value="<%= registro.getId()%>" hidden>
                                 <i
                                     class="fa-solid fa-book"
                                     ></i>
                                 <span>Receptar libros</span>
                             </button>
                         </div>
+                        <%
+                            }
+                        %>
                     </td>
                 </tr>
                 <%
@@ -159,7 +165,7 @@
                 ¿Ha recibido los libros?
             </div>
             <div class="modal-footer">
-                <form action="#" method="post">
+                <form action="SvReceptarLibrosAlquilados" method="post">
                     <input
                         type="text"
                         name="id_facturaAlquiler_"
