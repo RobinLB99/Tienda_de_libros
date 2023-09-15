@@ -68,9 +68,9 @@
                                         <strong>Cantidad</strong>
                                     </div>
                                 </div>
-                                <div class="border opacity-25"></div>
                                 <%  for (CantidadLibroPedido cl : libros) {
                                 %>
+                                <div class="border opacity-25"></div>
                                 <div class="row">
                                     <div class="col">
                                         <%= cl.getLibro().getNombre() %>
