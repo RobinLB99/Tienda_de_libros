@@ -29,7 +29,7 @@
             <thead>
                 <tr>
                     <th>N.Factura</th>
-                    <th>libros</th>
+                    <th>Cant. Libros</th>
                     <th>Cliente</th>
                     <th>Valor de la factura</th>
                     <th>Empleado</th>
@@ -45,6 +45,8 @@
                     for (CantidadLibroPedido cl : libros) {
                         cantidadLibros += cl.getCantidad();
                     }
+                    
+                    String nlibros = (cantidadLibros > 1) ? "Libros" : "Libro";
                 %>
                 <tr>
                     <td><%= registro.getNumFactura() %></td>
@@ -83,7 +85,7 @@
                             </div>
                             '
                             >
-                            <span><%=cantidadLibros%> Libro/libros</span>
+                            <span><%=cantidadLibros%> <%=nlibros%></span>
                         </button>
                     </td>
                     <td><%= registro.getCliente().getNombre() %> <%= registro.getCliente().getApellidos()%></td>
@@ -114,7 +116,7 @@
             <tfoot>
                 <tr>
                     <th>N.Factura</th>
-                    <th>libros</th>
+                    <th>Cant. Libros</th>
                     <th>Cliente</th>
                     <th>Valor de la factura</th>
                     <th>Empleado</th>
