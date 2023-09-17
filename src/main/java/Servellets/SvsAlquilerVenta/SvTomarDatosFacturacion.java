@@ -54,7 +54,7 @@ public class SvTomarDatosFacturacion extends HttpServlet {
         String idCliente = request.getParameter("idCliente_");
         String datosNuevoCliente = request.getParameter("datosNuevoCliente_");
         String tipoFactura = request.getParameter("typeFacture_");
-        
+                
         if (tipoCliente.equals("0")) {
             /**Código para llenar datos vacíos para consumidor final*/
             cliente.setCedula("-");
@@ -126,9 +126,6 @@ public class SvTomarDatosFacturacion extends HttpServlet {
         dataFactura.setAttribute("listaCantidadLibrosPedidos", listaCantidadLibrosPedidos);
         dataFactura.setAttribute("numFactura", numInvoice);
         dataFactura.setAttribute("tipoFactura", tipoFactura);
-        
-        System.out.println(cliente.toString());
-        System.out.println(tipoFactura);
         
         if (tipoFactura.equals("0"))
             response.sendRedirect("FacturacionVenta.jsp");

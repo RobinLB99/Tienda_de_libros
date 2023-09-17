@@ -62,7 +62,7 @@ public class SvIngresarFacturaAlquiler extends HttpServlet {
                 libro.setUnidades(libro.getUnidades() - pedido.getCantidad());
                 libros.add(libro);
             }
-
+            
             if (cliente.getId() == 0) {
                 control.crearCliente(cliente);
             }

@@ -213,6 +213,7 @@
                                 List<Cliente> clientes = (List) request.getSession().getAttribute("listaCLientes");
                                 
                                 if (clientes != null) for (Cliente cliente : clientes) {
+                                    if (!cliente.getNombre().equals("-")) {
                             %>
                             <tr>
                                 <td>
@@ -230,6 +231,7 @@
                                 <td><%= cliente.getDireccion() %></td>
                             </tr>
                             <%
+                                    }
                                 }
                             %>
                         </tbody>
